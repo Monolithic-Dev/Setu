@@ -1,0 +1,362 @@
+[
+  {
+    "question_id": "eval-KA-2024-00166",
+    "query_text": "residential break-in via Mangaluru",
+    "language": "en",
+    "expected_case_ids": [
+      "KA-2024-00166"
+    ],
+    "notes": "Built from KA-2024-00166's own MO and district \u2014 should be directly retrievable."
+  },
+  {
+    "question_id": "eval-KA-2024-00078",
+    "query_text": "pickpocketing in crowded Shivamogga",
+    "language": "en",
+    "expected_case_ids": [
+      "KA-2024-00078"
+    ],
+    "notes": "Built from KA-2024-00078's own MO and district \u2014 should be directly retrievable."
+  },
+  {
+    "question_id": "eval-KA-2025-00203",
+    "query_text": "residential break-in via Ballari",
+    "language": "en",
+    "expected_case_ids": [
+      "KA-2025-00203"
+    ],
+    "notes": "Built from KA-2025-00203's own MO and district \u2014 should be directly retrievable."
+  },
+  {
+    "question_id": "eval-KA-2026-00025",
+    "query_text": "cyber fraud via Kalaburagi",
+    "language": "en",
+    "expected_case_ids": [
+      "KA-2026-00025"
+    ],
+    "notes": "Built from KA-2026-00025's own MO and district \u2014 should be directly retrievable."
+  },
+  {
+    "question_id": "eval-KA-2025-00038",
+    "query_text": "pickpocketing in crowded Belagavi",
+    "language": "en",
+    "expected_case_ids": [
+      "KA-2025-00038"
+    ],
+    "notes": "Built from KA-2025-00038's own MO and district \u2014 should be directly retrievable."
+  },
+  {
+    "question_id": "eval-KA-2024-00275",
+    "query_text": "residential break-in via Mangaluru",
+    "language": "en",
+    "expected_case_ids": [
+      "KA-2024-00275"
+    ],
+    "notes": "Built from KA-2024-00275's own MO and district \u2014 should be directly retrievable."
+  },
+  {
+    "question_id": "eval-KA-2024-00049",
+    "query_text": "chain snatching using Hubballi-Dharwad",
+    "language": "en",
+    "expected_case_ids": [
+      "KA-2024-00049"
+    ],
+    "notes": "Built from KA-2024-00049's own MO and district \u2014 should be directly retrievable."
+  },
+  {
+    "question_id": "eval-KA-2025-00188",
+    "query_text": "chain snatching on Tumakuru",
+    "language": "en",
+    "expected_case_ids": [
+      "KA-2025-00188"
+    ],
+    "notes": "Built from KA-2025-00188's own MO and district \u2014 should be directly retrievable."
+  },
+  {
+    "question_id": "eval-KA-2024-00299",
+    "query_text": "cyber fraud via Shivamogga",
+    "language": "en",
+    "expected_case_ids": [
+      "KA-2024-00299"
+    ],
+    "notes": "Built from KA-2024-00299's own MO and district \u2014 should be directly retrievable."
+  },
+  {
+    "question_id": "eval-KA-2024-00030",
+    "query_text": "ATM tampering attempt Mangaluru",
+    "language": "en",
+    "expected_case_ids": [
+      "KA-2024-00030"
+    ],
+    "notes": "Built from KA-2024-00030's own MO and district \u2014 should be directly retrievable."
+  },
+  {
+    "question_id": "eval-KA-2024-00260",
+    "query_text": "two-wheeler theft from Tumakuru",
+    "language": "en",
+    "expected_case_ids": [
+      "KA-2024-00260"
+    ],
+    "notes": "Built from KA-2024-00260's own MO and district \u2014 should be directly retrievable."
+  },
+  {
+    "question_id": "eval-KA-2024-00110",
+    "query_text": "shop burglary after Mysuru",
+    "language": "en",
+    "expected_case_ids": [
+      "KA-2024-00110"
+    ],
+    "notes": "Built from KA-2024-00110's own MO and district \u2014 should be directly retrievable."
+  },
+  {
+    "question_id": "eval-KA-2025-00020",
+    "query_text": "ATM tampering attempt Bengaluru Urban",
+    "language": "en",
+    "expected_case_ids": [
+      "KA-2025-00020"
+    ],
+    "notes": "Built from KA-2025-00020's own MO and district \u2014 should be directly retrievable."
+  },
+  {
+    "question_id": "eval-KA-2026-00045",
+    "query_text": "two-wheeler theft from Ballari",
+    "language": "en",
+    "expected_case_ids": [
+      "KA-2026-00045"
+    ],
+    "notes": "Built from KA-2026-00045's own MO and district \u2014 should be directly retrievable."
+  },
+  {
+    "question_id": "eval-KA-2026-00223",
+    "query_text": "cyber fraud via Shivamogga",
+    "language": "en",
+    "expected_case_ids": [
+      "KA-2026-00223"
+    ],
+    "notes": "Built from KA-2026-00223's own MO and district \u2014 should be directly retrievable."
+  },
+  {
+    "question_id": "eval-KA-2025-00215",
+    "query_text": "cyber fraud via Mangaluru",
+    "language": "en",
+    "expected_case_ids": [
+      "KA-2025-00215"
+    ],
+    "notes": "Built from KA-2025-00215's own MO and district \u2014 should be directly retrievable."
+  },
+  {
+    "question_id": "eval-KA-2026-00036",
+    "query_text": "chain snatching using Ballari",
+    "language": "en",
+    "expected_case_ids": [
+      "KA-2026-00036"
+    ],
+    "notes": "Built from KA-2026-00036's own MO and district \u2014 should be directly retrievable."
+  },
+  {
+    "question_id": "eval-KA-2025-00124",
+    "query_text": "chain snatching using Mysuru",
+    "language": "en",
+    "expected_case_ids": [
+      "KA-2025-00124"
+    ],
+    "notes": "Built from KA-2025-00124's own MO and district \u2014 should be directly retrievable."
+  },
+  {
+    "question_id": "eval-KA-2024-00047",
+    "query_text": "shop burglary after Tumakuru",
+    "language": "en",
+    "expected_case_ids": [
+      "KA-2024-00047"
+    ],
+    "notes": "Built from KA-2024-00047's own MO and district \u2014 should be directly retrievable."
+  },
+  {
+    "question_id": "eval-KA-2024-00283",
+    "query_text": "pickpocketing in crowded Shivamogga",
+    "language": "en",
+    "expected_case_ids": [
+      "KA-2024-00283"
+    ],
+    "notes": "Built from KA-2024-00283's own MO and district \u2014 should be directly retrievable."
+  },
+  {
+    "question_id": "eval-KA-2024-00218",
+    "query_text": "cyber fraud via Tumakuru",
+    "language": "en",
+    "expected_case_ids": [
+      "KA-2024-00218"
+    ],
+    "notes": "Built from KA-2024-00218's own MO and district \u2014 should be directly retrievable."
+  },
+  {
+    "question_id": "eval-KA-2024-00031",
+    "query_text": "chain snatching using Belagavi",
+    "language": "en",
+    "expected_case_ids": [
+      "KA-2024-00031"
+    ],
+    "notes": "Built from KA-2024-00031's own MO and district \u2014 should be directly retrievable."
+  },
+  {
+    "question_id": "eval-KA-2024-00290",
+    "query_text": "pickpocketing in crowded Kalaburagi",
+    "language": "en",
+    "expected_case_ids": [
+      "KA-2024-00290"
+    ],
+    "notes": "Built from KA-2024-00290's own MO and district \u2014 should be directly retrievable."
+  },
+  {
+    "question_id": "eval-KA-2026-00064",
+    "query_text": "chain snatching on Hubballi-Dharwad",
+    "language": "en",
+    "expected_case_ids": [
+      "KA-2026-00064"
+    ],
+    "notes": "Built from KA-2026-00064's own MO and district \u2014 should be directly retrievable."
+  },
+  {
+    "question_id": "eval-KA-2026-00115",
+    "query_text": "residential break-in via Shivamogga",
+    "language": "en",
+    "expected_case_ids": [
+      "KA-2026-00115"
+    ],
+    "notes": "Built from KA-2026-00115's own MO and district \u2014 should be directly retrievable."
+  },
+  {
+    "question_id": "eval-KA-2024-00032",
+    "query_text": "cyber fraud via Hubballi-Dharwad",
+    "language": "en",
+    "expected_case_ids": [
+      "KA-2024-00032"
+    ],
+    "notes": "Built from KA-2024-00032's own MO and district \u2014 should be directly retrievable."
+  },
+  {
+    "question_id": "eval-KA-2026-00296",
+    "query_text": "chain snatching on Davanagere",
+    "language": "en",
+    "expected_case_ids": [
+      "KA-2026-00296"
+    ],
+    "notes": "Built from KA-2026-00296's own MO and district \u2014 should be directly retrievable."
+  },
+  {
+    "question_id": "eval-KA-2025-00300",
+    "query_text": "two-wheeler theft from Tumakuru",
+    "language": "en",
+    "expected_case_ids": [
+      "KA-2025-00300"
+    ],
+    "notes": "Built from KA-2025-00300's own MO and district \u2014 should be directly retrievable."
+  },
+  {
+    "question_id": "eval-KA-2024-00204",
+    "query_text": "ATM tampering attempt Mangaluru",
+    "language": "en",
+    "expected_case_ids": [
+      "KA-2024-00204"
+    ],
+    "notes": "Built from KA-2024-00204's own MO and district \u2014 should be directly retrievable."
+  },
+  {
+    "question_id": "eval-KA-2025-00026",
+    "query_text": "chain snatching on Shivamogga",
+    "language": "en",
+    "expected_case_ids": [
+      "KA-2025-00026"
+    ],
+    "notes": "Built from KA-2025-00026's own MO and district \u2014 should be directly retrievable."
+  },
+  {
+    "question_id": "eval-KA-2026-00114",
+    "query_text": "residential break-in via Kalaburagi",
+    "language": "en",
+    "expected_case_ids": [
+      "KA-2026-00114"
+    ],
+    "notes": "Built from KA-2026-00114's own MO and district \u2014 should be directly retrievable."
+  },
+  {
+    "question_id": "eval-KA-2026-00024",
+    "query_text": "residential break-in via Bengaluru Urban",
+    "language": "en",
+    "expected_case_ids": [
+      "KA-2026-00024"
+    ],
+    "notes": "Built from KA-2026-00024's own MO and district \u2014 should be directly retrievable."
+  },
+  {
+    "question_id": "eval-KA-2026-00286",
+    "query_text": "chain snatching using Kalaburagi",
+    "language": "en",
+    "expected_case_ids": [
+      "KA-2026-00286"
+    ],
+    "notes": "Built from KA-2026-00286's own MO and district \u2014 should be directly retrievable."
+  },
+  {
+    "question_id": "eval-KA-2025-00069",
+    "query_text": "pickpocketing in crowded Ballari",
+    "language": "en",
+    "expected_case_ids": [
+      "KA-2025-00069"
+    ],
+    "notes": "Built from KA-2025-00069's own MO and district \u2014 should be directly retrievable."
+  },
+  {
+    "question_id": "eval-KA-2025-00149",
+    "query_text": "residential break-in via Shivamogga",
+    "language": "en",
+    "expected_case_ids": [
+      "KA-2025-00149"
+    ],
+    "notes": "Built from KA-2025-00149's own MO and district \u2014 should be directly retrievable."
+  },
+  {
+    "question_id": "eval-KA-2025-00074",
+    "query_text": "cyber fraud via Hubballi-Dharwad",
+    "language": "en",
+    "expected_case_ids": [
+      "KA-2025-00074"
+    ],
+    "notes": "Built from KA-2025-00074's own MO and district \u2014 should be directly retrievable."
+  },
+  {
+    "question_id": "eval-KA-2024-00277",
+    "query_text": "chain snatching on Davanagere",
+    "language": "en",
+    "expected_case_ids": [
+      "KA-2024-00277"
+    ],
+    "notes": "Built from KA-2024-00277's own MO and district \u2014 should be directly retrievable."
+  },
+  {
+    "question_id": "eval-KA-2025-00061",
+    "query_text": "cyber fraud via Davanagere",
+    "language": "en",
+    "expected_case_ids": [
+      "KA-2025-00061"
+    ],
+    "notes": "Built from KA-2025-00061's own MO and district \u2014 should be directly retrievable."
+  },
+  {
+    "question_id": "eval-KA-2024-00293",
+    "query_text": "cyber fraud via Tumakuru",
+    "language": "en",
+    "expected_case_ids": [
+      "KA-2024-00293"
+    ],
+    "notes": "Built from KA-2024-00293's own MO and district \u2014 should be directly retrievable."
+  },
+  {
+    "question_id": "eval-KA-2024-00158",
+    "query_text": "residential break-in via Ballari",
+    "language": "en",
+    "expected_case_ids": [
+      "KA-2024-00158"
+    ],
+    "notes": "Built from KA-2024-00158's own MO and district \u2014 should be directly retrievable."
+  }
+]

@@ -1,0 +1,7 @@
+# Root-level dev/ML dependencies — install with:
+#   pip install -r requirements-dev.txt --break-system-packages
+scikit-learn>=1.4
+numpy>=1.26
+pytest>=8.0
+reportlab>=4.0
+pypdf>=4.0
