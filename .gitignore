@@ -1,0 +1,27 @@
+# Environment / secrets
+.env
+*.env
+!.env.example
+
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+venv/
+*.egg-info/
+
+# Node / frontend
+node_modules/
+client/dist/
+client/build/
+
+# Catalyst local state
+.catalystrc
+.catalyst-cache/
+
+# Data (regenerate via ml/data_generation, don't commit generated output)
+data/*.json
+!data/.gitkeep
+
+# OS
+.DS_Store

@@ -1,0 +1,4 @@
+# Per-function dependencies. Catalyst provides its own SDK at deploy time;
+# list only third-party packages this function needs beyond that.
+requests>=2.31
+reportlab>=4.0

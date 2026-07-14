@@ -1,0 +1,28 @@
+{
+  "_comment": "Illustrative starting point only — this schema was NOT verified against a live `catalyst init` run (no network access in the environment that generated this scaffold). Run `catalyst init` yourself and let it regenerate this file; treat that output as authoritative, not this one. What IS verified (via Catalyst's own documentation) is the service list below matching docs/Deployment.md §1.",
+  "project": {
+    "name": "setu-ksp-datathon",
+    "stack": {
+      "client": "client/",
+      "functions": "functions/"
+    }
+  },
+  "services_used": [
+    "functions",
+    "data-store",
+    "quickml",
+    "zia",
+    "cache",
+    "authentication",
+    "web-client-hosting",
+    "stratus",
+    "apm",
+    "automation-testing"
+  ],
+  "services_deliberately_not_used": [
+    "event-listeners",
+    "file-store",
+    "cron"
+  ],
+  "_deprecation_note": "Event Listeners, File Store, and Cron are on Catalyst's deprecation path (EOL 30 Apr 2026) — see docs/Deployment.md §1. Stratus is used instead of File Store."
+}
