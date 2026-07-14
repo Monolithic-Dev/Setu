@@ -1,5 +1,23 @@
 [
   {
+    "question_id": "eval-kn-KA-2025-00009",
+    "query_text": "Shivamogga ದಲ್ಲಿ ಬಾಗಿಲಿನ ಬೀಗ ಮುರಿದು ಕಳ್ಳತನ",
+    "language": "kn",
+    "expected_case_ids": [
+      "KA-2025-00009"
+    ],
+    "notes": "Multilingual test: Kannada query for residential break-in in Shivamogga."
+  },
+  {
+    "question_id": "eval-kn-KA-2026-00008",
+    "query_text": "Tumakuru ದಲ್ಲಿ ಫಿಶಿಂಗ್ ಕರೆ ಮೂಲಕ ಸೈಬರ್ ವಂಚನೆ",
+    "language": "kn",
+    "expected_case_ids": [
+      "KA-2026-00008"
+    ],
+    "notes": "Multilingual test: Kannada query for cyber fraud in Tumakuru."
+  },
+  {
     "question_id": "eval-KA-2024-00166",
     "query_text": "residential break-in via Mangaluru",
     "language": "en",
