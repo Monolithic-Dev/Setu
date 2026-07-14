@@ -141,3 +141,22 @@ export async function fetchAuditLogs(): Promise<AuditEntry[] | ApiError> {
 export async function exportConversationPdf(sessionId: string): Promise<{ path: string }> {
   return postJson<{ path: string }>("/api/export/pdf", { session_id: sessionId });
 }
+
+export async function transcribeAudio(audioBlob: Blob): Promise<{ text: string }> {
+  const formData = new FormData();
+  formData.append("audio", audioBlob);
+
+  const res = await fetch(`${API_BASE}/api/voice/transcribe`, {
+    method: "POST",
+    headers: DEV_AUTH_HEADERS, // Do not set Content-Type, fetch handles multipart boundary automatically
+    body: formData,
+    credentials: "include",
+  });
+  
+  if (!res.ok) {
+    const errorBody = await res.json().catch(() => ({}));
+    throw new Error(errorBody.message || "Failed to transcribe audio");
+  }
+  
+  return res.json() as Promise<{ text: string }>;
+}

@@ -1,0 +1,29 @@
+.app-split-layout {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  width: 100%;
+}
+
+.app-chat-pane {
+  flex: 1;
+  min-width: 400px;
+  max-width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-graph-pane {
+  flex: 1;
+  min-width: 400px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Ensure ChatWindow scales correctly inside the flex container */
+.app-chat-pane > .chat-window {
+  height: 100%;
+  border-right: none;
+}

@@ -41,7 +41,7 @@ def build_zcql(query: StructuredQuery) -> str:
     if query.case_id:
         conditions.append(f"CaseRecord.case_id = '{query.case_id}'")
     if query.district:
-        conditions.append(f"CaseRecord.district = '{query.district}'")
+        conditions.append(f"LOCATION.district = '{query.district}'")
     if query.date_from:
         conditions.append(f"CaseRecord.filed_date >= '{query.date_from}'")
     if query.date_to:
@@ -53,13 +53,13 @@ def build_zcql(query: StructuredQuery) -> str:
 
     # Scope enforcement — always appended, never optional.
     if query.scope_level == "station" and query.scope_station_id:
-        conditions.append(f"CaseRecord.station_id = '{query.scope_station_id}'")
+        conditions.append(f"LOCATION.station_jurisdiction = '{query.scope_station_id}'")
     elif query.scope_level == "district" and query.scope_district_id:
-        conditions.append(f"CaseRecord.district_id = '{query.scope_district_id}'")
+        conditions.append(f"LOCATION.district = '{query.scope_district_id}'")
     # scope_level == "all" adds no extra condition, matching docs/Database.md §4.
 
     where_clause = " AND ".join(conditions) if conditions else "1=1"
-    return f"SELECT * FROM CaseRecord WHERE {where_clause}"
+    return f"SELECT CaseRecord.* FROM CaseRecord INNER JOIN LOCATION ON CaseRecord.location_id = LOCATION.location_id WHERE {where_clause}"
 
 
 def execute_zcql(query_string: str) -> list[dict]:

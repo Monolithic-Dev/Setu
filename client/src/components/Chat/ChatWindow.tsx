@@ -1,5 +1,6 @@
 import { useState, useCallback } from "react";
-import { submitQuery, flagAnswer, type QueryResponse, type Language } from "../../api/queryClient";
+import { submitQuery, flagAnswer, transcribeAudio, type QueryResponse, type Language } from "../../api/queryClient";
+import { VoiceCapture } from "./VoiceCapture";
 import { t } from "../../i18n/strings";
 
 // Implements docs/UX.md's "Answer View" and "Connectivity State" (added Phase 7 review):
@@ -41,6 +42,18 @@ export function ChatWindow({ language }: { language: Language }) {
       console.error("Query failed, entering reconnecting state:", err);
     }
   }, [inputText, language, sessionId]);
+
+  const handleAudioCaptured = useCallback(async (audioBlob: Blob) => {
+    try {
+      setInputText("Transcribing..."); // In real app, we'd use a localized string or spinner
+      const result = await transcribeAudio(audioBlob);
+      setInputText(result.text);
+    } catch (err) {
+      console.error("Transcription failed:", err);
+      alert("Failed to transcribe audio.");
+      setInputText("");
+    }
+  }, []);
 
   const handleFeedback = useCallback((auditId: string, wasHelpful: boolean) => {
     flagAnswer(auditId, wasHelpful).catch((err) => console.error("Failed to record feedback:", err));
@@ -92,6 +105,7 @@ export function ChatWindow({ language }: { language: Language }) {
       </div>
 
       <div className="chat-input">
+        <VoiceCapture language={language} onAudioCaptured={handleAudioCaptured} />
         <input
           value={inputText}
           onChange={(e) => setInputText(e.target.value)}
