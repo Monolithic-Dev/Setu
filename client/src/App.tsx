@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { ChatWindow } from "./components/Chat/ChatWindow";
 import { Login } from "./components/Login/Login";
+import { NetworkGraph } from "./components/NetworkGraph/NetworkGraph";
 import { t, type Language } from "./i18n/strings";
 import { setDevAuth } from "./api/queryClient";
+import "./App.css"; // Ensure we have App.css for the split layout
 
 export default function App() {
   const [language, setLanguage] = useState<Language>("en");
@@ -37,7 +39,14 @@ export default function App() {
         {!isAuthenticated ? (
           <Login language={language} onLogin={handleLogin} />
         ) : (
-          <ChatWindow language={language} />
+          <div className="app-split-layout">
+            <div className="app-chat-pane">
+              <ChatWindow language={language} />
+            </div>
+            <div className="app-graph-pane">
+              <NetworkGraph language={language} />
+            </div>
+          </div>
         )}
       </main>
     </div>
