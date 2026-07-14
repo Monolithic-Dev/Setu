@@ -2,42 +2,68 @@ import { useState } from "react";
 import { ChatWindow } from "./components/Chat/ChatWindow";
 import { Login } from "./components/Login/Login";
 import { NetworkGraph } from "./components/NetworkGraph/NetworkGraph";
+import { AuditLogs } from "./components/Admin/AuditLogs";
 import { t, type Language } from "./i18n/strings";
 import { setDevAuth } from "./api/queryClient";
-import "./App.css"; // Ensure we have App.css for the split layout
+import "./App.css";
 
 export default function App() {
   const [language, setLanguage] = useState<Language>("en");
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [userRole, setUserRole] = useState("");
+  const [currentView, setCurrentView] = useState<"chat" | "audit">("chat");
 
   const handleLogin = (role: string, stationId: string, districtId: string) => {
     setDevAuth(role, stationId, districtId);
+    setUserRole(role);
     setIsAuthenticated(true);
   };
+
+  const isAdmin = userRole === "System Admin";
 
   return (
     <div className="app">
       <header>
         <h1>{t(language, "appTitle")}</h1>
-        <div className="language-toggle" role="group" aria-label="Language">
-          <button
-            aria-pressed={language === "en"}
-            onClick={() => setLanguage("en")}
-          >
-            English
-          </button>
-          <button
-            aria-pressed={language === "kn"}
-            onClick={() => setLanguage("kn")}
-          >
-            ಕನ್ನಡ
-          </button>
+        <div className="header-controls">
+          {isAuthenticated && isAdmin && (
+            <div className="admin-toggle">
+              <button 
+                className={currentView === "chat" ? "active" : ""} 
+                onClick={() => setCurrentView("chat")}
+              >
+                Chat
+              </button>
+              <button 
+                className={currentView === "audit" ? "active" : ""} 
+                onClick={() => setCurrentView("audit")}
+              >
+                Audit Logs
+              </button>
+            </div>
+          )}
+          <div className="language-toggle" role="group" aria-label="Language">
+            <button
+              aria-pressed={language === "en"}
+              onClick={() => setLanguage("en")}
+            >
+              English
+            </button>
+            <button
+              aria-pressed={language === "kn"}
+              onClick={() => setLanguage("kn")}
+            >
+              ಕನ್ನಡ
+            </button>
+          </div>
         </div>
       </header>
 
       <main>
         {!isAuthenticated ? (
           <Login language={language} onLogin={handleLogin} />
+        ) : currentView === "audit" && isAdmin ? (
+          <AuditLogs language={language} />
         ) : (
           <div className="app-split-layout">
             <div className="app-chat-pane">

@@ -45,7 +45,8 @@ _REPO_ROOT = os.path.join(os.path.dirname(__file__), "..", "..")
 
 _DEV_DATA_PATH = os.path.join(os.path.dirname(__file__), "..", "..", "data", "synthetic_cases.json")
 _dev_cases_cache = None
-_dev_index_cache = None
+_dev_index_cache_en = None
+_dev_index_cache_kn = None
 
 
 class QueryFunctionError(Exception):
@@ -78,12 +79,17 @@ def _load_dev_cases() -> list[dict]:
     return _dev_cases_cache
 
 
-def _get_dev_index() -> LocalTfidfIndex:
-    """Lazily builds and caches the TF-IDF index — expensive to rebuild per request."""
-    global _dev_index_cache
-    if _dev_index_cache is None:
-        _dev_index_cache = LocalTfidfIndex(_load_dev_cases())
-    return _dev_index_cache
+def _get_dev_index(language: str) -> LocalTfidfIndex:
+    """Lazily builds and caches the TF-IDF index per language — expensive to rebuild per request."""
+    global _dev_index_cache_en, _dev_index_cache_kn
+    if language == "kn":
+        if _dev_index_cache_kn is None:
+            _dev_index_cache_kn = LocalTfidfIndex(_load_dev_cases(), language_field="narrative_kn")
+        return _dev_index_cache_kn
+    else:
+        if _dev_index_cache_en is None:
+            _dev_index_cache_en = LocalTfidfIndex(_load_dev_cases(), language_field="narrative_en")
+        return _dev_index_cache_en
 
 
 def _case_record_from_dict(d: dict) -> CaseRecord:
@@ -120,7 +126,7 @@ def retrieve(query_text: str, user, role_name) -> list[dict]:
     try:
         semantic_results = query_knowledge_base(query_text, detect_language(query_text))
     except NotImplementedError:
-        semantic_results = _get_dev_index().search(query_text)
+        semantic_results = _get_dev_index(detect_language(query_text)).search(query_text)
 
     merged = merge_and_rank(structured_results, semantic_results)
 

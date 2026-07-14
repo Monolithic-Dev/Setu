@@ -44,8 +44,14 @@ def run_eval(question_set_path: str) -> dict:
     hits, misses, ranking_misses, true_misses = 0, 0, 0, 0
     latencies = []
     miss_details = []
+    
+    # Track stats by language
+    lang_stats = {"en": {"total": 0, "hits": 0}, "kn": {"total": 0, "hits": 0}}
 
     for q in questions:
+        lang = q.get("language", "en")
+        lang_stats[lang]["total"] += 1
+        
         start = time.perf_counter()
         result = handle_request({"text": q["query_text"]}, auth_context)
         full_retrieval = retrieve(q["query_text"], EvalUser(), "scrb_analyst")
@@ -57,6 +63,7 @@ def run_eval(question_set_path: str) -> dict:
 
         if retrieved_ids & expected_ids:
             hits += 1
+            lang_stats[lang]["hits"] += 1
         else:
             misses += 1
             # Distinguish "found but ranked below the top-3 sources shown" from
@@ -90,6 +97,7 @@ def run_eval(question_set_path: str) -> dict:
         "latency_p50_seconds": sorted(latencies)[len(latencies) // 2] if latencies else None,
         "latency_p95_seconds": sorted(latencies)[int(len(latencies) * 0.95)] if latencies else None,
         "miss_details": miss_details,
+        "lang_stats": lang_stats,
     }
 
 
@@ -107,6 +115,9 @@ def main():
     print(f"DEV-MODE BASELINE (not final submission numbers — see module docstring)")
     print(f"Questions: {results['n_questions']}")
     print(f"Retrieval hit rate (top-3 sources): {results['retrieval_hit_rate']:.1%} ({results['hits']}/{results['n_questions']})")
+    for l, stats in results["lang_stats"].items():
+        if stats["total"] > 0:
+            print(f"  - {l.upper()} hit rate: {stats['hits']/stats['total']:.1%} ({stats['hits']}/{stats['total']})")
     print(f"  of the {results['misses']} misses: {results['ranking_cutoff_misses']} were retrieved but ranked below top-3, "
           f"{results['true_misses']} were never retrieved at all")
     print(f"Latency p50: {results['latency_p50_seconds']:.4f}s, p95: {results['latency_p95_seconds']:.4f}s")
