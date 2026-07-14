@@ -1,0 +1,99 @@
+{
+  "tables": [
+    {
+      "name": "CASE_RECORD",
+      "columns": [
+        { "name": "case_id", "type": "varchar", "is_unique": true, "is_mandatory": true },
+        { "name": "fir_number", "type": "varchar" },
+        { "name": "filed_date", "type": "datetime" },
+        { "name": "modus_operandi", "type": "varchar" },
+        { "name": "weapon_type", "type": "varchar" },
+        { "name": "status", "type": "varchar" },
+        { "name": "narrative_kn", "type": "text" },
+        { "name": "narrative_en", "type": "text" },
+        { "name": "location_id", "type": "varchar" },
+        { "name": "sensitivity_level", "type": "varchar" }
+      ]
+    },
+    {
+      "name": "PERSON",
+      "columns": [
+        { "name": "person_id", "type": "varchar", "is_unique": true, "is_mandatory": true },
+        { "name": "name", "type": "varchar" },
+        { "name": "role_in_case", "type": "varchar" }
+      ]
+    },
+    {
+      "name": "CASE_PERSON_LINK",
+      "columns": [
+        { "name": "case_id", "type": "varchar" },
+        { "name": "person_id", "type": "varchar" },
+        { "name": "relationship", "type": "varchar" }
+      ]
+    },
+    {
+      "name": "LOCATION",
+      "columns": [
+        { "name": "location_id", "type": "varchar", "is_unique": true, "is_mandatory": true },
+        { "name": "latitude", "type": "double" },
+        { "name": "longitude", "type": "double" },
+        { "name": "district", "type": "varchar" },
+        { "name": "station_jurisdiction", "type": "varchar" }
+      ]
+    },
+    {
+      "name": "NETWORK_EDGE",
+      "columns": [
+        { "name": "edge_id", "type": "varchar", "is_unique": true, "is_mandatory": true },
+        { "name": "person_id_a", "type": "varchar" },
+        { "name": "person_id_b", "type": "varchar" },
+        { "name": "relationship_type", "type": "varchar" },
+        { "name": "confidence", "type": "double" }
+      ]
+    },
+    {
+      "name": "QUERY_LOG",
+      "columns": [
+        { "name": "query_id", "type": "varchar", "is_unique": true, "is_mandatory": true },
+        { "name": "user_id", "type": "varchar" },
+        { "name": "query_text", "type": "varchar" },
+        { "name": "language", "type": "varchar" },
+        { "name": "timestamp", "type": "datetime" }
+      ]
+    },
+    {
+      "name": "AUDIT_ENTRY",
+      "columns": [
+        { "name": "audit_id", "type": "varchar", "is_unique": true, "is_mandatory": true },
+        { "name": "query_id", "type": "varchar" },
+        { "name": "sources_used", "type": "varchar" },
+        { "name": "answer_summary", "type": "varchar" }
+      ]
+    },
+    {
+      "name": "USER",
+      "columns": [
+        { "name": "user_id", "type": "varchar", "is_unique": true, "is_mandatory": true },
+        { "name": "role_id", "type": "varchar" },
+        { "name": "station_id", "type": "varchar" }
+      ]
+    },
+    {
+      "name": "ROLE",
+      "columns": [
+        { "name": "role_id", "type": "varchar", "is_unique": true, "is_mandatory": true },
+        { "name": "role_name", "type": "varchar" },
+        { "name": "scope_level", "type": "varchar" }
+      ]
+    }
+  ],
+  "rbac_scopes": {
+    "CASE_RECORD": {
+      "Station Officer": "Own station + read-linked",
+      "SCRB Analyst": "All (read)",
+      "District SP": "District-scoped (read)",
+      "System Admin": "All"
+    },
+    "note": "RBAC implemented via Catalyst Data Store native table scopes."
+  }
+}
