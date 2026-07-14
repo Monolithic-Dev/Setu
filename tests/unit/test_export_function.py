@@ -29,18 +29,10 @@ def test_english_export_produces_a_valid_pdf_with_correct_text():
     assert "test-audit-en" in text
 
 
-def test_kannada_export_is_currently_broken_pending_unicode_font():
+def test_kannada_export_produces_a_valid_pdf_with_correct_text():
     """
-    Documents a CONFIRMED bug, not a hypothetical one: Kannada text
-    currently renders as unreadable boxes in the exported PDF, because no
-    Kannada-capable font was available in this build environment to
-    register with reportlab (only CJK and Latin fonts were present — see
-    functions/exportFunction/index.py's comment). This test asserts the
-    CURRENT broken behavior on purpose, so that once a real Kannada font
-    is wired in (Phase 8, with network access), this test will start
-    FAILING — which is the signal to update it to assert correct Kannada
-    text extraction instead. A test that silently stayed green through
-    that fix would be worse than no test at all.
+    Proves generate_pdf_local produces a real, readable PDF with Kannada
+    Unicode text, correctly extracted using NotoSansKannada.
     """
     import pypdf
 
@@ -56,11 +48,6 @@ def test_kannada_export_is_currently_broken_pending_unicode_font():
     reader = pypdf.PdfReader(result["path"])
     text = reader.pages[0].extract_text()
 
-    # This is the bug: the real Kannada characters are NOT present in the
-    # extracted text (they became replacement boxes instead). Asserting
-    # their absence, not their presence — see docstring.
-    assert "ಚೈನ್" not in text, (
-        "Kannada text now extracts correctly — a Unicode font must have been "
-        "wired in. Update this test to assert correct extraction instead of "
-        "documenting the bug; this is good news, not a new failure."
-    )
+    # Asserting the Kannada text is present and correctly extracted
+    assert "ಚೈನ್" in text
+    assert "ಮಾರುಕಟ್ಟೆ" in text

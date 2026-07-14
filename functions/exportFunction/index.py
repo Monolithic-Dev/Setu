@@ -41,6 +41,11 @@ def generate_pdf_local(conversation: dict, output_path: str) -> str:
     from reportlab.lib.units import cm
     from reportlab.pdfgen import canvas
     from reportlab.lib.utils import simpleSplit
+    from reportlab.pdfbase import pdfmetrics
+    from reportlab.pdfbase.ttfonts import TTFont
+
+    font_path = os.path.join(os.path.dirname(__file__), "NotoSansKannada-Regular.ttf")
+    pdfmetrics.registerFont(TTFont("NotoSansKannada", font_path))
 
     c = canvas.Canvas(output_path, pagesize=A4)
     width, height = A4
@@ -65,19 +70,13 @@ def generate_pdf_local(conversation: dict, output_path: str) -> str:
         c.setFont("Helvetica-Bold", 10)
         c.drawString(margin, y, f"{label}:")
         y -= 0.5 * cm
-        c.setFont("Helvetica", 10)
-        # CONFIRMED BUG, not a hypothetical: Kannada glyphs render as blank
-        # boxes with reportlab's built-in Helvetica (Latin-only font),
-        # verified by actually generating a Kannada export and extracting
-        # its text back out — see tests/unit/test_export_function.py's
-        # test_kannada_export_is_currently_broken_pending_unicode_font,
-        # which documents this rather than hiding it. No Kannada-capable
-        # font (e.g., Noto Sans Kannada) was available anywhere in this
-        # sandbox to fix it here (only CJK and Latin fonts were present) —
-        # this needs a real font file and pdfmetrics.registerFont() before
-        # Kannada export is demo-safe. Tracked in PHASE8_STATUS.md as a
-        # confirmed bug, not a stub.
-        for line in simpleSplit(str(value), "Helvetica", 10, max_width):
+        
+        val_str = str(value)
+        has_kannada = any('\u0C80' <= c <= '\u0CFF' for c in val_str)
+        val_font = "NotoSansKannada" if has_kannada else "Helvetica"
+        
+        c.setFont(val_font, 10)
+        for line in simpleSplit(val_str, val_font, 10, max_width):
             c.drawString(margin, y, line)
             y -= 0.45 * cm
         y -= 0.3 * cm
