@@ -61,6 +61,11 @@ export function ChatWindow({ language }: { language: Language }) {
 
   return (
     <div className="chat-window">
+      <div className="chat-header-actions">
+        <button className="export-pdf-btn" onClick={() => window.print()} title={t(language, "exportPDF") || "Export to PDF"}>
+          📄 Export to PDF
+        </button>
+      </div>
       <div className="chat-history">
         {turns.map((turn) => (
           <div key={turn.id} className="chat-turn">
