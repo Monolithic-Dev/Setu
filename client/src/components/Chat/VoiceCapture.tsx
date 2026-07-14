@@ -34,8 +34,7 @@ export function VoiceCapture({ language, onAudioCaptured }: VoiceCaptureProps) {
       mediaRecorder.start();
       setIsRecording(true);
     } catch (err) {
-      console.error("Error accessing microphone:", err);
-      alert(t(language, "micError") || "Could not access microphone.");
+      alert(t(language, "micUnavailable") || "Could not access microphone.");
     }
   }, [language, onAudioCaptured]);
 

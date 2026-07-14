@@ -34,7 +34,7 @@ export function NetworkGraph({ language }: NetworkGraphProps) {
       .attr("fill", "var(--text-muted, #666)")
       .attr("font-family", "inherit")
       .attr("font-size", "1rem")
-      .text(t(language, "networkEmptyState") || "Select an entity to view its network connections");
+      .text(t(language, "networkEmpty") || "Select an entity to view its network connections");
 
     // Placeholder icon/node
     g.append("circle")
@@ -55,7 +55,7 @@ export function NetworkGraph({ language }: NetworkGraphProps) {
   return (
     <div className="network-graph-container">
       <div className="network-graph-header">
-        <h2>{t(language, "networkGraphTitle") || "Entity Network"}</h2>
+        <h3>{t(language, "appTitle") || "Network Graph"}</h3>
       </div>
       <div className="network-graph-canvas">
         <svg ref={svgRef} className="network-graph-svg" />
