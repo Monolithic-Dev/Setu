@@ -58,7 +58,7 @@
         { "name": "user_id", "type": "varchar" },
         { "name": "query_text", "type": "varchar" },
         { "name": "language", "type": "varchar" },
-        { "name": "timestamp", "type": "datetime" }
+        { "name": "timestamp_", "type": "datetime" }
       ]
     },
     {
@@ -71,7 +71,7 @@
       ]
     },
     {
-      "name": "USER",
+      "name": "APP_USER",
       "columns": [
         { "name": "user_id", "type": "varchar", "is_unique": true, "is_mandatory": true },
         { "name": "role_id", "type": "varchar" },
