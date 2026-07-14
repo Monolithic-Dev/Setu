@@ -8,6 +8,15 @@
 
 const API_BASE = import.meta.env?.VITE_API_BASE ?? "/server";
 
+const DEV_AUTH_HEADERS: Record<string, string> = {};
+
+export function setDevAuth(role: string, stationId: string, districtId: string) {
+  DEV_AUTH_HEADERS["X-Dev-Role"] = role;
+  DEV_AUTH_HEADERS["X-Dev-Station"] = stationId;
+  DEV_AUTH_HEADERS["X-Dev-District"] = districtId;
+  DEV_AUTH_HEADERS["X-Dev-User"] = `dev_user_${role.replace(/\s+/g, "_")}`;
+}
+
 export type Language = "en" | "kn";
 
 export interface QueryRequest {
@@ -41,7 +50,10 @@ function isApiError(body: unknown): body is ApiError {
 async function postJson<TResponse>(path: string, body: unknown): Promise<TResponse> {
   const res = await fetch(`${API_BASE}${path}`, {
     method: "POST",
-    headers: { "Content-Type": "application/json" },
+    headers: { 
+      "Content-Type": "application/json",
+      ...DEV_AUTH_HEADERS
+    },
     body: JSON.stringify(body),
     credentials: "include", // Catalyst Authentication session
   });
@@ -66,7 +78,10 @@ export interface HotspotAlert {
 }
 
 export async function fetchHotspotAlerts(): Promise<HotspotAlert[]> {
-  const res = await fetch(`${API_BASE}/api/alerts/hotspots`, { credentials: "include" });
+  const res = await fetch(`${API_BASE}/api/alerts/hotspots`, { 
+    headers: DEV_AUTH_HEADERS,
+    credentials: "include" 
+  });
   const data = (await res.json()) as { alerts: HotspotAlert[] };
   return data.alerts;
 }
@@ -96,6 +111,7 @@ export interface NetworkGraphData {
 
 export async function fetchNetworkGraph(entityId: string): Promise<NetworkGraphData> {
   const res = await fetch(`${API_BASE}/api/network/${encodeURIComponent(entityId)}`, {
+    headers: DEV_AUTH_HEADERS,
     credentials: "include",
   });
   return (await res.json()) as NetworkGraphData;
@@ -113,7 +129,10 @@ export interface AuditEntry {
 }
 
 export async function fetchAuditLogs(): Promise<AuditEntry[] | ApiError> {
-  const res = await fetch(`${API_BASE}/api/audit/logs`, { credentials: "include" });
+  const res = await fetch(`${API_BASE}/api/audit/logs`, { 
+    headers: DEV_AUTH_HEADERS,
+    credentials: "include" 
+  });
   const data = await res.json();
   if (isApiError(data)) return data;
   return (data as { entries: AuditEntry[] }).entries;

@@ -16,6 +16,32 @@ control flow below are final; only the storage backing is a stub.
 
 from models import CaseRecord, RoleName, SensitivityLevel, User
 
+def get_dev_auth_context(headers: dict) -> dict:
+    """
+    Parses local dev-mode headers (X-Dev-Role, etc.) to simulate Catalyst Authentication.
+    Allows testing Role-Based Access Control before deploying.
+    """
+    raw_role = headers.get("X-Dev-Role", "Station Officer")
+    role_map = {
+        "Station Officer": RoleName.STATION_OFFICER,
+        "SCRB Analyst": RoleName.SCRB_ANALYST,
+        "District SP": RoleName.DISTRICT_SP,
+        "System Admin": RoleName.SYSTEM_ADMIN
+    }
+    role_name = role_map.get(raw_role, RoleName.STATION_OFFICER)
+    
+    user = User(
+        user_id=headers.get("X-Dev-User", f"dev_user_{role_name.value}"),
+        role_id=role_name.value,
+        station_id=headers.get("X-Dev-Station", "S-101"),
+        district_id=headers.get("X-Dev-District", "D-10"),
+    )
+    
+    return {
+        "user": user,
+        "role_name": role_name
+    }
+
 # Mirrors docs/Database.md §4 exactly. "all" / "district" / "station" / "own"
 # describe how a given role's queries get scoped server-side.
 TABLE_SCOPE = {

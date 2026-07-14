@@ -1,9 +1,17 @@
 import { useState } from "react";
 import { ChatWindow } from "./components/Chat/ChatWindow";
+import { Login } from "./components/Login/Login";
 import { t, type Language } from "./i18n/strings";
+import { setDevAuth } from "./api/queryClient";
 
 export default function App() {
   const [language, setLanguage] = useState<Language>("en");
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+  const handleLogin = (role: string, stationId: string, districtId: string) => {
+    setDevAuth(role, stationId, districtId);
+    setIsAuthenticated(true);
+  };
 
   return (
     <div className="app">
@@ -26,7 +34,11 @@ export default function App() {
       </header>
 
       <main>
-        <ChatWindow language={language} />
+        {!isAuthenticated ? (
+          <Login language={language} onLogin={handleLogin} />
+        ) : (
+          <ChatWindow language={language} />
+        )}
       </main>
     </div>
   );
