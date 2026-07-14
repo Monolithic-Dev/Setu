@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { fetchAuditLogs, AuditLogEntry } from "../../api/queryClient";
+import { fetchAuditLogs, AuditEntry } from "../../api/queryClient";
 import { t, type Language } from "../../i18n/strings";
 import "./AuditLogs.css";
 
@@ -8,7 +8,7 @@ interface AuditLogsProps {
 }
 
 export function AuditLogs({ language }: AuditLogsProps) {
-  const [logs, setLogs] = useState<AuditLogEntry[]>([]);
+  const [logs, setLogs] = useState<AuditEntry[]>([]);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(true);
 
@@ -16,7 +16,11 @@ export function AuditLogs({ language }: AuditLogsProps) {
     async function loadLogs() {
       try {
         const data = await fetchAuditLogs();
-        setLogs(data);
+        if ('status' in data && data.status === 'error') {
+          setError(data.message || "Failed to load audit logs.");
+        } else {
+          setLogs(data as AuditEntry[]);
+        }
       } catch (err: any) {
         setError(err.message || "Failed to load audit logs.");
       } finally {
@@ -27,7 +31,7 @@ export function AuditLogs({ language }: AuditLogsProps) {
   }, []);
 
   if (loading) {
-    return <div className="audit-loading">Loading audit logs...</div>;
+    return <div className="audit-loading">{t(language, "auditLoading") || "Loading audit logs..."}</div>;
   }
 
   if (error) {
@@ -36,18 +40,18 @@ export function AuditLogs({ language }: AuditLogsProps) {
 
   return (
     <div className="audit-logs-container">
-      <h2>System Audit Logs</h2>
+      <h2>{t(language, "auditTitle") || "System Audit Logs"}</h2>
       <p className="audit-subtitle">Confidential system access records.</p>
       
       <div className="table-responsive">
         <table className="audit-table">
           <thead>
             <tr>
-              <th>Timestamp</th>
-              <th>User ID</th>
+              <th>{t(language, "auditColumnTime") || "Timestamp"}</th>
+              <th>{t(language, "auditColumnUser") || "User ID"}</th>
               <th>Language</th>
-              <th>Sources Used</th>
-              <th>Query / Answer Summary</th>
+              <th>{t(language, "auditColumnSources") || "Sources Used"}</th>
+              <th>{t(language, "auditColumnQuery") || "Query / Answer Summary"}</th>
             </tr>
           </thead>
           <tbody>
@@ -59,7 +63,7 @@ export function AuditLogs({ language }: AuditLogsProps) {
                 <td className="sources-col">
                   {log.sources_used.length > 0 ? (
                     <ul className="source-list">
-                      {log.sources_used.map(src => (
+                      {log.sources_used.map((src: string) => (
                         <li key={src}>{src}</li>
                       ))}
                     </ul>
