@@ -60,3 +60,74 @@
   background: var(--primary-color, #0f4c81);
   color: white;
 }
+
+.chat-header-actions {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0.5rem 1rem;
+  border-bottom: 1px solid var(--border-color, #e0e0e0);
+}
+
+.export-pdf-btn {
+  background: var(--bg-surface, #ffffff);
+  border: 1px solid var(--border-color, #e0e0e0);
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  cursor: pointer;
+  color: var(--text-color, #333);
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+}
+
+.export-pdf-btn:hover {
+  background: var(--bg-color, #f9fafb);
+  border-color: var(--primary-color, #0f4c81);
+  color: var(--primary-color, #0f4c81);
+}
+
+/* Day 7: Dev-mode PDF Export Print Styles */
+@media print {
+  /* Hide headers, inputs, graph pane, and admin toggles */
+  header, 
+  .chat-input, 
+  .chat-header-actions, 
+  .app-graph-pane, 
+  .feedback-control {
+    display: none !important;
+  }
+
+  /* Make chat history take full page */
+  .app-split-layout {
+    display: block !important;
+    height: auto !important;
+  }
+
+  .app-chat-pane {
+    max-width: 100% !important;
+    width: 100% !important;
+    border: none !important;
+    display: block !important;
+  }
+
+  .chat-window {
+    border: none !important;
+    background: white !important;
+  }
+
+  .chat-history {
+    overflow: visible !important;
+    height: auto !important;
+    border: none !important;
+  }
+
+  .chat-turn {
+    break-inside: avoid;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 1rem;
+  }
+
+  body {
+    background-color: white !important;
+    color: black !important;
+  }
+}
