@@ -1,0 +1,243 @@
+{
+  "n_questions": 42,
+  "retrieval_hit_rate": 0.5952380952380952,
+  "hits": 25,
+  "misses": 17,
+  "ranking_cutoff_misses": 17,
+  "true_misses": 0,
+  "latency_p50_seconds": 0.02546729997266084,
+  "latency_p95_seconds": 0.035683599999174476,
+  "miss_details": [
+    {
+      "question_id": "eval-KA-2025-00203",
+      "query_text": "residential break-in via Ballari",
+      "expected": [
+        "KA-2025-00203"
+      ],
+      "got": [
+        "KA-2025-00118",
+        "KA-2024-00144",
+        "KA-2024-00158"
+      ],
+      "miss_type": "ranking_cutoff"
+    },
+    {
+      "question_id": "eval-KA-2024-00275",
+      "query_text": "residential break-in via Mangaluru",
+      "expected": [
+        "KA-2024-00275"
+      ],
+      "got": [
+        "KA-2025-00048",
+        "KA-2025-00141",
+        "KA-2024-00166"
+      ],
+      "miss_type": "ranking_cutoff"
+    },
+    {
+      "question_id": "eval-KA-2025-00188",
+      "query_text": "chain snatching on Tumakuru",
+      "expected": [
+        "KA-2025-00188"
+      ],
+      "got": [
+        "KA-2025-00041",
+        "KA-2024-00106",
+        "KA-2025-00147"
+      ],
+      "miss_type": "ranking_cutoff"
+    },
+    {
+      "question_id": "eval-KA-2024-00299",
+      "query_text": "cyber fraud via Shivamogga",
+      "expected": [
+        "KA-2024-00299"
+      ],
+      "got": [
+        "KA-2025-00070",
+        "KA-2024-00117",
+        "KA-2024-00120"
+      ],
+      "miss_type": "ranking_cutoff"
+    },
+    {
+      "question_id": "eval-KA-2026-00223",
+      "query_text": "cyber fraud via Shivamogga",
+      "expected": [
+        "KA-2026-00223"
+      ],
+      "got": [
+        "KA-2025-00070",
+        "KA-2024-00117",
+        "KA-2024-00120"
+      ],
+      "miss_type": "ranking_cutoff"
+    },
+    {
+      "question_id": "eval-KA-2025-00215",
+      "query_text": "cyber fraud via Mangaluru",
+      "expected": [
+        "KA-2025-00215"
+      ],
+      "got": [
+        "KA-2024-00028",
+        "KA-2025-00127",
+        "KA-2026-00160"
+      ],
+      "miss_type": "ranking_cutoff"
+    },
+    {
+      "question_id": "eval-KA-2024-00283",
+      "query_text": "pickpocketing in crowded Shivamogga",
+      "expected": [
+        "KA-2024-00283"
+      ],
+      "got": [
+        "KA-2025-00012",
+        "KA-2024-00078",
+        "KA-2024-00224"
+      ],
+      "miss_type": "ranking_cutoff"
+    },
+    {
+      "question_id": "eval-KA-2024-00218",
+      "query_text": "cyber fraud via Tumakuru",
+      "expected": [
+        "KA-2024-00218"
+      ],
+      "got": [
+        "KA-2026-00008",
+        "KA-2026-00040",
+        "KA-2025-00056"
+      ],
+      "miss_type": "ranking_cutoff"
+    },
+    {
+      "question_id": "eval-KA-2024-00290",
+      "query_text": "pickpocketing in crowded Kalaburagi",
+      "expected": [
+        "KA-2024-00290"
+      ],
+      "got": [
+        "KA-2025-00109",
+        "KA-2025-00190",
+        "KA-2025-00273"
+      ],
+      "miss_type": "ranking_cutoff"
+    },
+    {
+      "question_id": "eval-KA-2026-00115",
+      "query_text": "residential break-in via Shivamogga",
+      "expected": [
+        "KA-2026-00115"
+      ],
+      "got": [
+        "KA-2025-00009",
+        "KA-2025-00010",
+        "KA-2025-00066"
+      ],
+      "miss_type": "ranking_cutoff"
+    },
+    {
+      "question_id": "eval-KA-2026-00296",
+      "query_text": "chain snatching on Davanagere",
+      "expected": [
+        "KA-2026-00296"
+      ],
+      "got": [
+        "KA-2025-00023",
+        "KA-2024-00062",
+        "KA-2025-00067"
+      ],
+      "miss_type": "ranking_cutoff"
+    },
+    {
+      "question_id": "eval-KA-2025-00300",
+      "query_text": "two-wheeler theft from Tumakuru",
+      "expected": [
+        "KA-2025-00300"
+      ],
+      "got": [
+        "KA-2026-00072",
+        "KA-2024-00231",
+        "KA-2024-00260"
+      ],
+      "miss_type": "ranking_cutoff"
+    },
+    {
+      "question_id": "eval-KA-2024-00204",
+      "query_text": "ATM tampering attempt Mangaluru",
+      "expected": [
+        "KA-2024-00204"
+      ],
+      "got": [
+        "KA-2024-00030",
+        "KA-2024-00085",
+        "KA-2024-00198"
+      ],
+      "miss_type": "ranking_cutoff"
+    },
+    {
+      "question_id": "eval-KA-2026-00286",
+      "query_text": "chain snatching using Kalaburagi",
+      "expected": [
+        "KA-2026-00286"
+      ],
+      "got": [
+        "KA-2024-00054",
+        "KA-2025-00083",
+        "KA-2025-00126"
+      ],
+      "miss_type": "ranking_cutoff"
+    },
+    {
+      "question_id": "eval-KA-2025-00149",
+      "query_text": "residential break-in via Shivamogga",
+      "expected": [
+        "KA-2025-00149"
+      ],
+      "got": [
+        "KA-2025-00009",
+        "KA-2025-00010",
+        "KA-2025-00066"
+      ],
+      "miss_type": "ranking_cutoff"
+    },
+    {
+      "question_id": "eval-KA-2024-00277",
+      "query_text": "chain snatching on Davanagere",
+      "expected": [
+        "KA-2024-00277"
+      ],
+      "got": [
+        "KA-2025-00023",
+        "KA-2024-00062",
+        "KA-2025-00067"
+      ],
+      "miss_type": "ranking_cutoff"
+    },
+    {
+      "question_id": "eval-KA-2024-00293",
+      "query_text": "cyber fraud via Tumakuru",
+      "expected": [
+        "KA-2024-00293"
+      ],
+      "got": [
+        "KA-2026-00008",
+        "KA-2026-00040",
+        "KA-2025-00056"
+      ],
+      "miss_type": "ranking_cutoff"
+    }
+  ],
+  "lang_stats": {
+    "en": {
+      "total": 40,
+      "hits": 23
+    },
+    "kn": {
+      "total": 2,
+      "hits": 2
+    }
+  }
+}
