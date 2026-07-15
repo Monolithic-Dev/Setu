@@ -2,5 +2,6 @@
   "name": "queryFunction",
   "type": "advancedio",
   "language": "python",
-  "runtime": "python3.9"
+  "runtime": "python3.9",
+  "main": "index.py"
 }
