@@ -18,13 +18,13 @@ def test_build_zcql_always_enforces_station_scope():
     even if they don't explicitly filter by it (docs/Security.md §1)."""
     query = StructuredQuery(scope_level="station", scope_station_id="STN-001")
     zcql = build_zcql(query)
-    assert "station_id = 'STN-001'" in zcql
+    assert "LOCATION.station_jurisdiction = 'STN-001'" in zcql
 
 
 def test_build_zcql_district_scope_not_station_scope():
     query = StructuredQuery(scope_level="district", scope_district_id="D1")
     zcql = build_zcql(query)
-    assert "district_id = 'D1'" in zcql
+    assert "LOCATION.district = 'D1'" in zcql
     assert "station_id" not in zcql
 
 

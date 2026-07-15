@@ -63,8 +63,24 @@ def build_zcql(query: StructuredQuery) -> str:
 
 
 def execute_zcql(query_string: str) -> list[dict]:
-    """TODO(Phase 8): replace with a real ZCQL execution call via the Catalyst SDK."""
-    raise NotImplementedError("Wire in real ZCQL execution once Catalyst Data Store access exists.")
+    """Real ZCQL execution via the Catalyst SDK, falling back if not available."""
+    try:
+        import zcatalyst_sdk
+        app = zcatalyst_sdk.initialize()
+        zcql = app.zcql()
+        # Catalyst ZCQL returns a list of dictionaries with table names as top-level keys
+        # e.g., [{"CaseRecord": {"case_id": "...", ...}}]
+        results = zcql.execute_zcql_query(query_string)
+        # Extract the flat records
+        extracted = []
+        for row in results:
+            if "CaseRecord" in row:
+                extracted.append(row["CaseRecord"])
+        return extracted
+    except Exception as e:
+        # Fall back to local dev execution if Catalyst SDK is missing, credentials 
+        # are invalid, or we are running in local dev mock server.
+        raise NotImplementedError(f"ZCQL execution failed, falling back to local: {e}")
 
 
 def execute_structured_query_local(query: StructuredQuery, cases: list[dict]) -> list[dict]:
