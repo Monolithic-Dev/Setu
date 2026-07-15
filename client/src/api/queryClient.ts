@@ -138,8 +138,22 @@ export async function fetchAuditLogs(): Promise<AuditEntry[] | ApiError> {
   return (data as { entries: AuditEntry[] }).entries;
 }
 
-export async function exportConversationPdf(sessionId: string): Promise<{ path: string }> {
-  return postJson<{ path: string }>("/api/export/pdf", { session_id: sessionId });
+export async function exportConversationPdf(sessionId: string, conversation: any): Promise<Blob> {
+  const res = await fetch(`${API_BASE}/api/export/pdf`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      ...DEV_AUTH_HEADERS
+    },
+    body: JSON.stringify({ session_id: sessionId, conversation }),
+    credentials: "include",
+  });
+  if (!res.ok) throw new Error("Failed to export PDF");
+  return res.blob();
+}
+
+export async function synthesizeAudio(text: string, language: Language): Promise<{ audio: string }> {
+  return postJson<{ audio: string }>("/api/voice/synthesize", { text, language });
 }
 
 export async function transcribeAudio(audioBlob: Blob): Promise<{ text: string }> {

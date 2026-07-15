@@ -159,7 +159,7 @@ def generate_answer(query_text: str, retrieved_records: list[dict], language: st
         
         # QuickML LLM endpoint invocation
         llm = app.zia().quick_ml().llm()
-        response = llm.generate_text(prompt=prompt, model="default")
+        response = llm.generate_text(prompt=prompt, model="GLM-4.7-Flash")
         
         source_ids = list(set([r.get("case_id") for r in retrieved_records if r.get("case_id")]))
         return {"answer": response.get("text", "No answer generated."), "sources": source_ids}

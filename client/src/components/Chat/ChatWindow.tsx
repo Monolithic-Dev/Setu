@@ -1,12 +1,8 @@
 import { useState, useCallback } from "react";
-import { submitQuery, flagAnswer, transcribeAudio, type QueryResponse, type Language } from "../../api/queryClient";
+import { submitQuery, flagAnswer, transcribeAudio, exportConversationPdf, synthesizeAudio, type QueryResponse, type Language } from "../../api/queryClient";
 import { VoiceCapture } from "./VoiceCapture";
 import { t } from "../../i18n/strings";
 import "./ChatWindow.css";
-
-// Implements docs/UX.md's "Answer View" and "Connectivity State" (added Phase 7 review):
-// answer + sources + reasoning trail + feedback control, plus a visible
-// reconnecting state instead of a silent failure (NFR-10).
 
 interface ChatTurn {
   id: string;
@@ -31,6 +27,8 @@ export function ChatWindow({ language }: { language: Language }) {
   ]);
   const [inputText, setInputText] = useState("");
   const [sessionId] = useState(() => crypto.randomUUID());
+  const [isExporting, setIsExporting] = useState(false);
+  const [playingAudioId, setPlayingAudioId] = useState<string | null>(null);
 
   const handleSend = useCallback(async () => {
     const text = inputText.trim();
@@ -46,9 +44,6 @@ export function ChatWindow({ language }: { language: Language }) {
         prev.map((turn) => (turn.id === turnId ? { ...turn, response, status: "done" } : turn))
       );
     } catch (err) {
-      // NFR-10: a queued-retry UX belongs here (e.g., navigator.onLine listener
-      // + retry queue) — this is the hook point; full retry logic is a
-      // Phase 8 implementation task, not something meaningful to fake here.
       setTurns((prev) =>
         prev.map((turn) => (turn.id === turnId ? { ...turn, status: "reconnecting" } : turn))
       );
@@ -58,7 +53,7 @@ export function ChatWindow({ language }: { language: Language }) {
 
   const handleAudioCaptured = useCallback(async (audioBlob: Blob) => {
     try {
-      setInputText("Transcribing..."); // In real app, we'd use a localized string or spinner
+      setInputText("Transcribing...");
       const result = await transcribeAudio(audioBlob);
       setInputText(result.text);
     } catch (err) {
@@ -72,11 +67,57 @@ export function ChatWindow({ language }: { language: Language }) {
     flagAnswer(auditId, wasHelpful).catch((err) => console.error("Failed to record feedback:", err));
   }, []);
 
+  const handleExportPdf = useCallback(async () => {
+    const lastTurn = turns[turns.length - 1];
+    if (!lastTurn || !lastTurn.response) {
+      alert("No completed conversation to export yet!");
+      return;
+    }
+    
+    setIsExporting(true);
+    try {
+      const conversation = {
+        query_text: lastTurn.queryText,
+        answer: lastTurn.response.answer,
+        sources: lastTurn.response.sources.map(s => s.case_id),
+        audit_id: lastTurn.response.audit_id,
+        timestamp: new Date().toISOString()
+      };
+      
+      const blob = await exportConversationPdf(sessionId, conversation);
+      const url = window.URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = `Setu_Report_${sessionId.substring(0, 8)}.pdf`;
+      a.click();
+      window.URL.revokeObjectURL(url);
+    } catch (err) {
+      console.error("Failed to export PDF", err);
+      alert("Failed to export PDF.");
+    } finally {
+      setIsExporting(false);
+    }
+  }, [turns, sessionId]);
+
+  const handlePlayAudio = useCallback(async (turnId: string, text: string) => {
+    setPlayingAudioId(turnId);
+    try {
+      const result = await synthesizeAudio(text, language);
+      const audio = new Audio("data:audio/wav;base64," + result.audio);
+      audio.onended = () => setPlayingAudioId(null);
+      await audio.play();
+    } catch (err) {
+      console.error("Audio synthesis failed:", err);
+      alert("Failed to play audio.");
+      setPlayingAudioId(null);
+    }
+  }, [language]);
+
   return (
     <div className="chat-window">
       <div className="chat-header-actions">
-        <button className="export-pdf-btn" onClick={() => window.print()} title={t(language, "exportPdf") || "Export to PDF"}>
-          📄 Export to PDF
+        <button className="export-pdf-btn" onClick={handleExportPdf} disabled={isExporting} title={t(language, "exportPdf") || "Export to PDF"}>
+          {isExporting ? "⏳ Exporting..." : "📄 Export to PDF"}
         </button>
       </div>
       <div className="chat-history">
@@ -93,6 +134,12 @@ export function ChatWindow({ language }: { language: Language }) {
             {turn.status === "done" && turn.response && (
               <div className="answer">
                 <p>{turn.response.answer}</p>
+                
+                <div style={{ marginTop: "10px" }}>
+                  <button onClick={() => handlePlayAudio(turn.id, turn.response!.answer)} disabled={playingAudioId === turn.id} style={{ background: "transparent", border: "1px solid var(--primary-color)", color: "var(--primary-color)", borderRadius: "12px", padding: "4px 10px", cursor: "pointer", fontSize: "0.85rem" }}>
+                    {playingAudioId === turn.id ? "🔊 Playing..." : "🔊 Read Aloud"}
+                  </button>
+                </div>
 
                 {turn.response.sources.length > 0 && (
                   <details className="sources">

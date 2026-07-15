@@ -26,6 +26,9 @@ from voiceTranscribeFunction.index import handle_request as voice_transcribe_han
 from voiceSynthesizeFunction.index import handle_request as voice_synthesize_handle_request
 # pyrefly: ignore [missing-import]
 from alertsFunction.index import handle_request as alerts_handle_request
+# pyrefly: ignore [missing-import]
+from exportFunction.index import handle_request as export_handle_request
+from fastapi.responses import FileResponse
 
 def get_mock_auth_context(request: Request):
     """Mocks Catalyst authentication context using headers."""
@@ -114,6 +117,17 @@ async def api_voice_synthesize(request: Request):
         
         import base64
         return {"audio": base64.b64encode(result["audio_bytes"]).decode("utf-8"), "provider": result["provider"]}
+    except Exception as e:
+        print(f"Error: {e}")
+        raise HTTPException(status_code=400, detail={"status": "error", "error_code": "BAD_REQUEST", "message": str(e)})
+
+@app.post("/api/export/pdf")
+async def api_export_pdf(request: Request):
+    auth_context = get_mock_auth_context(request)
+    try:
+        body = await request.json()
+        result = export_handle_request(body.get("session_id"), body.get("conversation", {}), auth_context)
+        return FileResponse(result["path"], filename=f"export_{body.get('session_id')}.pdf", media_type="application/pdf")
     except Exception as e:
         print(f"Error: {e}")
         raise HTTPException(status_code=400, detail={"status": "error", "error_code": "BAD_REQUEST", "message": str(e)})
