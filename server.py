@@ -80,6 +80,34 @@ async def api_audit_logs(request: Request):
     except Exception as e:
         raise HTTPException(status_code=400, detail={"status": "error", "error_code": "BAD_REQUEST", "message": str(e)})
 
+@app.post("/server/api/voice/transcribe")
+async def api_voice_transcribe(request: Request):
+    try:
+        # Assuming audio bytes are sent in the body or form
+        form = await request.form()
+        audio_bytes = await form["file"].read() if "file" in form else await request.body()
+        language_hint = "auto"
+        config = {"SARVAM_API_KEY": "sk_xwjgnnee_lfunwefqkKmnR6qRGKx2XCSt"}
+        result = voice_transcribe_handle_request(audio_bytes, language_hint, config)
+        return result
+    except Exception as e:
+        print(f"Error: {e}")
+        raise HTTPException(status_code=400, detail={"status": "error", "error_code": "BAD_REQUEST", "message": str(e)})
+
+@app.post("/server/api/voice/synthesize")
+async def api_voice_synthesize(request: Request):
+    try:
+        body = await request.json()
+        config = {"SARVAM_API_KEY": "sk_xwjgnnee_lfunwefqkKmnR6qRGKx2XCSt"}
+        result = voice_synthesize_handle_request(body.get("text", ""), body.get("language", "kn"), config)
+        
+        # We need to return audio bytes (or base64) to the client.
+        import base64
+        return {"audio": base64.b64encode(result["audio_bytes"]).decode("utf-8"), "provider": result["provider"]}
+    except Exception as e:
+        print(f"Error: {e}")
+        raise HTTPException(status_code=400, detail={"status": "error", "error_code": "BAD_REQUEST", "message": str(e)})
+
 if __name__ == "__main__":
     import uvicorn
     print("Starting Catalyst local dev mock server on port 3000 using FastAPI...")
