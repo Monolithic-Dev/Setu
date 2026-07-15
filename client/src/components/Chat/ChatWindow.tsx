@@ -16,7 +16,19 @@ interface ChatTurn {
 }
 
 export function ChatWindow({ language }: { language: Language }) {
-  const [turns, setTurns] = useState<ChatTurn[]>([]);
+  const [turns, setTurns] = useState<ChatTurn[]>([
+    {
+      id: "welcome",
+      queryText: "System Initialization",
+      status: "done",
+      response: {
+        answer: "Welcome to Setu Intelligence Platform. ZCQL Data Store connected. QuickML Knowledge Base online. Awaiting query...",
+        sources: [],
+        audit_id: "init",
+        language: "en"
+      }
+    }
+  ]);
   const [inputText, setInputText] = useState("");
   const [sessionId] = useState(() => crypto.randomUUID());
 

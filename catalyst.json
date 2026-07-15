@@ -4,6 +4,7 @@
   },
   "functions": {
     "source": "functions",
+    "ignore": ["shared", "__pycache__"],
     "targets": [
       "alertsFunction",
       "auditFunction",
