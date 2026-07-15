@@ -148,16 +148,25 @@ def retrieve(query_text: str, user, role_name) -> list[dict]:
 
 
 def generate_answer(query_text: str, retrieved_records: list[dict], language: str) -> dict:
-    """
-    Real QuickML LLM Serving call in production (docs/AIArchitecture.md §1);
-    falls back to local extractive synthesis (functions/shared/local_answer_synthesis.py)
-    when QuickML isn't available, per this module's dev-mode design.
-    """
-    # TODO(Phase 8): try a real QuickML call here first, matching the
-    # try/except NotImplementedError pattern used in retrieve() above, once
-    # QuickML early access exists to test against.
-    synthesized = synthesize_answer(query_text, retrieved_records, language)
-    return {"answer": synthesized.answer_text, "sources": synthesized.source_case_ids}
+    """Real QuickML LLM Serving call via Catalyst SDK."""
+    try:
+        import zcatalyst_sdk
+        app = zcatalyst_sdk.initialize()
+        
+        # Build prompt context
+        context = "\n".join([f"[{r.get('case_id', 'id')}] {r.get('narrative_en', '')}" for r in retrieved_records])
+        prompt = f"Answer the user query based ONLY on the following cases:\n{context}\n\nQuery: {query_text}\nAnswer in {language}:"
+        
+        # QuickML LLM endpoint invocation
+        llm = app.zia().quick_ml().llm()
+        response = llm.generate_text(prompt=prompt, model="default")
+        
+        source_ids = list(set([r.get("case_id") for r in retrieved_records if r.get("case_id")]))
+        return {"answer": response.get("text", "No answer generated."), "sources": source_ids}
+    except Exception as e:
+        # Fall back to extractive synthesis
+        synthesized = synthesize_answer(query_text, retrieved_records, language)
+        return {"answer": synthesized.answer_text, "sources": synthesized.source_case_ids}
 
 
 def handle_request(request_body: dict, auth_context: dict) -> dict:

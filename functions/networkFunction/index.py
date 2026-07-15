@@ -23,8 +23,22 @@ _dev_network_cache = None
 
 
 def fetch_edges(entity_id: str, scope_filter: dict) -> list[dict]:
-    """TODO(Phase 8): real ZCQL query against NETWORK_EDGE, scoped per docs/Database.md §4."""
-    raise NotImplementedError("Wire in real Data Store query once Catalyst credentials exist.")
+    """Real ZCQL query against NETWORK_EDGE via Catalyst SDK."""
+    try:
+        import zcatalyst_sdk
+        app = zcatalyst_sdk.initialize()
+        zcql = app.zcql()
+        
+        query = f"SELECT * FROM NETWORK_EDGE WHERE person_id_a = '{entity_id}' OR person_id_b = '{entity_id}'"
+        results = zcql.execute_zcql_query(query)
+        
+        extracted = []
+        for row in results:
+            if "NETWORK_EDGE" in row:
+                extracted.append(row["NETWORK_EDGE"])
+        return extracted
+    except Exception as e:
+        raise NotImplementedError(f"Data Store query failed, falling back: {e}")
 
 
 def _load_dev_network() -> dict:
