@@ -1,0 +1,6 @@
+{
+  "name": "voiceTranscribeFunction",
+  "type": "advancedio",
+  "language": "python",
+  "runtime": "python3.9"
+}

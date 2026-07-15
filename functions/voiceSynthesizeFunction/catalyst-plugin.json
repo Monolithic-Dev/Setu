@@ -1,0 +1,6 @@
+{
+  "name": "voiceSynthesizeFunction",
+  "type": "advancedio",
+  "language": "python",
+  "runtime": "python3.9"
+}
