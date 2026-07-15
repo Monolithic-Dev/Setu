@@ -1,38 +1,24 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import * as d3 from "d3";
 import { t, type Language } from "../../i18n/strings";
+import { fetchNetworkGraph, NetworkGraphData } from "../../api/queryClient";
 import "./NetworkGraph.css";
 
 interface NetworkGraphProps {
   language: Language;
 }
 
-const dummyData = {
-  nodes: [
-    { id: "Suspect A", group: 1, radius: 25 },
-    { id: "Suspect B", group: 1, radius: 15 },
-    { id: "Vehicle X", group: 2, radius: 10 },
-    { id: "Location Y", group: 3, radius: 20 },
-    { id: "Phone Z", group: 4, radius: 8 },
-    { id: "Account W", group: 5, radius: 12 },
-    { id: "Suspect C", group: 1, radius: 18 }
-  ],
-  links: [
-    { source: "Suspect A", target: "Suspect B", value: 1 },
-    { source: "Suspect A", target: "Location Y", value: 2 },
-    { source: "Suspect B", target: "Vehicle X", value: 1 },
-    { source: "Suspect C", target: "Location Y", value: 1 },
-    { source: "Suspect A", target: "Phone Z", value: 1 },
-    { source: "Suspect C", target: "Account W", value: 1 },
-    { source: "Account W", target: "Suspect B", value: 2 }
-  ]
-};
-
 export function NetworkGraph({ language }: NetworkGraphProps) {
   const svgRef = useRef<SVGSVGElement>(null);
+  const [data, setData] = useState<NetworkGraphData | null>(null);
 
   useEffect(() => {
-    if (!svgRef.current) return;
+    // Fetch a real graph for a demo person (e.g., Person 0001)
+    fetchNetworkGraph("Person 0001").then(setData).catch(console.error);
+  }, []);
+
+  useEffect(() => {
+    if (!svgRef.current || !data) return;
 
     const svg = d3.select(svgRef.current);
     svg.selectAll("*").remove();
@@ -45,18 +31,22 @@ export function NetworkGraph({ language }: NetworkGraphProps) {
 
     const g = svg.append("g");
 
-    const simulation = d3.forceSimulation(dummyData.nodes as any)
-      .force("link", d3.forceLink(dummyData.links).id((d: any) => d.id).distance(100))
+    // Convert edges to expected D3 format
+    const d3Nodes = data.nodes.map(n => ({ id: n.id, radius: 15, group: 1, label: n.label }));
+    const d3Links = data.edges.map(e => ({ source: e.source, target: e.target, value: e.confidence || 1 }));
+
+    const simulation = d3.forceSimulation(d3Nodes as any)
+      .force("link", d3.forceLink(d3Links).id((d: any) => d.id).distance(100))
       .force("charge", d3.forceManyBody().strength(-300))
       .force("center", d3.forceCenter(width / 2, height / 2))
-      .force("collide", d3.forceCollide().radius((d: any) => d.radius + 10));
+      .force("collide", d3.forceCollide().radius(25));
 
     // Links with glow
     const link = g.append("g")
       .attr("stroke", "var(--primary-color)")
       .attr("stroke-opacity", 0.4)
       .selectAll("line")
-      .data(dummyData.links)
+      .data(d3Links)
       .join("line")
       .attr("stroke-width", (d) => Math.sqrt(d.value) * 2)
       .attr("class", "graph-link");
@@ -64,7 +54,7 @@ export function NetworkGraph({ language }: NetworkGraphProps) {
     // Nodes
     const node = g.append("g")
       .selectAll("circle")
-      .data(dummyData.nodes)
+      .data(d3Nodes)
       .join("circle")
       .attr("r", (d) => d.radius)
       .attr("fill", (d) => {
@@ -77,12 +67,12 @@ export function NetworkGraph({ language }: NetworkGraphProps) {
     // Labels
     const label = g.append("g")
       .selectAll("text")
-      .data(dummyData.nodes)
+      .data(d3Nodes)
       .join("text")
       .attr("class", "graph-label")
       .attr("dy", (d) => d.radius + 15)
       .attr("text-anchor", "middle")
-      .text((d) => d.id);
+      .text((d) => d.label || d.id);
 
     simulation.on("tick", () => {
       link
@@ -127,7 +117,7 @@ export function NetworkGraph({ language }: NetworkGraphProps) {
         .on("end", dragended);
     }
 
-  }, [language]);
+  }, [data, language]);
 
   return (
     <div className="network-graph-container">
@@ -136,7 +126,8 @@ export function NetworkGraph({ language }: NetworkGraphProps) {
         <span className="live-badge">LIVE ANALYSIS</span>
       </div>
       <div className="network-graph-canvas">
-        <svg ref={svgRef} className="network-graph-svg" />
+        {!data && <div style={{padding: "2rem", color: "var(--text-muted)", textAlign: "center"}}>Loading live intelligence network...</div>}
+        <svg ref={svgRef} className="network-graph-svg" style={{display: data ? "block" : "none"}}/>
       </div>
     </div>
   );

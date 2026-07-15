@@ -3,16 +3,9 @@
     "source": "client/dist"
   },
   "functions": {
-    "source": "functions",
-    "ignore": ["shared", "__pycache__"],
+    "source": "catalyst_functions",
     "targets": [
-      "alertsFunction",
-      "auditFunction",
-      "exportFunction",
-      "networkFunction",
-      "queryFunction",
-      "voiceSynthesizeFunction",
-      "voiceTranscribeFunction"
+      "setu_api"
     ]
   }
 }

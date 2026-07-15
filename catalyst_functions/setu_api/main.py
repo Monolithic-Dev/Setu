@@ -3,10 +3,11 @@ import os
 from fastapi import FastAPI, Request, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 
-# Initialize FastAPI app
-app = FastAPI(title="Setu Local Dev Server")
+# Ensure the function root can be imported
+sys.path.insert(0, os.path.abspath(os.path.dirname(__file__)))
 
-# Add CORS middleware to match Catalyst's frontend-backend bridge
+app = FastAPI(title="Setu Catalyst API")
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -15,14 +16,11 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Ensure Catalyst functions can be imported
-sys.path.insert(0, os.path.abspath(os.path.dirname(__file__)))
-
-# Import the Catalyst functions
-from functions.queryFunction.index import handle_request as query_handle_request
-from functions.networkFunction.index import handle_request as network_handle_request
-from functions.voiceTranscribeFunction.index import handle_request as voice_transcribe_handle_request
-from functions.voiceSynthesizeFunction.index import handle_request as voice_synthesize_handle_request
+from queryFunction.index import handle_request as query_handle_request
+from networkFunction.index import handle_request as network_handle_request
+from voiceTranscribeFunction.index import handle_request as voice_transcribe_handle_request
+from voiceSynthesizeFunction.index import handle_request as voice_synthesize_handle_request
+from alertsFunction.index import handle_request as alerts_handle_request
 
 def get_mock_auth_context(request: Request):
     """Mocks Catalyst authentication context using headers."""
@@ -42,7 +40,7 @@ def get_mock_auth_context(request: Request):
     user = MockUser(user_id, scope_level, station, district)
     return {"user": user, "role_name": role}
 
-@app.post("/server/api/query")
+@app.post("/api/query")
 async def api_query(request: Request):
     auth_context = get_mock_auth_context(request)
     try:
@@ -53,7 +51,7 @@ async def api_query(request: Request):
         print(f"Error: {e}")
         raise HTTPException(status_code=400, detail={"status": "error", "error_code": "BAD_REQUEST", "message": str(e)})
 
-@app.get("/server/api/network/{entity_id}")
+@app.get("/api/network/{entity_id}")
 async def api_network(entity_id: str, request: Request):
     auth_context = get_mock_auth_context(request)
     try:
@@ -62,7 +60,16 @@ async def api_network(entity_id: str, request: Request):
     except Exception as e:
         raise HTTPException(status_code=400, detail={"status": "error", "error_code": "BAD_REQUEST", "message": str(e)})
 
-@app.get("/server/api/audit/logs")
+@app.get("/api/alerts/hotspots")
+async def api_alerts_hotspots(request: Request):
+    auth_context = get_mock_auth_context(request)
+    try:
+        result = alerts_handle_request({}, auth_context)
+        return result
+    except Exception as e:
+        raise HTTPException(status_code=400, detail={"status": "error", "error_code": "BAD_REQUEST", "message": str(e)})
+
+@app.get("/api/audit/logs")
 async def api_audit_logs(request: Request):
     role = request.headers.get("X-Dev-Role", "Station Officer")
     if role != "System Admin":
@@ -80,10 +87,9 @@ async def api_audit_logs(request: Request):
     except Exception as e:
         raise HTTPException(status_code=400, detail={"status": "error", "error_code": "BAD_REQUEST", "message": str(e)})
 
-@app.post("/server/api/voice/transcribe")
+@app.post("/api/voice/transcribe")
 async def api_voice_transcribe(request: Request):
     try:
-        # Assuming audio bytes are sent in the body or form
         form = await request.form()
         audio_bytes = await form["file"].read() if "file" in form else await request.body()
         language_hint = "auto"
@@ -94,14 +100,13 @@ async def api_voice_transcribe(request: Request):
         print(f"Error: {e}")
         raise HTTPException(status_code=400, detail={"status": "error", "error_code": "BAD_REQUEST", "message": str(e)})
 
-@app.post("/server/api/voice/synthesize")
+@app.post("/api/voice/synthesize")
 async def api_voice_synthesize(request: Request):
     try:
         body = await request.json()
         config = {"SARVAM_API_KEY": "sk_xwjgnnee_lfunwefqkKmnR6qRGKx2XCSt"}
         result = voice_synthesize_handle_request(body.get("text", ""), body.get("language", "kn"), config)
         
-        # We need to return audio bytes (or base64) to the client.
         import base64
         return {"audio": base64.b64encode(result["audio_bytes"]).decode("utf-8"), "provider": result["provider"]}
     except Exception as e:
@@ -111,4 +116,4 @@ async def api_voice_synthesize(request: Request):
 if __name__ == "__main__":
     import uvicorn
     print("Starting Catalyst local dev mock server on port 3000 using FastAPI...")
-    uvicorn.run("server:app", host="127.0.0.1", port=3000, reload=True)
+    uvicorn.run("main:app", host="127.0.0.1", port=3000, reload=True)
