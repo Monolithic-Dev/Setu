@@ -1,45 +1,95 @@
-.app-split-layout {
-  display: flex;
-  flex-direction: row;
+:root {
+  /* Premium Dark Mode Palette */
+  --bg-main: #0b1120;
+  --bg-surface: rgba(30, 41, 59, 0.7); /* Glassmorphism base */
+  --bg-surface-solid: #1e293b;
+  --border-color: rgba(255, 255, 255, 0.1);
+  --border-highlight: rgba(56, 189, 248, 0.4);
+  
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  
+  /* Vibrant Accents */
+  --primary-color: #38bdf8;
+  --primary-hover: #0284c7;
+  --primary-glow: rgba(56, 189, 248, 0.3);
+  
+  --secondary-color: #818cf8;
+  --danger-color: #fb7185;
+  
+  /* Utilities */
+  --glass-blur: blur(12px);
+  --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 10px 25px -5px rgba(0, 0, 0, 0.8);
+  --transition-fast: 0.2s ease;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body, html {
   height: 100%;
   width: 100%;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: var(--bg-main);
+  background-image: 
+    radial-gradient(circle at 15% 50%, rgba(56, 189, 248, 0.08), transparent 25%),
+    radial-gradient(circle at 85% 30%, rgba(129, 140, 248, 0.08), transparent 25%);
+  color: var(--text-main);
+  overflow: hidden;
 }
 
-.app-chat-pane {
-  flex: 1;
-  min-width: 400px;
-  max-width: 50%;
+#root {
   height: 100%;
   display: flex;
   flex-direction: column;
 }
 
-.app-graph-pane {
-  flex: 1;
-  min-width: 400px;
+.app {
   height: 100%;
   display: flex;
   flex-direction: column;
 }
 
-/* Ensure ChatWindow scales correctly inside the flex container */
-.app-chat-pane > .chat-window {
-  height: 100%;
-  border-right: none;
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border-bottom: 1px solid var(--border-color);
+  z-index: 10;
+}
+
+header h1 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 0.5px;
 }
 
 .header-controls {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 1.5rem;
 }
 
 .admin-toggle {
   display: flex;
-  background: var(--bg-surface, #ffffff);
-  border-radius: 6px;
-  overflow: hidden;
-  border: 1px solid var(--border-color, #e0e0e0);
+  background: rgba(0,0,0,0.2);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  padding: 0.25rem;
 }
 
 .admin-toggle button {
@@ -48,86 +98,153 @@
   padding: 0.5rem 1rem;
   cursor: pointer;
   font-weight: 500;
-  color: var(--text-muted, #666);
-  transition: all 0.2s ease;
+  font-family: inherit;
+  color: var(--text-muted);
+  border-radius: 8px;
+  transition: all var(--transition-fast);
 }
 
 .admin-toggle button:hover {
-  background: var(--bg-color, #f9fafb);
+  color: var(--text-main);
 }
 
 .admin-toggle button.active {
-  background: var(--primary-color, #0f4c81);
-  color: white;
+  background: var(--bg-surface-solid);
+  color: var(--primary-color);
+  box-shadow: var(--shadow-sm);
 }
 
+.language-toggle {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.language-toggle button {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-color);
+  color: var(--text-muted);
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: all var(--transition-fast);
+}
+
+.language-toggle button:hover {
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+}
+
+.language-toggle button[aria-pressed="true"] {
+  background: rgba(56, 189, 248, 0.15);
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+  box-shadow: 0 0 10px var(--primary-glow);
+}
+
+/* Main Layout */
+main {
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+  padding: 1.5rem;
+  gap: 1.5rem;
+}
+
+.app-split-layout {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  width: 100%;
+  gap: 1.5rem;
+}
+
+.app-chat-pane, .app-graph-pane {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-surface);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+  position: relative;
+}
+
+.app-chat-pane {
+  min-width: 400px;
+  max-width: 45%;
+}
+
+.app-graph-pane {
+  min-width: 400px;
+}
+
+/* Chat actions */
 .chat-header-actions {
   display: flex;
   justify-content: flex-end;
-  padding: 0.5rem 1rem;
-  border-bottom: 1px solid var(--border-color, #e0e0e0);
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--border-color);
+  background: rgba(0,0,0,0.15);
 }
 
 .export-pdf-btn {
-  background: var(--bg-surface, #ffffff);
-  border: 1px solid var(--border-color, #e0e0e0);
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-color);
+  padding: 0.4rem 1rem;
+  border-radius: 6px;
   cursor: pointer;
-  color: var(--text-color, #333);
-  font-size: 0.9rem;
-  transition: all 0.2s ease;
+  color: var(--text-main);
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: all var(--transition-fast);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
 }
 
 .export-pdf-btn:hover {
-  background: var(--bg-color, #f9fafb);
-  border-color: var(--primary-color, #0f4c81);
-  color: var(--primary-color, #0f4c81);
+  background: rgba(56, 189, 248, 0.1);
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+  box-shadow: 0 0 8px var(--primary-glow);
 }
 
-/* Day 7: Dev-mode PDF Export Print Styles */
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* Print Styles */
 @media print {
-  /* Hide headers, inputs, graph pane, and admin toggles */
-  header, 
-  .chat-input, 
-  .chat-header-actions, 
-  .app-graph-pane, 
-  .feedback-control {
-    display: none !important;
-  }
-
-  /* Make chat history take full page */
-  .app-split-layout {
-    display: block !important;
-    height: auto !important;
-  }
-
-  .app-chat-pane {
-    max-width: 100% !important;
-    width: 100% !important;
-    border: none !important;
-    display: block !important;
-  }
-
-  .chat-window {
-    border: none !important;
-    background: white !important;
-  }
-
-  .chat-history {
-    overflow: visible !important;
-    height: auto !important;
-    border: none !important;
-  }
-
-  .chat-turn {
-    break-inside: avoid;
-    border-bottom: 1px solid #ccc;
-    padding-bottom: 1rem;
-  }
-
   body {
-    background-color: white !important;
+    background: white !important;
     color: black !important;
   }
+  header, .chat-input, .chat-header-actions, .app-graph-pane, .feedback-control {
+    display: none !important;
+  }
+  .app-split-layout { display: block !important; height: auto !important; }
+  .app-chat-pane { max-width: 100% !important; border: none !important; box-shadow: none !important; }
+  .chat-window { border: none !important; background: white !important; }
+  .chat-history { overflow: visible !important; height: auto !important; border: none !important; }
+  .chat-turn { break-inside: avoid; border-bottom: 1px solid #ccc; padding-bottom: 1rem; }
 }
