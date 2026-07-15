@@ -1,0 +1,7 @@
+{
+  "name": "alertsFunction",
+  "type": "advancedio",
+  "language": "python",
+  "runtime": "python3.9",
+  "main": "index.py"
+}

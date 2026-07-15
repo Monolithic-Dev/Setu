@@ -20,8 +20,8 @@ client/build/
 .catalyst-cache/
 
 # Data (regenerate via ml/data_generation, don't commit generated output)
-data/*.json
-!data/.gitkeep
+**/data/*.json
+!**/data/.gitkeep
 
 # OS
 .DS_Store

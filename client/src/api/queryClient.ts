@@ -6,7 +6,7 @@
 // undefined outside a Vite runtime (found while trying to runtime-test
 // this file directly under plain Node/tsx, which doesn't provide it).
 
-const API_BASE = import.meta.env?.VITE_API_BASE ?? "/server";
+const API_BASE = import.meta.env?.VITE_API_BASE ?? "/server/setu_api";
 
 const DEV_AUTH_HEADERS: Record<string, string> = {};
 
