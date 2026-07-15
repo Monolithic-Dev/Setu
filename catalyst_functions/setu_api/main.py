@@ -16,10 +16,15 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+# pyrefly: ignore [missing-import]
 from queryFunction.index import handle_request as query_handle_request
+# pyrefly: ignore [missing-import]
 from networkFunction.index import handle_request as network_handle_request
+# pyrefly: ignore [missing-import]
 from voiceTranscribeFunction.index import handle_request as voice_transcribe_handle_request
+# pyrefly: ignore [missing-import]
 from voiceSynthesizeFunction.index import handle_request as voice_synthesize_handle_request
+# pyrefly: ignore [missing-import]
 from alertsFunction.index import handle_request as alerts_handle_request
 
 def get_mock_auth_context(request: Request):
