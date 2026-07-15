@@ -2,6 +2,7 @@ import { useState, useCallback } from "react";
 import { submitQuery, flagAnswer, transcribeAudio, type QueryResponse, type Language } from "../../api/queryClient";
 import { VoiceCapture } from "./VoiceCapture";
 import { t } from "../../i18n/strings";
+import "./ChatWindow.css";
 
 // Implements docs/UX.md's "Answer View" and "Connectivity State" (added Phase 7 review):
 // answer + sources + reasoning trail + feedback control, plus a visible
