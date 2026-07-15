@@ -77,10 +77,57 @@ class SarvamProvider(SpeechProvider):
         self.api_key = api_key
 
     def transcribe(self, audio_bytes: bytes, language_hint: str) -> TranscriptionResult:
-        raise NotImplementedError("Wire in real Sarvam AI STT call once API access is confirmed.")
+        import requests
+        try:
+            # Sarvam AI STT
+            url = "https://api.sarvam.ai/speech-to-text"
+            headers = {"api-subscription-key": self.api_key}
+            files = {"file": ("audio.wav", audio_bytes, "audio/wav")}
+            data = {"model": "saaras:v3", "mode": "transcribe"}
+            
+            response = requests.post(url, headers=headers, files=files, data=data)
+            response.raise_for_status()
+            
+            result = response.json()
+            # The exact response key might be 'transcript' or 'text'
+            text = result.get("transcript", result.get("text", ""))
+            
+            return TranscriptionResult(text=text, language=language_hint, provider=self.name)
+        except Exception as e:
+            raise SpeechProviderError(f"Sarvam STT failed: {e}")
 
     def synthesize(self, text: str, language: str) -> SynthesisResult:
-        raise NotImplementedError("Wire in real Sarvam AI TTS call once API access is confirmed.")
+        import requests
+        import base64
+        try:
+            # Sarvam AI TTS
+            url = "https://api.sarvam.ai/text-to-speech"
+            headers = {
+                "api-subscription-key": self.api_key,
+                "Content-Type": "application/json"
+            }
+            # map language code from app to sarvam language code (e.g. kn -> kn-IN)
+            lang_code = "kn-IN" if language == "kn" else "hi-IN" if language == "hi" else "en-IN"
+            
+            payload = {
+                "text": text,
+                "target_language_code": lang_code,
+                "model": "bulbul:v3"
+            }
+            
+            response = requests.post(url, headers=headers, json=payload)
+            response.raise_for_status()
+            
+            result = response.json()
+            # It usually returns base64 string in 'audios' array or 'audio' field
+            b64_audio = result.get("audios", [None])[0] if "audios" in result else result.get("audio", "")
+            if not b64_audio:
+                raise ValueError("No audio returned from Sarvam")
+                
+            audio_data = base64.b64decode(b64_audio)
+            return SynthesisResult(audio_bytes=audio_data, provider=self.name)
+        except Exception as e:
+            raise SpeechProviderError(f"Sarvam TTS failed: {e}")
 
 
 class SpeechService:
