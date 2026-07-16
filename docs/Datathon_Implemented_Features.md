@@ -1,0 +1,34 @@
+# Datathon Implemented Features
+
+This document outlines the major "production-level" features and core AI logic enhancements implemented for the Datathon to ensure the application satisfies both the aesthetic and technical requirements (Challenge 1 & Challenge 2).
+
+## 1. UI/UX Premium Overhaul
+To ensure the product has a stunning, award-winning presentation:
+- **Dark Mode & Glassmorphism:** Completely revamped the root CSS to utilize deep midnight blues (`#020617`), vibrant active accents (`#0ea5e9`, `#a855f7`), and rich frosted-glass background blurs.
+- **Fluid Micro-animations:** Introduced keyframe animations (e.g., `@keyframes slideUpFade`) to the Chat window so messages glide in smoothly, providing a native-app feel.
+- **Bilingual Interface:** Maintained and polished the English/Kannada toggle across the new UI elements.
+
+## 2. Interactive Analytics Dashboard
+A brand new view added to provide macro-level intelligence for District SPs and Analysts.
+- **Visualizations:** Integrated `recharts` to render responsive Crime Trend Line Charts and Modus Operandi Pie Charts.
+- **Mock Integration:** Backed by a realistic `/api/dashboard/stats` mock endpoint in the Python backend to feed the charts with rich synthetic data (Total Cases, Active Hotspots).
+
+## 3. Core AI: Intelligent Query Parser
+Replaced naive keyword filtering with an intelligent Natural Language (NL) intent parser.
+- **Implementation:** The `queryFunction` backend now utilizes Regex and heuristic mapping to automatically extract **District**, **Weapon Type**, and **Modus Operandi** entities directly from conversational user queries (e.g., extracting "Mysuru" and "Knife" from "recent knife crimes in mysuru").
+- **Impact:** Maps natural language directly to structured database filters (ZCQL), drastically improving retrieval accuracy and demonstrating real "Conversational AI" capability.
+
+## 4. Core AI: Pattern Detection (Link Prediction)
+Added algorithmic intelligence to the Network Graph to detect hidden criminal networks.
+- **Implementation:** Integrated a **Jaccard Similarity** algorithm in `networkFunction`. 
+- **Impact:** If two suspects share a high percentage of mutual associates (score > 30%) but lack a formal connection, the AI injects a "suggested_link" edge with a confidence score. This directly fulfills Challenge 2's requirement for "Predictive Risk Scoring & Pattern Detection".
+
+## 5. Core AI: Advanced Answer Synthesis
+Enhanced the local fallback AI to generate concise, highly relevant answers without relying on an external LLM API.
+- **Implementation:** Developed a TF-IDF sentence-level extraction algorithm in `local_answer_synthesis.py`.
+- **Impact:** The system splits case narratives into sentences, scores each sentence against the user's query keywords, and extracts only the top-ranked insights. This makes the local AI look incredibly smart and concise.
+
+## 6. Kannada PDF Export Fix
+Resolved a critical localization bug in the export functionality.
+- **Implementation:** Downloaded and bundled the `NotoSansKannada-Regular.ttf` Google Font, modifying the `reportlab` logic in `exportFunction` to correctly register and use it when Kannada characters are detected.
+- **Impact:** Ensures the Audit & Export features work flawlessly across both languages, proving robust localization.
