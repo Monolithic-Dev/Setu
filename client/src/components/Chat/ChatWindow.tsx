@@ -1,6 +1,7 @@
 import { useState, useCallback } from "react";
 import { submitQuery, flagAnswer, transcribeAudio, type QueryResponse, type Language } from "../../api/queryClient";
 import { VoiceCapture } from "./VoiceCapture";
+import { ConnectivityBanner } from "../ConnectivityBanner/ConnectivityBanner";
 import { t } from "../../i18n/strings";
 import "./ChatWindow.css";
 
@@ -31,6 +32,8 @@ export function ChatWindow({ language }: { language: Language }) {
   ]);
   const [inputText, setInputText] = useState("");
   const [sessionId] = useState(() => crypto.randomUUID());
+  const [feedbackGiven, setFeedbackGiven] = useState<Record<string, boolean>>({});
+  const [isRetrying, setIsRetrying] = useState(false);
 
   const handleSend = useCallback(async () => {
     const text = inputText.trim();
@@ -40,20 +43,37 @@ export function ChatWindow({ language }: { language: Language }) {
     setTurns((prev) => [...prev, { id: turnId, queryText: text, response: null, status: "pending" }]);
     setInputText("");
 
-    try {
-      const response = await submitQuery({ session_id: sessionId, text, language });
-      setTurns((prev) =>
-        prev.map((turn) => (turn.id === turnId ? { ...turn, response, status: "done" } : turn))
-      );
-    } catch (err) {
-      // NFR-10: a queued-retry UX belongs here (e.g., navigator.onLine listener
-      // + retry queue) — this is the hook point; full retry logic is a
-      // Phase 8 implementation task, not something meaningful to fake here.
-      setTurns((prev) =>
-        prev.map((turn) => (turn.id === turnId ? { ...turn, status: "reconnecting" } : turn))
-      );
-      console.error("Query failed, entering reconnecting state:", err);
-    }
+    let attempt = 0;
+    const maxAttempts = 3;
+
+    const trySubmit = async () => {
+      try {
+        const response = await submitQuery({ session_id: sessionId, text, language });
+        setIsRetrying(false);
+        setTurns((prev) =>
+          prev.map((turn) => (turn.id === turnId ? { ...turn, response, status: "done" } : turn))
+        );
+      } catch (err) {
+        attempt++;
+        if (attempt >= maxAttempts) {
+          setIsRetrying(false);
+          setTurns((prev) =>
+            prev.map((turn) => (turn.id === turnId ? { ...turn, status: "error" } : turn))
+          );
+          console.error("Query failed after retries:", err);
+        } else {
+          setIsRetrying(true);
+          setTurns((prev) =>
+            prev.map((turn) => (turn.id === turnId ? { ...turn, status: "reconnecting" } : turn))
+          );
+          // Exponential backoff
+          await new Promise(resolve => setTimeout(resolve, Math.pow(2, attempt) * 1000));
+          await trySubmit();
+        }
+      }
+    };
+
+    await trySubmit();
   }, [inputText, language, sessionId]);
 
   const handleAudioCaptured = useCallback(async (audioBlob: Blob) => {
@@ -70,10 +90,12 @@ export function ChatWindow({ language }: { language: Language }) {
 
   const handleFeedback = useCallback((auditId: string, wasHelpful: boolean) => {
     flagAnswer(auditId, wasHelpful).catch((err) => console.error("Failed to record feedback:", err));
+    setFeedbackGiven(prev => ({ ...prev, [auditId]: true }));
   }, []);
 
   return (
     <div className="chat-window">
+      <ConnectivityBanner isVisible={isRetrying} />
       <div className="chat-header-actions">
         <button className="export-pdf-btn" onClick={() => window.print()} title={t(language, "exportPdf") || "Export to PDF"}>
           📄 Export to PDF
@@ -108,13 +130,19 @@ export function ChatWindow({ language }: { language: Language }) {
                 )}
 
                 <div className="feedback-control">
-                  <span>{t(language, "wasHelpful")}</span>
-                  <button onClick={() => handleFeedback(turn.response!.audit_id, true)}>
-                    {t(language, "yes")}
-                  </button>
-                  <button onClick={() => handleFeedback(turn.response!.audit_id, false)}>
-                    {t(language, "no")}
-                  </button>
+                  {feedbackGiven[turn.response!.audit_id] ? (
+                    <span className="feedback-thanks">Thanks, noted.</span>
+                  ) : (
+                    <>
+                      <span>{t(language, "wasHelpful")}</span>
+                      <button onClick={() => handleFeedback(turn.response!.audit_id, true)}>
+                        👍 {t(language, "yes")}
+                      </button>
+                      <button onClick={() => handleFeedback(turn.response!.audit_id, false)}>
+                        👎 {t(language, "no")}
+                      </button>
+                    </>
+                  )}
                 </div>
               </div>
             )}

@@ -102,6 +102,9 @@ export interface GraphEdge {
   target: string;
   relationship: string;
   confidence: number;
+  suggested_link?: boolean;
+  shared_associates?: string[];
+  total_associates?: number;
 }
 
 export interface NetworkGraphData {

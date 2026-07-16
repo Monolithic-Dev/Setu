@@ -85,6 +85,15 @@
         { "name": "role_name", "type": "varchar" },
         { "name": "scope_level", "type": "varchar" }
       ]
+    },
+    {
+      "name": "FEEDBACK_ENTRY",
+      "columns": [
+        { "name": "feedback_id", "type": "varchar", "is_unique": true, "is_mandatory": true },
+        { "name": "audit_id", "type": "varchar" },
+        { "name": "was_helpful", "type": "boolean" },
+        { "name": "timestamp_", "type": "datetime" }
+      ]
     }
   ],
   "rbac_scopes": {

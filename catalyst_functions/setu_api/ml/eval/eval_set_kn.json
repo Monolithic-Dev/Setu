@@ -1,0 +1,234 @@
+[
+  {
+    "question_id": "eval-kn-KA-2025-00102",
+    "query_text": "Kalaburagi ಪ್ರದೇಶದಲ್ಲಿ chain snatching on foot near market ಕುರಿತು ಹುಡುಕಿ",
+    "language": "kn",
+    "expected_case_ids": [
+      "KA-2025-00102"
+    ],
+    "notes": "Kannada eval query"
+  },
+  {
+    "question_id": "eval-kn-KA-2025-00367",
+    "query_text": "Mysuru ದಿಂದ ವರದಿಯಾದ residential break-in via forced door lock ಪ್ರಕರಣಗಳು",
+    "language": "kn",
+    "expected_case_ids": [
+      "KA-2025-00367"
+    ],
+    "notes": "Kannada eval query"
+  },
+  {
+    "question_id": "eval-kn-KA-2026-00333",
+    "query_text": "Bengaluru Urban ದಲ್ಲಿ residential break-in via rear window ಪ್ರಕರಣ",
+    "language": "kn",
+    "expected_case_ids": [
+      "KA-2026-00333"
+    ],
+    "notes": "Kannada eval query"
+  },
+  {
+    "question_id": "eval-kn-KA-2026-00360",
+    "query_text": "Davanagere ಪ್ರದೇಶದಲ್ಲಿ cyber fraud via phishing call ಕುರಿತು ಹುಡುಕಿ",
+    "language": "kn",
+    "expected_case_ids": [
+      "KA-2026-00360"
+    ],
+    "notes": "Kannada eval query"
+  },
+  {
+    "question_id": "eval-kn-KA-2025-00215",
+    "query_text": "Mangaluru ದಿಂದ ವರದಿಯಾದ cyber fraud via phishing call ಪ್ರಕರಣಗಳು",
+    "language": "kn",
+    "expected_case_ids": [
+      "KA-2025-00215"
+    ],
+    "notes": "Kannada eval query"
+  },
+  {
+    "question_id": "eval-kn-KA-2026-00113",
+    "query_text": "Tumakuru ದಲ್ಲಿ cyber fraud via fake job offer ಪ್ರಕರಣ",
+    "language": "kn",
+    "expected_case_ids": [
+      "KA-2026-00113"
+    ],
+    "notes": "Kannada eval query"
+  },
+  {
+    "question_id": "eval-kn-KA-2026-00230",
+    "query_text": "Belagavi ಪ್ರದೇಶದಲ್ಲಿ chain snatching using two-wheeler ಕುರಿತು ಹುಡುಕಿ",
+    "language": "kn",
+    "expected_case_ids": [
+      "KA-2026-00230"
+    ],
+    "notes": "Kannada eval query"
+  },
+  {
+    "question_id": "eval-kn-KA-2026-00302",
+    "query_text": "Ballari ದಿಂದ ವರದಿಯಾದ shop burglary after business hours ಪ್ರಕರಣಗಳು",
+    "language": "kn",
+    "expected_case_ids": [
+      "KA-2026-00302"
+    ],
+    "notes": "Kannada eval query"
+  },
+  {
+    "question_id": "eval-kn-KA-2026-00143",
+    "query_text": "Davanagere ದಲ್ಲಿ residential break-in via forced door lock ಪ್ರಕರಣ",
+    "language": "kn",
+    "expected_case_ids": [
+      "KA-2026-00143"
+    ],
+    "notes": "Kannada eval query"
+  },
+  {
+    "question_id": "eval-kn-KA-2024-00415",
+    "query_text": "Hubballi-Dharwad ಪ್ರದೇಶದಲ್ಲಿ cyber fraud via fake job offer ಕುರಿತು ಹುಡುಕಿ",
+    "language": "kn",
+    "expected_case_ids": [
+      "KA-2024-00415"
+    ],
+    "notes": "Kannada eval query"
+  },
+  {
+    "question_id": "eval-kn-KA-2024-00446",
+    "query_text": "Hubballi-Dharwad ದಿಂದ ವರದಿಯಾದ chain snatching on foot near market ಪ್ರಕರಣಗಳು",
+    "language": "kn",
+    "expected_case_ids": [
+      "KA-2024-00446"
+    ],
+    "notes": "Kannada eval query"
+  },
+  {
+    "question_id": "eval-kn-KA-2025-00004",
+    "query_text": "Tumakuru ದಲ್ಲಿ ATM tampering attempt ಪ್ರಕರಣ",
+    "language": "kn",
+    "expected_case_ids": [
+      "KA-2025-00004"
+    ],
+    "notes": "Kannada eval query"
+  },
+  {
+    "question_id": "eval-kn-KA-2024-00389",
+    "query_text": "Ballari ಪ್ರದೇಶದಲ್ಲಿ chain snatching using two-wheeler ಕುರಿತು ಹುಡುಕಿ",
+    "language": "kn",
+    "expected_case_ids": [
+      "KA-2024-00389"
+    ],
+    "notes": "Kannada eval query"
+  },
+  {
+    "question_id": "eval-kn-KA-2025-00413",
+    "query_text": "Kalaburagi ದಿಂದ ವರದಿಯಾದ chain snatching on foot near market ಪ್ರಕರಣಗಳು",
+    "language": "kn",
+    "expected_case_ids": [
+      "KA-2025-00413"
+    ],
+    "notes": "Kannada eval query"
+  },
+  {
+    "question_id": "eval-kn-KA-2024-00082",
+    "query_text": "Hubballi-Dharwad ದಲ್ಲಿ chain snatching using two-wheeler ಪ್ರಕರಣ",
+    "language": "kn",
+    "expected_case_ids": [
+      "KA-2024-00082"
+    ],
+    "notes": "Kannada eval query"
+  },
+  {
+    "question_id": "eval-kn-KA-2026-00358",
+    "query_text": "Tumakuru ಪ್ರದೇಶದಲ್ಲಿ cyber fraud via fake job offer ಕುರಿತು ಹುಡುಕಿ",
+    "language": "kn",
+    "expected_case_ids": [
+      "KA-2026-00358"
+    ],
+    "notes": "Kannada eval query"
+  },
+  {
+    "question_id": "eval-kn-KA-2024-00175",
+    "query_text": "Hubballi-Dharwad ದಿಂದ ವರದಿಯಾದ residential break-in via rear window ಪ್ರಕರಣಗಳು",
+    "language": "kn",
+    "expected_case_ids": [
+      "KA-2024-00175"
+    ],
+    "notes": "Kannada eval query"
+  },
+  {
+    "question_id": "eval-kn-KA-2024-00080",
+    "query_text": "Shivamogga ದಲ್ಲಿ two-wheeler theft from parking area ಪ್ರಕರಣ",
+    "language": "kn",
+    "expected_case_ids": [
+      "KA-2024-00080"
+    ],
+    "notes": "Kannada eval query"
+  },
+  {
+    "question_id": "eval-kn-KA-2024-00111",
+    "query_text": "Kalaburagi ಪ್ರದೇಶದಲ್ಲಿ two-wheeler theft from parking area ಕುರಿತು ಹುಡುಕಿ",
+    "language": "kn",
+    "expected_case_ids": [
+      "KA-2024-00111"
+    ],
+    "notes": "Kannada eval query"
+  },
+  {
+    "question_id": "eval-kn-KA-2025-00491",
+    "query_text": "Mangaluru ದಿಂದ ವರದಿಯಾದ residential break-in via forced door lock ಪ್ರಕರಣಗಳು",
+    "language": "kn",
+    "expected_case_ids": [
+      "KA-2025-00491"
+    ],
+    "notes": "Kannada eval query"
+  },
+  {
+    "question_id": "eval-kn-KA-2025-00391",
+    "query_text": "Shivamogga ದಲ್ಲಿ cyber fraud via phishing call ಪ್ರಕರಣ",
+    "language": "kn",
+    "expected_case_ids": [
+      "KA-2025-00391"
+    ],
+    "notes": "Kannada eval query"
+  },
+  {
+    "question_id": "eval-kn-KA-2025-00173",
+    "query_text": "Bengaluru Urban ಪ್ರದೇಶದಲ್ಲಿ chain snatching on foot near market ಕುರಿತು ಹುಡುಕಿ",
+    "language": "kn",
+    "expected_case_ids": [
+      "KA-2025-00173"
+    ],
+    "notes": "Kannada eval query"
+  },
+  {
+    "question_id": "eval-kn-KA-2024-00195",
+    "query_text": "Bengaluru Urban ದಿಂದ ವರದಿಯಾದ cyber fraud via phishing call ಪ್ರಕರಣಗಳು",
+    "language": "kn",
+    "expected_case_ids": [
+      "KA-2024-00195"
+    ],
+    "notes": "Kannada eval query"
+  },
+  {
+    "question_id": "eval-kn-KA-2026-00050",
+    "query_text": "Davanagere ದಲ್ಲಿ cyber fraud via fake job offer ಪ್ರಕರಣ",
+    "language": "kn",
+    "expected_case_ids": [
+      "KA-2026-00050"
+    ],
+    "notes": "Kannada eval query"
+  },
+  {
+    "question_id": "eval-kn-KA-2025-00184",
+    "query_text": "Shivamogga ಪ್ರದೇಶದಲ್ಲಿ chain snatching on foot near market ಕುರಿತು ಹುಡುಕಿ",
+    "language": "kn",
+    "expected_case_ids": [
+      "KA-2025-00184"
+    ],
+    "notes": "Kannada eval query"
+  },
+  {
+    "question_id": "eval-kn-ambiguous-1",
+    "query_text": "ಬೆಂಗಳೂರಿನಲ್ಲಿ ಏಲಿಯನ್ ಅಪಹರಣ",
+    "language": "kn",
+    "expected_case_ids": [],
+    "notes": "Ambiguous query, should return nothing"
+  }
+]

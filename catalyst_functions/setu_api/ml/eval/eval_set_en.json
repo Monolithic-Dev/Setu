@@ -1,0 +1,234 @@
+[
+  {
+    "question_id": "eval-en-KA-2024-00328",
+    "query_text": "two-wheeler theft from parking area in Bengaluru Urban",
+    "language": "en",
+    "expected_case_ids": [
+      "KA-2024-00328"
+    ],
+    "notes": "English eval query"
+  },
+  {
+    "question_id": "eval-en-KA-2024-00058",
+    "query_text": "Looking for incidents of cyber fraud via phishing call that happened in Belagavi",
+    "language": "en",
+    "expected_case_ids": [
+      "KA-2024-00058"
+    ],
+    "notes": "English eval query"
+  },
+  {
+    "question_id": "eval-en-KA-2026-00013",
+    "query_text": "Any residential break-in via forced door lock cases reported from Mysuru?",
+    "language": "en",
+    "expected_case_ids": [
+      "KA-2026-00013"
+    ],
+    "notes": "English eval query"
+  },
+  {
+    "question_id": "eval-en-KA-2025-00380",
+    "query_text": "chain snatching on foot near market in Kalaburagi",
+    "language": "en",
+    "expected_case_ids": [
+      "KA-2025-00380"
+    ],
+    "notes": "English eval query"
+  },
+  {
+    "question_id": "eval-en-KA-2025-00141",
+    "query_text": "Looking for incidents of residential break-in via forced door lock that happened in Mangaluru",
+    "language": "en",
+    "expected_case_ids": [
+      "KA-2025-00141"
+    ],
+    "notes": "English eval query"
+  },
+  {
+    "question_id": "eval-en-KA-2025-00126",
+    "query_text": "Any chain snatching using two-wheeler cases reported from Kalaburagi?",
+    "language": "en",
+    "expected_case_ids": [
+      "KA-2025-00126"
+    ],
+    "notes": "English eval query"
+  },
+  {
+    "question_id": "eval-en-KA-2026-00115",
+    "query_text": "residential break-in via forced door lock in Shivamogga",
+    "language": "en",
+    "expected_case_ids": [
+      "KA-2026-00115"
+    ],
+    "notes": "English eval query"
+  },
+  {
+    "question_id": "eval-en-KA-2026-00072",
+    "query_text": "Looking for incidents of two-wheeler theft from parking area that happened in Tumakuru",
+    "language": "en",
+    "expected_case_ids": [
+      "KA-2026-00072"
+    ],
+    "notes": "English eval query"
+  },
+  {
+    "question_id": "eval-en-KA-2026-00378",
+    "query_text": "Any two-wheeler theft from parking area cases reported from Shivamogga?",
+    "language": "en",
+    "expected_case_ids": [
+      "KA-2026-00378"
+    ],
+    "notes": "English eval query"
+  },
+  {
+    "question_id": "eval-en-KA-2026-00053",
+    "query_text": "ATM tampering attempt in Belagavi",
+    "language": "en",
+    "expected_case_ids": [
+      "KA-2026-00053"
+    ],
+    "notes": "English eval query"
+  },
+  {
+    "question_id": "eval-en-KA-2025-00347",
+    "query_text": "Looking for incidents of shop burglary after business hours that happened in Ballari",
+    "language": "en",
+    "expected_case_ids": [
+      "KA-2025-00347"
+    ],
+    "notes": "English eval query"
+  },
+  {
+    "question_id": "eval-en-KA-2025-00457",
+    "query_text": "Any residential break-in via forced door lock cases reported from Kalaburagi?",
+    "language": "en",
+    "expected_case_ids": [
+      "KA-2025-00457"
+    ],
+    "notes": "English eval query"
+  },
+  {
+    "question_id": "eval-en-KA-2026-00280",
+    "query_text": "cyber fraud via phishing call in Belagavi",
+    "language": "en",
+    "expected_case_ids": [
+      "KA-2026-00280"
+    ],
+    "notes": "English eval query"
+  },
+  {
+    "question_id": "eval-en-KA-2026-00045",
+    "query_text": "Looking for incidents of two-wheeler theft from parking area that happened in Ballari",
+    "language": "en",
+    "expected_case_ids": [
+      "KA-2026-00045"
+    ],
+    "notes": "English eval query"
+  },
+  {
+    "question_id": "eval-en-KA-2026-00303",
+    "query_text": "Any two-wheeler theft from parking area cases reported from Belagavi?",
+    "language": "en",
+    "expected_case_ids": [
+      "KA-2026-00303"
+    ],
+    "notes": "English eval query"
+  },
+  {
+    "question_id": "eval-en-KA-2025-00217",
+    "query_text": "residential break-in via forced door lock in Hubballi-Dharwad",
+    "language": "en",
+    "expected_case_ids": [
+      "KA-2025-00217"
+    ],
+    "notes": "English eval query"
+  },
+  {
+    "question_id": "eval-en-KA-2024-00017",
+    "query_text": "Looking for incidents of ATM tampering attempt that happened in Mysuru",
+    "language": "en",
+    "expected_case_ids": [
+      "KA-2024-00017"
+    ],
+    "notes": "English eval query"
+  },
+  {
+    "question_id": "eval-en-KA-2026-00016",
+    "query_text": "Any pickpocketing in crowded transit area cases reported from Mysuru?",
+    "language": "en",
+    "expected_case_ids": [
+      "KA-2026-00016"
+    ],
+    "notes": "English eval query"
+  },
+  {
+    "question_id": "eval-en-KA-2025-00048",
+    "query_text": "residential break-in via forced door lock in Mangaluru",
+    "language": "en",
+    "expected_case_ids": [
+      "KA-2025-00048"
+    ],
+    "notes": "English eval query"
+  },
+  {
+    "question_id": "eval-en-KA-2026-00112",
+    "query_text": "Looking for incidents of pickpocketing in crowded transit area that happened in Mysuru",
+    "language": "en",
+    "expected_case_ids": [
+      "KA-2026-00112"
+    ],
+    "notes": "English eval query"
+  },
+  {
+    "question_id": "eval-en-KA-2024-00120",
+    "query_text": "Any cyber fraud via phishing call cases reported from Shivamogga?",
+    "language": "en",
+    "expected_case_ids": [
+      "KA-2024-00120"
+    ],
+    "notes": "English eval query"
+  },
+  {
+    "question_id": "eval-en-KA-2025-00259",
+    "query_text": "shop burglary after business hours in Mangaluru",
+    "language": "en",
+    "expected_case_ids": [
+      "KA-2025-00259"
+    ],
+    "notes": "English eval query"
+  },
+  {
+    "question_id": "eval-en-KA-2024-00309",
+    "query_text": "Looking for incidents of ATM tampering attempt that happened in Shivamogga",
+    "language": "en",
+    "expected_case_ids": [
+      "KA-2024-00309"
+    ],
+    "notes": "English eval query"
+  },
+  {
+    "question_id": "eval-en-KA-2025-00014",
+    "query_text": "Any chain snatching on foot near market cases reported from Belagavi?",
+    "language": "en",
+    "expected_case_ids": [
+      "KA-2025-00014"
+    ],
+    "notes": "English eval query"
+  },
+  {
+    "question_id": "eval-en-KA-2026-00288",
+    "query_text": "chain snatching using two-wheeler in Bengaluru Urban",
+    "language": "en",
+    "expected_case_ids": [
+      "KA-2026-00288"
+    ],
+    "notes": "English eval query"
+  },
+  {
+    "question_id": "eval-en-ambiguous-1",
+    "query_text": "alien abduction in Bengaluru",
+    "language": "en",
+    "expected_case_ids": [],
+    "notes": "Ambiguous query, should return nothing"
+  }
+]

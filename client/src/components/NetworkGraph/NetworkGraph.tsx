@@ -33,7 +33,15 @@ export function NetworkGraph({ language }: NetworkGraphProps) {
 
     // Convert edges to expected D3 format
     const d3Nodes = data.nodes.map(n => ({ id: n.id, radius: 15, group: 1, label: n.label }));
-    const d3Links = data.edges.map(e => ({ source: e.source, target: e.target, value: e.confidence || 1 }));
+    const d3Links = data.edges.map(e => ({ 
+      source: e.source, 
+      target: e.target, 
+      value: e.confidence || 1,
+      suggested_link: e.suggested_link,
+      shared_associates: e.shared_associates,
+      total_associates: e.total_associates,
+      relationship: e.relationship
+    }));
 
     const simulation = d3.forceSimulation(d3Nodes as any)
       .force("link", d3.forceLink(d3Links).id((d: any) => d.id).distance(100))
@@ -48,8 +56,19 @@ export function NetworkGraph({ language }: NetworkGraphProps) {
       .selectAll("line")
       .data(d3Links)
       .join("line")
-      .attr("stroke-width", (d) => Math.sqrt(d.value) * 2)
+      .attr("stroke-width", (d: any) => Math.sqrt(d.value) * 2)
       .attr("class", "graph-link");
+
+    link.append("title")
+      .text((d: any) => {
+        if (d.suggested_link && d.shared_associates && d.total_associates) {
+          const sharedCount = d.shared_associates.length;
+          const sId = typeof d.source === 'object' ? d.source.id : d.source;
+          const tId = typeof d.target === 'object' ? d.target.id : d.target;
+          return `AI Prediction (Jaccard Score: ${d.value})\n${sId} and ${tId} share ${sharedCount} of ${d.total_associates} known associates: ${d.shared_associates.join(", ")}`;
+        }
+        return `Relationship: ${d.relationship || 'Connected'}`;
+      });
 
     // Nodes
     const node = g.append("g")

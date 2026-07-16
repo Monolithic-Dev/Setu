@@ -99,7 +99,8 @@ def build_graph(entity_id: str, edges: list[dict]) -> dict:
         for j in range(i + 1, len(node_ids)):
             n1, n2 = node_ids[i], node_ids[j]
             if n2 not in neighbors[n1]:
-                intersection = len(neighbors[n1].intersection(neighbors[n2]))
+                shared = neighbors[n1].intersection(neighbors[n2])
+                intersection = len(shared)
                 union = len(neighbors[n1].union(neighbors[n2]))
                 if union > 0:
                     score = intersection / union
@@ -110,7 +111,9 @@ def build_graph(entity_id: str, edges: list[dict]) -> dict:
                             "target": n2,
                             "relationship": "AI Predicted Link",
                             "confidence": round(score, 2),
-                            "suggested_link": True
+                            "suggested_link": True,
+                            "shared_associates": list(shared),
+                            "total_associates": union
                         })
 
     return {"nodes": list(nodes.values()), "edges": graph_edges}

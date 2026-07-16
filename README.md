@@ -27,13 +27,13 @@ SCRB manages crime data from 1,100+ police stations across Karnataka. Current to
 
 ## Tech Stack
 
-React + TypeScript · Python 3.10+ (Catalyst Functions) · Zoho Catalyst QuickML (LLM Serving + RAG + Knowledge Base) · Catalyst Data Store + OLAP · Zia (NER/AutoML) · Bhashini / Sarvam AI (Kannada speech) · D3.js
+React + TypeScript · Python 3.10+ (Catalyst Functions) · TF-IDF + BM25 Retrieval · Local NLP Heuristics · Catalyst Data Store + OLAP · D3.js
 
-Full rationale in `docs/TechStack.md`.
+Full target rationale in `docs/TechStack.md`.
 
 ## Architecture
 
-See `docs/Architecture.md` and `docs/AIArchitecture.md` for full diagrams. High level: a serverless Catalyst Functions layer orchestrates QuickML (conversational core), Data Store/OLAP (structured data + analytics), Zia (entity extraction), and an external Indic-speech layer, behind role-based access control enforced at the database layer.
+See `docs/Architecture.md` and `docs/AIArchitecture.md` for target diagrams, and `docs/Datathon_Implemented_Features.md` for current implemented state. High level: a serverless Catalyst Functions layer orchestrates hybrid RAG (ZCQL structured search + TF-IDF semantic search), Data Store/OLAP (structured data + analytics), and local Jaccard-similarity network prediction, behind strict role-based access control.
 
 ## Setup & Installation
 

@@ -59,12 +59,12 @@ Key screens implemented:
 ---
 
 ### Slide 7 — Architecture Diagram *(Architecture Explanation)*
-Client (web + voice) talks to a Python orchestration layer which coordinates: LLM Serving for the conversational RAG core, Data Store for structured records, and local dev-mode fallbacks for TF-IDF Semantic Search. Every layer enforces strict RBAC before combining answers.
+Client (web + voice) talks to a Python orchestration layer which coordinates: Data Store for structured records, and local dev-mode fallbacks for TF-IDF Semantic Search. Every layer enforces strict RBAC before combining answers. *Interface designed so QuickML LLM Serving can replace the local synthesis step directly, once Gen-AI early access is confirmed — see Roadmap.*
 ```mermaid
 flowchart TB
     Client[Web + Voice Client] --> Func[Python Core Engine]
     Func --> HybridRAG[Hybrid RAG: TF-IDF + ZCQL]
-    Func --> Synthesis[LLM Synthesis & Grounding]
+    Func --> Synthesis[Local Synthesis & Grounding]
     Func --> Audit[Audit Store]
 ```
 
@@ -73,7 +73,7 @@ flowchart TB
 ### Slide 8 — Technologies Used *(Technical Summary + AI Justification)*
 **Stack:** React + TypeScript frontend, Vite, Python 3.10+ backend, TF-IDF + BM25, D3.js for network visualization.
 
-**Why this AI approach:** A conversational RAG system is the right tool here specifically because the core problem is retrieval-and-synthesis over fragmented records, not classification. We use a *Hybrid* RAG approach—combining strict structured filtering (District/Date) with fuzzy Semantic Search (Modus Operandi matches)—to guarantee zero missed leads. 
+**Why this AI approach:** A conversational RAG system is the right tool here specifically because the core problem is retrieval-and-synthesis over fragmented records, not classification. We use a *Hybrid* RAG approach—combining strict structured filtering (District/Date) with fuzzy Semantic Search (Modus Operandi matches)—to guarantee zero missed leads. *We prioritized a fully working, benchmarked pipeline over a dependency on early-access Gen-AI infrastructure that could block the whole demo if access was delayed — see RiskRegister R1.*
 
 ---
 
