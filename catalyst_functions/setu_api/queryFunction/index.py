@@ -42,9 +42,9 @@ from local_answer_synthesis import synthesize_answer
 from sensitivity_gate import check_sensitivity
 import local_audit_store
 
-_REPO_ROOT = os.path.join(os.path.dirname(__file__), "..", "..")
+_REPO_ROOT = os.path.join(os.path.dirname(__file__), "..", "..", "..")
 
-_DEV_DATA_PATH = os.path.join(os.path.dirname(__file__), "..", "..", "data", "synthetic_cases.json")
+_DEV_DATA_PATH = os.path.join(os.path.dirname(__file__), "..", "..", "..", "data", "synthetic_cases.json")
 _dev_cases_cache = None
 _dev_index_cache_en = None
 _dev_index_cache_kn = None

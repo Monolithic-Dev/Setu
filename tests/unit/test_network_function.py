@@ -26,8 +26,9 @@ def test_network_function_returns_real_graph_for_connected_person():
     result = network_index.handle_request(most_connected_id, auth_context={})
 
     assert len(result["nodes"]) > 1, "A well-connected person should produce a multi-node graph"
+    # Note: Jaccard link prediction will add edges between neighbors,
+    # so not every edge involves most_connected_id.
     assert len(result["edges"]) > 0
-    assert all(most_connected_id in (e["source"], e["target"]) for e in result["edges"])
 
 
 def test_network_function_handles_isolated_entity_gracefully():

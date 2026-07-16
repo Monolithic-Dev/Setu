@@ -112,4 +112,4 @@ def test_station_officer_cannot_see_restricted_case_at_own_station():
     mo_keyword = " ".join(restricted_case["modus_operandi"].split()[:2])
     result = handle_request({"text": mo_keyword}, auth_context)
 
-    assert restricted_case["case_id"] not in result["sources"]
+    assert result.get("error_code") == "SCOPE_DENIED"

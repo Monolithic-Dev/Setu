@@ -7,7 +7,7 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "shared"))
 
 import local_audit_store
 
-_REPO_ROOT = os.path.join(os.path.dirname(__file__), "..", "..")
+_REPO_ROOT = os.path.join(os.path.dirname(__file__), "..", "..", "..")
 
 def handle_request(request_body: dict, auth_context: dict) -> dict:
     """

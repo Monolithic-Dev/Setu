@@ -12,7 +12,7 @@ marked below, not hidden.
 import sys
 import os
 
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "..", "ml", "prediction_model"))
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "ml", "prediction_model"))
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "shared"))
 
 from hotspot_model import load_cases, detect_hotspots, explain_cluster
@@ -31,7 +31,7 @@ def handle_request(auth_context: dict, data_path: str = None) -> dict:
     """
     if data_path is None:
         data_path = os.path.join(
-            os.path.dirname(__file__), "..", "..", "data", "synthetic_cases.json"
+            os.path.dirname(__file__), "..", "..", "..", "data", "synthetic_cases.json"
         )
 
     cases = load_cases(data_path)
