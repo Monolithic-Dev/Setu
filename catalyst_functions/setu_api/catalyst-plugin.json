@@ -1,7 +1,0 @@
-{
-  "name": "setu_api",
-  "type": "advancedio",
-  "language": "python",
-  "runtime": "python3.9",
-  "main": "main.py"
-}

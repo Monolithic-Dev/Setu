@@ -3,7 +3,8 @@
     "source": "client/dist"
   },
   "functions": {
-    "source": "catalyst_functions",
+    "source": "functions",
+    "ignore": [],
     "targets": [
       "setu_api"
     ]
