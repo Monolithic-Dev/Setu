@@ -17,7 +17,7 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "shared"))
 from models import RoleName
 import local_audit_store
 
-_REPO_ROOT = os.path.join(os.path.dirname(__file__), "..", "..")
+_REPO_ROOT = os.path.join(os.path.dirname(__file__), "..", "..", "..")
 
 AUDIT_ALLOWED_ROLES = {RoleName.SCRB_ANALYST, RoleName.DISTRICT_SP, RoleName.SYSTEM_ADMIN}
 
