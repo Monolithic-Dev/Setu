@@ -1,0 +1,92 @@
+[
+  {
+    "question_id": "eval-cs-KA-2024-00434",
+    "query_text": "chain snatching using two-wheeler ಪ್ರಕರಣ in Bengaluru Urban",
+    "language": "kn-en",
+    "expected_case_ids": [
+      "KA-2024-00434"
+    ],
+    "notes": "Code-switched eval query"
+  },
+  {
+    "question_id": "eval-cs-KA-2024-00177",
+    "query_text": "cyber fraud via phishing call ಪ್ರಕರಣ in Ballari",
+    "language": "kn-en",
+    "expected_case_ids": [
+      "KA-2024-00177"
+    ],
+    "notes": "Code-switched eval query"
+  },
+  {
+    "question_id": "eval-cs-KA-2024-00310",
+    "query_text": "cyber fraud via fake job offer ಪ್ರಕರಣ in Bengaluru Urban",
+    "language": "kn-en",
+    "expected_case_ids": [
+      "KA-2024-00310"
+    ],
+    "notes": "Code-switched eval query"
+  },
+  {
+    "question_id": "eval-cs-KA-2025-00136",
+    "query_text": "residential break-in via rear window ಪ್ರಕರಣ in Hubballi-Dharwad",
+    "language": "kn-en",
+    "expected_case_ids": [
+      "KA-2025-00136"
+    ],
+    "notes": "Code-switched eval query"
+  },
+  {
+    "question_id": "eval-cs-KA-2024-00414",
+    "query_text": "chain snatching using two-wheeler ಪ್ರಕರಣ in Hubballi-Dharwad",
+    "language": "kn-en",
+    "expected_case_ids": [
+      "KA-2024-00414"
+    ],
+    "notes": "Code-switched eval query"
+  },
+  {
+    "question_id": "eval-cs-KA-2025-00023",
+    "query_text": "chain snatching on foot near market ಪ್ರಕರಣ in Davanagere",
+    "language": "kn-en",
+    "expected_case_ids": [
+      "KA-2025-00023"
+    ],
+    "notes": "Code-switched eval query"
+  },
+  {
+    "question_id": "eval-cs-KA-2025-00374",
+    "query_text": "residential break-in via forced door lock ಪ್ರಕರಣ in Ballari",
+    "language": "kn-en",
+    "expected_case_ids": [
+      "KA-2025-00374"
+    ],
+    "notes": "Code-switched eval query"
+  },
+  {
+    "question_id": "eval-cs-KA-2024-00236",
+    "query_text": "ATM tampering attempt ಪ್ರಕರಣ in Belagavi",
+    "language": "kn-en",
+    "expected_case_ids": [
+      "KA-2024-00236"
+    ],
+    "notes": "Code-switched eval query"
+  },
+  {
+    "question_id": "eval-cs-KA-2024-00275",
+    "query_text": "residential break-in via rear window ಪ್ರಕರಣ in Mangaluru",
+    "language": "kn-en",
+    "expected_case_ids": [
+      "KA-2024-00275"
+    ],
+    "notes": "Code-switched eval query"
+  },
+  {
+    "question_id": "eval-cs-KA-2026-00064",
+    "query_text": "chain snatching on foot near market ಪ್ರಕರಣ in Hubballi-Dharwad",
+    "language": "kn-en",
+    "expected_case_ids": [
+      "KA-2026-00064"
+    ],
+    "notes": "Code-switched eval query"
+  }
+]

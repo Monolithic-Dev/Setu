@@ -16,7 +16,7 @@ import os
 import sys
 import time
 
-REPO_ROOT = os.path.join(os.path.dirname(__file__), "..", "..")
+REPO_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "..", ".."))
 sys.path.insert(0, REPO_ROOT)
 from tests._helpers import load_function_module
 
@@ -35,9 +35,11 @@ class EvalUser:
     role_scope_level: str = "all"  # eval runs unscoped to measure retrieval quality, not RBAC
 
 
-def run_eval(question_set_path: str) -> dict:
-    with open(question_set_path, encoding="utf-8") as f:
-        questions = json.load(f)
+def run_eval(question_set_paths: list[str]) -> dict:
+    questions = []
+    for path in question_set_paths:
+        with open(path, encoding="utf-8") as f:
+            questions.extend(json.load(f))
 
     auth_context = {"user": EvalUser(), "role_name": "scrb_analyst"}
 
@@ -50,6 +52,8 @@ def run_eval(question_set_path: str) -> dict:
 
     for q in questions:
         lang = q.get("language", "en")
+        if lang not in lang_stats:
+            lang_stats[lang] = {"total": 0, "hits": 0}
         lang_stats[lang]["total"] += 1
         
         start = time.perf_counter()
@@ -103,11 +107,11 @@ def run_eval(question_set_path: str) -> dict:
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--question-set", default="question_set.json")
+    parser.add_argument("--question-sets", nargs='+', default=["eval_set_en.json", "eval_set_kn.json", "eval_set_codeswitch.json"])
     parser.add_argument("--out", default="eval_results.json")
     args = parser.parse_args()
 
-    results = run_eval(args.question_set)
+    results = run_eval(args.question_sets)
 
     with open(args.out, "w", encoding="utf-8") as f:
         json.dump(results, f, indent=2)

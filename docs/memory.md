@@ -7,8 +7,8 @@ KSP Datathon 2026 (Karnataka State Police × Hack2Skill × Zoho Catalyst). Proto
 
 ## Status
 - Phases 1–6 — complete (see each doc's own header)
-- Phase 7 (Judge Review) — complete → `JudgeReview.md`, plus targeted edits to 8 existing documents (see below)
-- Awaiting user approval before Phase 8 (Implementation) — the last checkpoint before code gets written
+- Phase 7 (Judge Review) — complete
+- Phase 8 (Implementation) — Shipped base prototype (see `Datathon_Implemented_Features.md`), currently completing final hardening. See `docs/new/06_IMPLEMENTATION_GAPS_TRACKER.md` as the canonical up-to-date source going forward instead of re-deriving status from Phase 1–7 docs alone.
 
 ## Key Facts (reference, don't re-derive)
 - Team: 4–5 people, dedicated AI/ML + frontend + backend roles

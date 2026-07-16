@@ -59,12 +59,12 @@ Key screens implemented:
 ---
 
 ### Slide 7 — Architecture Diagram *(Architecture Explanation)*
-Client (web + voice) talks to a Python orchestration layer which coordinates: LLM Serving for the conversational RAG core, Data Store for structured records, and local dev-mode fallbacks for TF-IDF Semantic Search. Every layer enforces strict RBAC before combining answers.
+Client (web + voice) talks to a Python orchestration layer which coordinates: Data Store for structured records, and local dev-mode fallbacks for TF-IDF Semantic Search. Every layer enforces strict RBAC before combining answers. *Interface designed so QuickML LLM Serving can replace the local synthesis step directly, once Gen-AI early access is confirmed — see Roadmap.*
 ```mermaid
 flowchart TB
     Client[Web + Voice Client] --> Func[Python Core Engine]
     Func --> HybridRAG[Hybrid RAG: TF-IDF + ZCQL]
-    Func --> Synthesis[LLM Synthesis & Grounding]
+    Func --> Synthesis[Local Synthesis & Grounding]
     Func --> Audit[Audit Store]
 ```
 
@@ -73,18 +73,22 @@ flowchart TB
 ### Slide 8 — Technologies Used *(Technical Summary + AI Justification)*
 **Stack:** React + TypeScript frontend, Vite, Python 3.10+ backend, TF-IDF + BM25, D3.js for network visualization.
 
-**Why this AI approach:** A conversational RAG system is the right tool here specifically because the core problem is retrieval-and-synthesis over fragmented records, not classification. We use a *Hybrid* RAG approach—combining strict structured filtering (District/Date) with fuzzy Semantic Search (Modus Operandi matches)—to guarantee zero missed leads. 
+**Why this AI approach:** A conversational RAG system is the right tool here specifically because the core problem is retrieval-and-synthesis over fragmented records, not classification. We use a *Hybrid* RAG approach—combining strict structured filtering (District/Date) with fuzzy Semantic Search (Modus Operandi matches)—to guarantee zero missed leads. *We prioritized a fully working, benchmarked pipeline over a dependency on early-access Gen-AI infrastructure that could block the whole demo if access was delayed — see RiskRegister R1.*
 
 ---
 
 ### Slide 9 — AI Evaluation Metrics
 We built a local automated Eval Harness to benchmark our RAG pipeline's accuracy and speed.
-**Results from our 42-question benchmark suite (against a synthetic corpus):**
-- **Overall Retrieval Hit Rate (Top-3):** 59.5% (25/42)
-  - **English Hit Rate:** 57.5% (23/40)
-  - **Kannada Hit Rate:** 100.0% (2/2) (Bilingual TF-IDF logic correctly routes non-English queries)
-- **Zero True Misses:** All 17 "missed" queries were successfully retrieved but narrowly missed the top-3 ranking cutoff, meaning zero critical evidence was lost.
-- **Latency (p95):** 35.7ms (blazing fast local hybrid retrieval)
+**Results from our 62-question benchmark suite (against a synthetic corpus):**
+- **Overall Retrieval Hit Rate (Top-3):** 67.7% (42/62)
+  - **English Hit Rate:** 69.2% (18/26)
+  - **Kannada Hit Rate:** 69.2% (18/26) (Bilingual TF-IDF logic correctly routes non-English queries)
+  - **Code-Switch Hit Rate:** 60.0% (6/10)
+- **Target Gap & Reason:** The 67.7% hit rate is currently below our PRD.md §4 target of ≥85%. This gap exists because TF-IDF struggles with paraphrased Kannada/code-switched queries that lack surface-level token overlap with the narrative text — a known limitation of lexical vs semantic retrieval.
+- **Path to Target:** QuickML's semantic Knowledge Base search, once live, should meaningfully close this gap (see Roadmap).
+- **Zero True Misses:** All 20 "missed" queries were successfully retrieved but narrowly missed the top-3 ranking cutoff, meaning zero critical evidence was lost.
+- **Hallucination Rate:** 0% (Dev-mode returns direct source excerpts pending QuickML integration).
+- **Latency (p95):** 231ms (blazing fast local hybrid retrieval)
 
 ---
 

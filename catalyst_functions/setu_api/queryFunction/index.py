@@ -39,6 +39,7 @@ from models import AuditEntry, QueryLog, CaseRecord, SensitivityLevel
 from structured_search import StructuredQuery, build_zcql, execute_zcql, execute_structured_query_local
 from semantic_search import query_knowledge_base, merge_and_rank, LocalTfidfIndex
 from local_answer_synthesis import synthesize_answer
+from sensitivity_gate import check_sensitivity
 import local_audit_store
 
 _REPO_ROOT = os.path.join(os.path.dirname(__file__), "..", "..")
@@ -103,13 +104,48 @@ def _case_record_from_dict(d: dict) -> CaseRecord:
     )
 
 
+import re
+
+def extract_structured_filters(query_text: str) -> dict:
+    """
+    Heuristic NL-to-Structured-Filter extraction for the Datathon demo.
+    Replaces the naive v1 logic with a regex/keyword based intent parser
+    to extract district, weapon type, and MO keywords.
+    """
+    filters = {}
+    query_lower = query_text.lower()
+    
+    # 1. District Extraction (Karnataka districts commonly in synthetic data)
+    districts = ["bengaluru", "mysuru", "hubballi", "dharwad", "mangaluru", "belagavi", "kalaburagi", "ballari", "vijayapura", "shivamogga", "tumakuru", "raichur", "bidar", "hasan", "chitradurga", "mandya", "udupi", "kodagu", "kolar"]
+    for d in districts:
+        if d in query_lower:
+            filters["district"] = d.title()
+            break
+            
+    # 2. Weapon Type Extraction
+    weapons = {"knife": "knife", "machete": "machete", "gun": "firearm", "firearm": "firearm", "pistol": "firearm", "stick": "blunt object", "rod": "blunt object"}
+    for w_key, w_val in weapons.items():
+        if w_key in query_lower:
+            filters["weapon_type"] = w_val
+            break
+            
+    # 3. MO / Keyword Extraction
+    stopwords = {"show", "me", "recent", "cases", "in", "using", "a", "the", "of", "and", "or", "what", "where", "how", "who", "with"}
+    words = re.findall(r'\b[a-z]{3,}\b', query_lower)
+    mo_words = [w for w in words if w not in stopwords and w not in districts and w not in weapons]
+    
+    filters["modus_operandi_keyword"] = " ".join(mo_words) if mo_words else query_text
+    return filters
+
+
 def retrieve(query_text: str, user, role_name) -> list[dict]:
     """Hybrid retrieval: structured + semantic, merged per docs/AIArchitecture.md §1."""
+    filters = extract_structured_filters(query_text)
+
     structured_query = StructuredQuery(
-        modus_operandi_keyword=query_text,  # naive v1: pass raw text as a keyword filter;
-        # TODO(Phase 8): real NL-to-filter extraction, likely via a cheap
-        # QuickML call to pull structured fields (district/date/weapon) out
-        # of the free-text query before building StructuredQuery properly.
+        district=filters.get("district"),
+        weapon_type=filters.get("weapon_type"),
+        modus_operandi_keyword=filters.get("modus_operandi_keyword"),
         scope_level=getattr(user, "role_scope_level", "station"),
         scope_station_id=user.station_id,
         scope_district_id=user.district_id,
@@ -141,6 +177,10 @@ def retrieve(query_text: str, user, role_name) -> list[dict]:
         if full_record is None:
             continue  # can't verify scope without the full record — fail closed, not open
         case_obj = _case_record_from_dict(full_record)
+        
+        # Check sensitivity gate (will raise ScopeDeniedError if denied)
+        check_sensitivity(case_obj, role_name)
+        
         if can_access_case(user, role_name, case_obj, case_district=full_record["location"]["district"]):
             accessible.append({**full_record, "match_type": record.get("match_type", "unknown")})
 
@@ -191,7 +231,15 @@ def handle_request(request_body: dict, auth_context: dict) -> dict:
         timestamp=datetime.utcnow(),
     )
 
-    retrieved = retrieve(query_text, user, role_name)
+    try:
+        retrieved = retrieve(query_text, user, role_name)
+    except ScopeDeniedError as e:
+        return {
+            "status": "error",
+            "error_code": "SCOPE_DENIED",
+            "message": str(e)
+        }
+
     generated = generate_answer(query_text, retrieved, language)
 
     source_texts = [r.get("narrative_en", "") or r.get("matched_text", "") for r in retrieved]
@@ -207,6 +255,7 @@ def handle_request(request_body: dict, auth_context: dict) -> dict:
         query_id=query_log.query_id,
         sources_used=generated["sources"],
         answer_summary=generated["answer"][:200],
+        verification_result="pass" if (verification and verification.is_grounded) else ("fail" if verification else "none")
     )
 
     # Real persistence in dev-mode (functions/shared/local_audit_store.py) —
@@ -220,6 +269,7 @@ def handle_request(request_body: dict, auth_context: dict) -> dict:
         "language": language,
         "sources_used": generated["sources"],
         "answer_summary": generated["answer"][:200],
+        "verification_result": audit_entry.verification_result,
         "timestamp": query_log.timestamp.isoformat(),
     })
 

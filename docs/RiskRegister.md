@@ -6,7 +6,7 @@
 
 | ID | Risk | Likelihood | Impact | Mitigation | Owner |
 |---|---|---|---|---|---|
-| R1 | Catalyst QuickML Gen-AI early access delayed | Medium | High — blocks the entire AI/ML workstream | Request Day 1; fall back to an external LLM API temporarily if not granted by Day 4 (`SprintPlan.md`) | AI/ML |
+| R1 | Catalyst QuickML Gen-AI early access delayed | Materialized | High | Materialized; fallback (TF-IDF/ZCQL) is the shipped path for this submission | AI/ML |
 | R2 | Kannada NLU/voice quality underwhelms | Low–Medium | Medium — undercuts the core differentiator | Bhashini/Sarvam verified via research to handle Kannada + code-switching; dedicated bilingual eval track (`TestingStrategy.md` §2) | AI/ML |
 | R3 | Synthetic dataset lacks credibility | Medium | Medium — weak demo, weak benchmark results | Deliberate generation strategy documented in README (`Database.md` §5); reviewed by the whole team before Week 2 | AI/ML |
 | R4 | Predictive/"profiling" features drift toward demographic proxies over time | Low (now technically blocked) | High — real harm + judging penalty | Schema-level exclusion (`Database.md` §3) + code-review checklist (`CodingStandards.md` §6) — a structural control, not just a reminder | Backend + AI/ML |
@@ -16,7 +16,7 @@
 | R8 | Prompt injection against the conversational endpoint | Low–Medium | Medium–High given sensitive data domain | Hardened system prompt, RBAC enforced before retrieval, dedicated security test pass (`Security.md` §3, `TestingStrategy.md` §3) | Backend + AI/ML |
 | R9 | Missed or broken submission link/format at deadline | Low if buffer is respected | High — disqualification | Internal 24–25 Jul deadline, explicit pre-submit checklist (`DeploymentStrategy.md` §5) | Whole team |
 | R10 | Higher competition on this track (chatbot is the "obvious" AI choice) | Unknown — no visibility into other teams | Medium | Differentiation leans on bilingual + explainability + Catalyst-native depth, not novelty of concept alone (`ProductStrategy.md` §2) | Whole team |
-| R11 | QuickML rate limits or early-access constraints tighter than expected | Unknown until access granted | Medium | Monitor usage from Day 1 of access (`MonitoringStrategy.md` §1); external LLM fallback path already defined (R1) | AI/ML |
+| R11 | QuickML rate limits or early-access constraints tighter than expected | N/A | Medium | N/A-for-this-submission (QuickML was not reached) | AI/ML |
 | R12 | Team member availability/illness across 20 days | Low–Medium | Medium | Ownership map (`FolderStructure.md` §2) is documented, not tribal knowledge — anyone can see what any area needs | Whole team |
 | R13 | Poor connectivity at rural stations causes silent failures | Medium | Medium–High for real adoptability credibility | Graceful degradation added (NFR-10, `UX.md`) — queued retry + visible state, not silent failure | Frontend |
 | R14 | Case-level sensitive data (e.g., minors) exposed via otherwise-valid role access | Low (now technically blocked) | High | `sensitivity_level` field + independent access gate added (`Database.md` §4a, FR-7.3) | Backend |

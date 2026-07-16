@@ -95,3 +95,4 @@ class AuditEntry:
     sources_used: list
     answer_summary: str
     flagged_helpful: bool | None = None  # FR-10.2, added Phase 7 review
+    verification_result: str = ""  # added for grounding verification

@@ -66,20 +66,55 @@ def build_graph(entity_id: str, edges: list[dict]) -> dict:
     """
     Shapes raw edge records into a { nodes, edges } structure the frontend's
     D3.js graph component can render directly (docs/TechStack.md).
+    Includes AI Pattern Detection (Jaccard Similarity Link Prediction) to
+    suggest hidden connections between suspects.
     """
     nodes = {entity_id: {"id": entity_id, "label": entity_id}}
     graph_edges = []
+    
+    # Track neighbors to calculate Jaccard similarity for link prediction
+    neighbors = {entity_id: set()}
 
     for edge in edges:
-        for pid in (edge["person_id_a"], edge["person_id_b"]):
+        pa, pb = edge["person_id_a"], edge["person_id_b"]
+        for pid in (pa, pb):
             if pid not in nodes:
                 nodes[pid] = {"id": pid, "label": pid}
+                neighbors[pid] = set()
+                
+        # Populate neighbor sets
+        neighbors[pa].add(pb)
+        neighbors[pb].add(pa)
+
         graph_edges.append({
-            "source": edge["person_id_a"],
-            "target": edge["person_id_b"],
+            "source": pa,
+            "target": pb,
             "relationship": edge["relationship_type"],
             "confidence": edge["confidence"],
         })
+
+    # AI Pattern Detection: Jaccard Link Prediction
+    node_ids = list(nodes.keys())
+    for i in range(len(node_ids)):
+        for j in range(i + 1, len(node_ids)):
+            n1, n2 = node_ids[i], node_ids[j]
+            if n2 not in neighbors[n1]:
+                shared = neighbors[n1].intersection(neighbors[n2])
+                intersection = len(shared)
+                union = len(neighbors[n1].union(neighbors[n2]))
+                if union > 0:
+                    score = intersection / union
+                    # If similarity is above 30%, suggest a link
+                    if score >= 0.3:
+                        graph_edges.append({
+                            "source": n1,
+                            "target": n2,
+                            "relationship": "AI Predicted Link",
+                            "confidence": round(score, 2),
+                            "suggested_link": True,
+                            "shared_associates": list(shared),
+                            "total_associates": union
+                        })
 
     return {"nodes": list(nodes.values()), "edges": graph_edges}
 

@@ -21,6 +21,9 @@ _LOCK = threading.Lock()  # dev-mode only; real Data Store handles this concurre
 def _store_path(repo_root: str) -> str:
     return os.path.join(repo_root, "data", "dev_audit_log.json")
 
+def _feedback_store_path(repo_root: str) -> str:
+    return os.path.join(repo_root, "data", "dev_feedback_log.json")
+
 
 def append_entry(repo_root: str, entry: dict) -> None:
     """
@@ -52,6 +55,25 @@ def read_entries(repo_root: str, scope_filter: dict | None = None) -> list[dict]
     this is ever called — that's the real access boundary, not this filter.
     """
     path = _store_path(repo_root)
+    if not os.path.exists(path):
+        return []
+    with open(path, encoding="utf-8") as f:
+        return json.load(f)
+
+def append_feedback(repo_root: str, entry: dict) -> None:
+    path = _feedback_store_path(repo_root)
+    with _LOCK:
+        entries = []
+        if os.path.exists(path):
+            with open(path, encoding="utf-8") as f:
+                entries = json.load(f)
+        entries.append(entry)
+        os.makedirs(os.path.dirname(path), exist_ok=True)
+        with open(path, "w", encoding="utf-8") as f:
+            json.dump(entries, f, indent=2)
+
+def read_feedback(repo_root: str) -> list[dict]:
+    path = _feedback_store_path(repo_root)
     if not os.path.exists(path):
         return []
     with open(path, encoding="utf-8") as f:

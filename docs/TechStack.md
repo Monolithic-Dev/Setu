@@ -2,6 +2,8 @@
 
 **Phase 5 of 8 · Challenge 1: Intelligent Conversational AI for the KSP Crime Database**
 
+*Note: this document describes the target architecture. See `Datathon_Implemented_Features.md` and `new/06_IMPLEMENTATION_GAPS_TRACKER.md` for what's implemented in the current submission.*
+
 ---
 
 ## 1. Stack Summary
