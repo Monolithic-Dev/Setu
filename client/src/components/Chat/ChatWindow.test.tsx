@@ -13,7 +13,7 @@ import { ChatWindow } from "./ChatWindow";
 describe("App", () => {
   it("renders the product title", () => {
     render(<App />);
-    expect(screen.getByText(/Setu/)).toBeInTheDocument();
+    expect(screen.getAllByText(/Setu/)[0]).toBeInTheDocument();
   });
 
   it("renders both language toggle buttons", () => {
@@ -40,8 +40,8 @@ describe("ChatWindow", () => {
     expect(screen.getByPlaceholderText(/ಪ್ರಶ್ನೆ ಕೇಳಿ/)).toBeInTheDocument();
   });
 
-  it("starts with an empty chat history", () => {
+  it("starts with a welcome message", () => {
     const { container } = render(<ChatWindow language="en" />);
-    expect(container.querySelectorAll(".chat-turn").length).toBe(0);
+    expect(container.querySelectorAll(".chat-turn").length).toBe(1);
   });
 });
