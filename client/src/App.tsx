@@ -3,6 +3,7 @@ import { ChatWindow } from "./components/Chat/ChatWindow";
 import { Login } from "./components/Login/Login";
 import { NetworkGraph } from "./components/NetworkGraph/NetworkGraph";
 import { AuditLogs } from "./components/Admin/AuditLogs";
+import { Dashboard } from "./components/Analytics/Dashboard";
 import { t, type Language } from "./i18n/strings";
 import { setDevAuth } from "./api/queryClient";
 import "./App.css";
@@ -11,7 +12,7 @@ export default function App() {
   const [language, setLanguage] = useState<Language>("en");
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [userRole, setUserRole] = useState("");
-  const [currentView, setCurrentView] = useState<"chat" | "audit">("chat");
+  const [currentView, setCurrentView] = useState<"chat" | "audit" | "dashboard">("chat");
 
   const handleLogin = (role: string, stationId: string, districtId: string) => {
     setDevAuth(role, stationId, districtId);
@@ -26,20 +27,28 @@ export default function App() {
       <header>
         <h1>{t(language, "appTitle")}</h1>
         <div className="header-controls">
-          {isAuthenticated && isAdmin && (
+          {isAuthenticated && (
             <div className="admin-toggle">
               <button 
                 className={currentView === "chat" ? "active" : ""} 
                 onClick={() => setCurrentView("chat")}
               >
-                Chat
+                Intelligence Chat
               </button>
               <button 
-                className={currentView === "audit" ? "active" : ""} 
-                onClick={() => setCurrentView("audit")}
+                className={currentView === "dashboard" ? "active" : ""} 
+                onClick={() => setCurrentView("dashboard")}
               >
-                Audit Logs
+                Analytics Dashboard
               </button>
+              {isAdmin && (
+                <button 
+                  className={currentView === "audit" ? "active" : ""} 
+                  onClick={() => setCurrentView("audit")}
+                >
+                  Audit Logs
+                </button>
+              )}
             </div>
           )}
           <div className="language-toggle" role="group" aria-label="Language">
@@ -64,6 +73,8 @@ export default function App() {
           <Login language={language} onLogin={handleLogin} />
         ) : currentView === "audit" && isAdmin ? (
           <AuditLogs language={language} />
+        ) : currentView === "dashboard" ? (
+          <Dashboard language={language} />
         ) : (
           <div className="app-split-layout">
             <div className="app-chat-pane">

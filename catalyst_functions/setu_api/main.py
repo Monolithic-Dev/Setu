@@ -113,6 +113,32 @@ async def api_voice_synthesize(request: Request):
         print(f"Error: {e}")
         raise HTTPException(status_code=400, detail={"status": "error", "error_code": "BAD_REQUEST", "message": str(e)})
 
+@app.get("/api/dashboard/stats")
+async def api_dashboard_stats(request: Request):
+    # Mock data for the analytics dashboard
+    return {
+        "status": "success",
+        "data": {
+            "totalCases": 12450,
+            "activeHotspots": 12,
+            "resolvedCases": 8300,
+            "monthlyTrend": [
+                {"month": "Jan", "crimes": 400},
+                {"month": "Feb", "crimes": 380},
+                {"month": "Mar", "crimes": 420},
+                {"month": "Apr", "crimes": 390},
+                {"month": "May", "crimes": 450},
+                {"month": "Jun", "crimes": 410}
+            ],
+            "crimeTypes": [
+                {"name": "Theft", "value": 45},
+                {"name": "Assault", "value": 25},
+                {"name": "Fraud", "value": 20},
+                {"name": "Other", "value": 10}
+            ]
+        }
+    }
+
 if __name__ == "__main__":
     import uvicorn
     print("Starting Catalyst local dev mock server on port 3000 using FastAPI...")
