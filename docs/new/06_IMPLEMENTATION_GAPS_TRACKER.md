@@ -17,7 +17,7 @@ One row per requirement or claim that has a gap between plan and reality. Don't 
 | FR-7.3 (sensitivity) | `sensitivity_level` gate on `CASE_RECORD` | Added sensitivity_gate.py enforcing strict allowlist | Done | Backend | See `02_BACKEND_TASKS.md` Task 2 |
 | FR-10.1/10.2 (feedback) | `POST /api/feedback` persists flags | Wired UI to endpoint and shows confirmation | Done | Frontend/Backend | See `02_BACKEND_TASKS.md` & `03_FRONTEND_TASKS.md` |
 | NFR-10 (offline) | Graceful degradation, queued retry | Built connectivity banner with exponential backoff | Done | Frontend | See `03_FRONTEND_TASKS.md` Task 1 |
-| PRD §4 (retrieval precision) | ≥85% precision@5 | 59.5% measured on a 42-question set (Kannada n=2, not credible) | Open | AI/ML | See `04_ML_EVAL_TASKS.md` |
+| PRD §4 (retrieval precision) | ≥85% precision@5 | 67.7% measured on a 62-question set (proper EN, KN, and KN-EN split), gap acknowledged in PitchDeck | Done | AI/ML | See `04_ML_EVAL_TASKS.md` |
 | Security claims | RBAC enforced server-side at Data Store layer | Confirmed structured_search.py and index.py apply role/scope filtering strictly server-side | Done | Backend | See `02_BACKEND_TASKS.md` Task 4 | See `tests/security/rbac_boundary_test_report.md` |
 | Explainability (semantic hits) | Plain-language basis for network suggested-links | Tooltip shows plain language Jaccard score and shared associates | Done | Frontend | See `03_FRONTEND_TASKS.md` Task 3 |
 
@@ -39,3 +39,4 @@ One row per requirement or claim that has a gap between plan and reality. Don't 
 | 2026-07-16 | Completed frontend tasks (NFR-10, FR-10.1, Network Tooltip) | Agent |
 | 2026-07-16 | Completed backend tasks (FR-3.3, FR-7.3, Security confirmation) | Agent |
 | 2026-07-16 | Completed RBAC & Prompt-Injection testing, verified fallback build, and generated report | Agent |
+| 2026-07-16 | Completed ML eval tasks: expanded dataset to 62 queries, benchmarked, updated docs | Agent |

@@ -52,6 +52,8 @@ def run_eval(question_set_paths: list[str]) -> dict:
 
     for q in questions:
         lang = q.get("language", "en")
+        if lang not in lang_stats:
+            lang_stats[lang] = {"total": 0, "hits": 0}
         lang_stats[lang]["total"] += 1
         
         start = time.perf_counter()

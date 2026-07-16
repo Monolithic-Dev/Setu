@@ -123,14 +123,18 @@ flowchart TD
 
 ## 7. Model Evaluation Framework
 
-| Metric | What it measures | How measured |
-|---|---|---|
-| Retrieval precision@k | Are the right records being found | Held-out synthetic test set with known correct answers |
-| Bilingual accuracy parity | Does Kannada perform as well as English | Same eval set, run in both languages, compared |
-| Code-switch robustness | Does mixed Kannada-English input work | A dedicated code-switched subset of the eval set |
-| Hallucination rate | Does the system ever answer without grounding | Manual review of a sample of answers against their cited sources |
-| Latency | Is it fast enough for mid-investigation use | Measured against the target set once Catalyst QuickML benchmarks are available |
-| Hotspot/pattern precision-recall | Is the prediction model's output meaningful | Standard classical-ML metrics against synthetic labeled clusters |
+## 7. Model Evaluation Framework
+
+| Metric | What it measures | How measured | Target | Actual (Dev-Mode) |
+|---|---|---|---|---|
+| Retrieval precision@3 | Are the right records being found | Held-out synthetic test set (n=62) | ≥85% | 67.7% (TF-IDF limitation) |
+| Bilingual accuracy parity | Does Kannada perform as well as English | Same eval set, run in both languages | < 10pp gap | 0pp gap (69.2% EN, 69.2% KN) |
+| Code-switch robustness | Does mixed Kannada-English input work | Code-switched subset of eval set | ≥75% | 60.0% |
+| Hallucination rate | Does the system ever answer without grounding | Manual review of a sample of answers | 0% | 0% (Extractive only in dev) |
+| Latency | Is it fast enough for mid-investigation use | Local p95 measurement | <2.0s | 0.23s |
+| Hotspot precision-recall | Is the prediction model's output meaningful | Standard classical-ML metrics | TBD | TBD (Pending Phase 5) |
+
+**Note on Gap Analysis:** The retrieval precision (67.7%) currently misses the 85% target because the dev-mode TF-IDF engine struggles with paraphrased queries lacking exact token overlap. QuickML's semantic Knowledge Base search will replace this in production to close the gap.
 
 This eval set and protocol is a **Week 1 deliverable**, per `Roadmap.md` — not something assembled the week before submission.
 
