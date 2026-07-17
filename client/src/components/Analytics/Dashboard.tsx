@@ -1,7 +1,5 @@
 import { useEffect, useState } from "react";
 import {
-  BarChart,
-  Bar,
   XAxis,
   YAxis,
   CartesianGrid,
@@ -13,15 +11,15 @@ import {
   LineChart,
   Line
 } from "recharts";
-import { Activity, Map, AlertTriangle, CheckCircle } from "lucide-react";
+import { Activity, AlertTriangle, CheckCircle } from "lucide-react";
 import "./Dashboard.css";
-import { t, Language } from "../../i18n/strings";
+import { Language } from "../../i18n/strings";
 
 interface DashboardProps {
   language: Language;
 }
 
-export function Dashboard({ language }: DashboardProps) {
+export function Dashboard({ }: DashboardProps) {
   const [stats, setStats] = useState<any>(null);
 
   useEffect(() => {
@@ -99,7 +97,7 @@ export function Dashboard({ language }: DashboardProps) {
                   paddingAngle={5}
                   dataKey="value"
                 >
-                  {stats.crimeTypes.map((entry: any, index: number) => (
+                  {stats.crimeTypes.map((_: any, index: number) => (
                     <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
                   ))}
                 </Pie>
