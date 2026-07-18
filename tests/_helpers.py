@@ -26,14 +26,14 @@ def load_function_module(function_dir_name: str, repo_root: str):
     imports (of functions/shared/*) still apply globally, but the module
     itself is cached under a collision-proof name.
     """
-    shared_path = os.path.join(repo_root, "catalyst_functions", "setu_api", "shared")
+    shared_path = os.path.join(repo_root, "functions", "setu_api", "shared")
     shared_retrieval_path = os.path.join(shared_path, "retrieval")
     if shared_path not in sys.path:
         sys.path.insert(0, shared_path)
     if shared_retrieval_path not in sys.path:
         sys.path.insert(0, shared_retrieval_path)
 
-    module_path = os.path.join(repo_root, "catalyst_functions", "setu_api", function_dir_name, "index.py")
+    module_path = os.path.join(repo_root, "functions", "setu_api", function_dir_name, "index.py")
     unique_name = f"_fn_{function_dir_name}"
 
     if unique_name in sys.modules:

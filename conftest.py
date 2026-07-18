@@ -37,7 +37,7 @@ def ensure_synthetic_data(n_cases: int = 300, seed: int = 42) -> str:
     if os.path.exists(DATA_PATH):
         return DATA_PATH
 
-    sys.path.insert(0, os.path.join(REPO_ROOT, "catalyst_functions", "setu_api", "ml", "data_generation"))
+    sys.path.insert(0, os.path.join(REPO_ROOT, "functions", "setu_api", "ml", "data_generation"))
     import generate_dataset  # the real generator, not a duplicate implementation
 
     random.seed(seed)
@@ -48,7 +48,7 @@ def ensure_synthetic_data(n_cases: int = 300, seed: int = 42) -> str:
         json.dump(cases, f, ensure_ascii=False, indent=2)
 
     # Also write to where index.py looks for it
-    cf_data = os.path.join(REPO_ROOT, "catalyst_functions", "data")
+    cf_data = os.path.join(REPO_ROOT, "functions", "data")
     os.makedirs(cf_data, exist_ok=True)
     cf_file = os.path.join(cf_data, "synthetic_cases.json")
     with open(cf_file, "w", encoding="utf-8") as f:
@@ -69,7 +69,7 @@ def ensure_network_data() -> str:
     with open(data_path, encoding="utf-8") as f:
         cases = json.load(f)
 
-    sys.path.insert(0, os.path.join(REPO_ROOT, "catalyst_functions", "setu_api", "ml", "data_generation"))
+    sys.path.insert(0, os.path.join(REPO_ROOT, "functions", "setu_api", "ml", "data_generation"))
     import generate_dataset
 
     persons, edges, case_person_links = generate_dataset.generate_network(cases)
@@ -81,7 +81,7 @@ def ensure_network_data() -> str:
 
 def ensure_question_set(n_questions: int = 40, seed: int = 7) -> str:
     """Generates the eval question set if it doesn't already exist. Idempotent."""
-    question_set_path = os.path.join(REPO_ROOT, "catalyst_functions", "setu_api", "ml", "eval", "question_set.json")
+    question_set_path = os.path.join(REPO_ROOT, "functions", "setu_api", "ml", "eval", "question_set.json")
     if os.path.exists(question_set_path):
         return question_set_path
 
@@ -89,7 +89,7 @@ def ensure_question_set(n_questions: int = 40, seed: int = 7) -> str:
     with open(data_path, encoding="utf-8") as f:
         cases = json.load(f)
 
-    sys.path.insert(0, os.path.join(REPO_ROOT, "catalyst_functions", "setu_api", "ml", "eval"))
+    sys.path.insert(0, os.path.join(REPO_ROOT, "functions", "setu_api", "ml", "eval"))
     import generate_question_set as gqs
 
     questions = gqs.build_question_set(cases, n_questions, seed)

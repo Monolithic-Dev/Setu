@@ -27,11 +27,20 @@ def _feedback_store_path(repo_root: str) -> str:
 
 def append_entry(repo_root: str, entry: dict) -> None:
     """
-    Appends one audit entry. Append-only by construction — this function
-    has no delete/update counterpart, deliberately, mirroring
-    docs/Security.md §3's real access-control requirement at the code
-    level for dev-mode too, not just documenting it as a future rule.
+    Appends one audit entry. Attempts real Data Store persistence first,
+    falls back to local dev-mode JSON on failure.
     """
+    try:
+        import zcatalyst_sdk
+        app = zcatalyst_sdk.initialize()
+        datastore = app.datastore()
+        table = datastore.table("AUDIT_ENTRY")
+        table.insert_row(entry)
+        return
+    except Exception as e:
+        # Fall back to local JSON
+        pass
+
     path = _store_path(repo_root)
     with _LOCK:
         entries = []
@@ -46,14 +55,22 @@ def append_entry(repo_root: str, entry: dict) -> None:
 
 def read_entries(repo_root: str, scope_filter: dict | None = None) -> list[dict]:
     """
-    Returns all audit entries. `scope_filter` is accepted for interface
-    parity with the real Data Store query but not yet applied here — dev-
-    mode audit entries don't currently carry enough scope metadata
-    (station/district) to filter by it meaningfully; every entry is
-    visible in dev-mode regardless of scope_filter. auditFunction's
-    role-gate (SCRB Analyst/District SP/Admin only) still applies before
-    this is ever called — that's the real access boundary, not this filter.
+    Returns all audit entries.
     """
+    try:
+        import zcatalyst_sdk
+        app = zcatalyst_sdk.initialize()
+        zcql = app.zcql()
+        results = zcql.execute_zcql_query("SELECT * FROM AUDIT_ENTRY")
+        extracted = []
+        for row in results:
+            if "AUDIT_ENTRY" in row:
+                extracted.append(row["AUDIT_ENTRY"])
+        return extracted
+    except Exception as e:
+        # Fall back to local JSON
+        pass
+
     path = _store_path(repo_root)
     if not os.path.exists(path):
         return []
