@@ -13,7 +13,7 @@
 | Context-aware conversations | ⚠️ Verify | Not explicitly confirmed in handoff | `07_CONTEXT_AWARE_CONVERSATIONS.md` |
 | PDF export of conversation history | ✅ Yes | `exportFunction`, Kannada font fix | — |
 | Criminal network visualization | ✅ Yes | `NetworkGraph.tsx`, Jaccard link prediction | Explainability tooltip already added per prior task |
-| Crime trend & hotspot detection | ⚠️ Verify live | `hotspot_model.py`, `Dashboard.tsx` | `08_TREND_HOTSPOT_DASHBOARD_REAL_DATA.md` |
+| Crime trend & hotspot detection | ✅ Yes, live | `hotspot_model.py`, `Dashboard.tsx` | — |
 | Predictive analytics & early warnings | ✅ Yes | `alertsFunction` | Confirm framed as aggregate only, never individual |
 | Explainable AI with audit trails | ✅ Strong | `grounding_verifier.py`, `local_audit_store.py` | Consider hash-chaining for tamper-evidence (stretch) |
 | Role-based secure access | ✅ Yes, tested | `auth_middleware.py`, `sensitivity_gate.py`, `rbac_boundary_test_report.md` | — |

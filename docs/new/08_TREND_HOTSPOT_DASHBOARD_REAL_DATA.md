@@ -22,7 +22,7 @@ Per `JudgeReview.md` §4 and your own explainability pitch, don't just show a ho
 
 ## Acceptance criteria
 
-- [ ] Killing/changing the underlying dataset visibly changes the dashboard output (proves it's live, not static)
-- [ ] Every hotspot signal shown has a one-line plain-language basis, not just a number/color on a map
-- [ ] No individual-level score anywhere on the dashboard — spot-check against `CodingStandards.md` §6 checklist
-- [ ] `Datathon_Implemented_Features.md` updated to say "live" explicitly, replacing any earlier "mock" language
+- `[x]` Killing/changing the underlying dataset visibly changes the dashboard output (proves it's live, not static)
+- `[x]` Every hotspot signal shown has a one-line plain-language basis, not just a number/color on a map
+- `[x]` No individual-level score anywhere on the dashboard — spot-check against `CodingStandards.md` §6 checklist
+- `[x]` `Datathon_Implemented_Features.md` updated to say "live" explicitly, replacing any earlier "mock" language

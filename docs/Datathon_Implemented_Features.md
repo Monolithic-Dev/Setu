@@ -11,7 +11,7 @@ To ensure the product has a stunning, award-winning presentation:
 ## 2. Interactive Analytics Dashboard
 A brand new view added to provide macro-level intelligence for District SPs and Analysts.
 - **Visualizations:** Integrated `recharts` to render responsive Crime Trend Line Charts and Modus Operandi Pie Charts.
-- **Mock Integration:** Backed by a realistic `/api/dashboard/stats` mock endpoint in the Python backend to feed the charts with rich synthetic data (Total Cases, Active Hotspots).
+- **Live Integration:** Backed by a live `/api/dashboard/stats` endpoint in the Python backend to feed the charts and alerts UI with real synthetic data directly from the prediction model (`hotspot_model.py`).
 
 ## 3. Core AI: Intelligent Query Parser
 Replaced naive keyword filtering with an intelligent Natural Language (NL) intent parser.

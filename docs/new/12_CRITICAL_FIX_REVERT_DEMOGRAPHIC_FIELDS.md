@@ -30,8 +30,8 @@ A recent change added "Age Bracket" and "Occupation" fields to the Analytics Das
 
 ## Acceptance criteria
 
-- [ ] `age_bracket` / `occupation` (or equivalents) removed from schema, dashboard, data generator, and prediction model — grep the whole repo for these field names to confirm nothing was missed
-- [ ] Dashboard's socio-demographic panel replaced with aggregate-only content
-- [ ] `CodingStandards.md` §6 checklist re-run and passing
-- [ ] `Datathon_Implemented_Features.md` and the compliance doc updated to reflect the corrected, honest scope
-- [ ] `.agents/AGENTS.md` (or equivalent) updated with an explicit standing rule: literal feature-checklist completion never overrides a documented responsible-AI exclusion
+- `[x]` `age_bracket` / `occupation` (or equivalents) removed from schema, dashboard, data generator, and prediction model — grep the whole repo for these field names to confirm nothing was missed
+- `[x]` Dashboard's socio-demographic panel replaced with aggregate-only content
+- `[x]` `CodingStandards.md` §6 checklist re-run and passing
+- `[x]` `Datathon_Implemented_Features.md` and the compliance doc updated to reflect the corrected, honest scope
+- `[x]` `.agents/AGENTS.md` (or equivalent) updated with an explicit standing rule: literal feature-checklist completion never overrides a documented responsible-AI exclusion
