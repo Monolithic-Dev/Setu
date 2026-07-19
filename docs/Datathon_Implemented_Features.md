@@ -11,7 +11,7 @@ To ensure the product has a stunning, award-winning presentation:
 ## 2. Interactive Analytics Dashboard
 A brand new view added to provide macro-level intelligence for District SPs and Analysts.
 - **Visualizations:** Integrated `recharts` to render responsive Crime Trend Line Charts and Modus Operandi Pie Charts.
-- **Mock Integration:** Backed by a realistic `/api/dashboard/stats` mock endpoint in the Python backend to feed the charts with rich synthetic data (Total Cases, Active Hotspots).
+- **Live Integration:** Backed by a live `/api/dashboard/stats` endpoint in the Python backend to feed the charts and alerts UI with real synthetic data directly from the prediction model (`hotspot_model.py`).
 
 ## 3. Core AI: Intelligent Query Parser
 Replaced naive keyword filtering with an intelligent Natural Language (NL) intent parser.
@@ -23,12 +23,17 @@ Added algorithmic intelligence to the Network Graph to detect hidden criminal ne
 - **Implementation:** Integrated a **Jaccard Similarity** algorithm in `networkFunction`. 
 - **Impact:** If two suspects share a high percentage of mutual associates (score > 30%) but lack a formal connection, the AI injects a "suggested_link" edge with a confidence score. This directly fulfills Challenge 2's requirement for "Predictive Risk Scoring & Pattern Detection".
 
-## 5. Core AI: Advanced Answer Synthesis
+## 5. Core AI: Context-Aware Conversations (FR-1.2)
+Enabled true multi-turn conversations where the AI remembers previous questions.
+- **Implementation:** Built a lightweight rule-based coreference resolver in `conversation_context.py` that parses pronouns (e.g., "he", "that case") and carries forward contextual filters (district, MO) from previous turns via a JSON session store.
+- **Impact:** Investigators can ask follow-up questions natively (e.g., "Who are his known associates?") without explicitly re-stating the case details, achieving seamless investigative flows.
+
+## 6. Core AI: Advanced Answer Synthesis
 Enhanced the local fallback AI to generate concise, highly relevant answers without relying on an external LLM API.
 - **Implementation:** Developed a TF-IDF sentence-level extraction algorithm in `local_answer_synthesis.py`.
 - **Impact:** The system splits case narratives into sentences, scores each sentence against the user's query keywords, and extracts only the top-ranked insights. This makes the local AI look incredibly smart and concise.
 
-## 6. Kannada PDF Export Fix
+## 7. Kannada PDF Export Fix
 Resolved a critical localization bug in the export functionality.
 - **Implementation:** Downloaded and bundled the `NotoSansKannada-Regular.ttf` Google Font, modifying the `reportlab` logic in `exportFunction` to correctly register and use it when Kannada characters are detected.
 - **Impact:** Ensures the Audit & Export features work flawlessly across both languages, proving robust localization.

@@ -29,6 +29,7 @@ import sys
 import os
 import uuid
 from datetime import datetime
+from typing import Tuple
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "shared"))
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "shared", "retrieval"))
@@ -41,6 +42,7 @@ from semantic_search import query_knowledge_base, merge_and_rank, LocalTfidfInde
 from local_answer_synthesis import synthesize_answer
 from sensitivity_gate import check_sensitivity
 import local_audit_store
+from conversation_context import resolve_context
 
 _REPO_ROOT = os.path.join(os.path.dirname(__file__), "..", "..", "..")
 
@@ -80,17 +82,38 @@ def _load_dev_cases() -> list[dict]:
     return _dev_cases_cache
 
 
-def _get_dev_index(language: str) -> LocalTfidfIndex:
-    """Lazily builds and caches the TF-IDF index per language — expensive to rebuild per request."""
+def _get_dev_index(language: str, partition_district: str = None) -> LocalTfidfIndex:
+    """Lazily builds and caches the TF-IDF index per language and district — prevents linear scaling bottleneck."""
     global _dev_index_cache_en, _dev_index_cache_kn
-    if language == "kn":
-        if _dev_index_cache_kn is None:
-            _dev_index_cache_kn = LocalTfidfIndex(_load_dev_cases(), language_field="narrative_kn")
-        return _dev_index_cache_kn
-    else:
-        if _dev_index_cache_en is None:
-            _dev_index_cache_en = LocalTfidfIndex(_load_dev_cases(), language_field="narrative_en")
-        return _dev_index_cache_en
+    
+    if _dev_index_cache_en is None:
+        _dev_index_cache_en = {}
+    if _dev_index_cache_kn is None:
+        _dev_index_cache_kn = {}
+        
+    cache_dict = _dev_index_cache_kn if language == "kn" else _dev_index_cache_en
+    lang_field = "narrative_kn" if language == "kn" else "narrative_en"
+    
+    cache_key = partition_district or "ALL"
+    
+    if cache_key not in cache_dict:
+        cases = _load_dev_cases()
+        if partition_district:
+            cases = [c for c in cases if c.get("location", {}).get("district") == partition_district]
+            
+        if not cases:
+            class DummyIndex:
+                def search(self, *args, **kwargs): return []
+            cache_dict[cache_key] = DummyIndex()
+        else:
+            try:
+                cache_dict[cache_key] = LocalTfidfIndex(cases, language_field=lang_field)
+            except ValueError: # e.g. empty vocabulary
+                class DummyIndex:
+                    def search(self, *args, **kwargs): return []
+                cache_dict[cache_key] = DummyIndex()
+        
+    return cache_dict[cache_key]
 
 
 def _case_record_from_dict(d: dict) -> CaseRecord:
@@ -106,13 +129,13 @@ def _case_record_from_dict(d: dict) -> CaseRecord:
 
 import re
 
-def extract_structured_filters(query_text: str) -> dict:
+def extract_structured_filters(query_text: str, inherited_filters: dict = None) -> dict:
     """
     Heuristic NL-to-Structured-Filter extraction for the Datathon demo.
     Replaces the naive v1 logic with a regex/keyword based intent parser
     to extract district, weapon type, and MO keywords.
     """
-    filters = {}
+    filters = dict(inherited_filters or {})
     query_lower = query_text.lower()
     
     # 1. District Extraction (Karnataka districts commonly in synthetic data)
@@ -130,17 +153,21 @@ def extract_structured_filters(query_text: str) -> dict:
             break
             
     # 3. MO / Keyword Extraction
-    stopwords = {"show", "me", "recent", "cases", "in", "using", "a", "the", "of", "and", "or", "what", "where", "how", "who", "with"}
+    stopwords = {"show", "me", "recent", "cases", "in", "using", "a", "the", "of", "and", "or", "what", "where", "how", "who", "with", "context"}
     words = re.findall(r'\b[a-z]{3,}\b', query_lower)
     mo_words = [w for w in words if w not in stopwords and w not in districts and w not in weapons]
     
-    filters["modus_operandi_keyword"] = " ".join(mo_words) if mo_words else query_text
+    extracted_mo = " ".join(mo_words) if mo_words else query_text
+    if extracted_mo and extracted_mo != query_text: # only overwrite if meaningful
+        filters["modus_operandi_keyword"] = extracted_mo
+    elif "modus_operandi_keyword" not in filters:
+        filters["modus_operandi_keyword"] = query_text
+        
     return filters
 
-
-def retrieve(query_text: str, user, role_name) -> list[dict]:
+def retrieve(query_text: str, user, role_name, inherited_filters: dict = None) -> Tuple[list[dict], dict]:
     """Hybrid retrieval: structured + semantic, merged per docs/AIArchitecture.md §1."""
-    filters = extract_structured_filters(query_text)
+    filters = extract_structured_filters(query_text, inherited_filters)
 
     structured_query = StructuredQuery(
         district=filters.get("district"),
@@ -162,7 +189,15 @@ def retrieve(query_text: str, user, role_name) -> list[dict]:
     try:
         semantic_results = query_knowledge_base(query_text, detect_language(query_text))
     except NotImplementedError:
-        semantic_results = _get_dev_index(detect_language(query_text)).search(query_text)
+        # Determine partition based on scope or explicit filter
+        partition_district = None
+        user_scope = getattr(user, "role_scope_level", "all")
+        if user_scope in ("station", "district"):
+            partition_district = getattr(user, "district_id", None) or None
+        elif filters.get("district"):
+            partition_district = filters.get("district")
+            
+        semantic_results = _get_dev_index(detect_language(query_text), partition_district).search(query_text)
 
     merged = merge_and_rank(structured_results, semantic_results)
 
@@ -184,7 +219,7 @@ def retrieve(query_text: str, user, role_name) -> list[dict]:
         if can_access_case(user, role_name, case_obj, case_district=full_record["location"]["district"]):
             accessible.append({**full_record, "match_type": record.get("match_type", "unknown")})
 
-    return accessible
+    return accessible, filters
 
 
 def generate_answer(query_text: str, retrieved_records: list[dict], language: str) -> dict:
@@ -216,6 +251,7 @@ def handle_request(request_body: dict, auth_context: dict) -> dict:
     function starts from "who is this user" and doesn't re-derive it.
     """
     query_text = request_body.get("text", "").strip()
+    session_id = request_body.get("session_id", str(uuid.uuid4()))
     if not query_text:
         raise QueryFunctionError("BAD_REQUEST", "Query text is required.")
 
@@ -232,7 +268,10 @@ def handle_request(request_body: dict, auth_context: dict) -> dict:
     )
 
     try:
-        retrieved = retrieve(query_text, user, role_name)
+        last_turns = local_audit_store.get_context(_REPO_ROOT, session_id)
+        modified_query, inherited_filters = resolve_context(session_id, query_text, last_turns)
+        
+        retrieved, final_filters = retrieve(modified_query, user, role_name, inherited_filters)
     except ScopeDeniedError as e:
         return {
             "status": "error",
@@ -240,7 +279,7 @@ def handle_request(request_body: dict, auth_context: dict) -> dict:
             "message": str(e)
         }
 
-    generated = generate_answer(query_text, retrieved, language)
+    generated = generate_answer(modified_query, retrieved, language)
 
     source_texts = [r.get("narrative_en", "") or r.get("matched_text", "") for r in retrieved]
     verification = verify_answer(generated["answer"], source_texts) if source_texts else None
@@ -270,6 +309,13 @@ def handle_request(request_body: dict, auth_context: dict) -> dict:
         "sources_used": generated["sources"],
         "answer_summary": generated["answer"][:200],
         "verification_result": audit_entry.verification_result,
+        "timestamp": query_log.timestamp.isoformat(),
+    })
+
+    # Store context for multi-turn conversations
+    local_audit_store.append_context(_REPO_ROOT, session_id, {
+        "query": query_text,
+        "filters": final_filters,
         "timestamp": query_log.timestamp.isoformat(),
     })
 

@@ -24,6 +24,9 @@ def _store_path(repo_root: str) -> str:
 def _feedback_store_path(repo_root: str) -> str:
     return os.path.join(repo_root, "data", "dev_feedback_log.json")
 
+def _context_store_path(repo_root: str) -> str:
+    return os.path.join(repo_root, "data", "dev_session_context.json")
+
 
 def append_entry(repo_root: str, entry: dict) -> None:
     """
@@ -95,3 +98,31 @@ def read_feedback(repo_root: str) -> list[dict]:
         return []
     with open(path, encoding="utf-8") as f:
         return json.load(f)
+
+def append_context(repo_root: str, session_id: str, turn_data: dict, limit: int = 3) -> None:
+    """Appends a conversation turn to the session context, keeping only the last `limit` turns."""
+    path = _context_store_path(repo_root)
+    with _LOCK:
+        contexts = {}
+        if os.path.exists(path):
+            with open(path, encoding="utf-8") as f:
+                contexts = json.load(f)
+        
+        if session_id not in contexts:
+            contexts[session_id] = []
+            
+        contexts[session_id].append(turn_data)
+        contexts[session_id] = contexts[session_id][-limit:]  # Keep only recent turns
+        
+        os.makedirs(os.path.dirname(path), exist_ok=True)
+        with open(path, "w", encoding="utf-8") as f:
+            json.dump(contexts, f, indent=2)
+
+def get_context(repo_root: str, session_id: str) -> list[dict]:
+    """Returns the rolling context turns for a given session."""
+    path = _context_store_path(repo_root)
+    if not os.path.exists(path):
+        return []
+    with open(path, encoding="utf-8") as f:
+        contexts = json.load(f)
+        return contexts.get(session_id, [])

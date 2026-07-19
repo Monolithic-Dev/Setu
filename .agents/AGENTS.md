@@ -12,4 +12,7 @@ For every completed task or logical unit of work, you MUST proactively execute t
      - **Why:** The rationale and business/technical context.
      - **How:** High-level architectural approach or key implementation details.
      - **Verification:** How the changes were tested (unit tests, manual testing, etc.).
-   - If the GitHub CLI is not authenticated, output the direct URL for the user to create the PR, and provide the markdown template for the PR description in your response so the user can copy-paste it.
+     - If the GitHub CLI is not authenticated, output the direct URL for the user to create the PR, and provide the markdown template for the PR description in your response so the user can copy-paste it.
+
+## Responsible AI Constraints
+- **Literal feature-checklist completion NEVER overrides a documented responsible-AI exclusion.** If an official feature (e.g., "Socio-demographic insights", "Behavioral profiling") conflicts with the project's ethical constraints (`Database.md` §3, `AIArchitecture.md` §4, `CodingStandards.md` §6), you must strictly uphold the project's constraints (e.g., excluding demographic/socio-economic fields). Do not inject proxy fields like `age_bracket` or `occupation` to satisfy literal features.

@@ -107,6 +107,26 @@ export function Dashboard({ }: DashboardProps) {
           </div>
         </div>
       </div>
+      <div className="alerts-grid">
+        <div className="chart-card">
+          <h3>Active Hotspot Alerts</h3>
+          {stats.hotspotAlerts && stats.hotspotAlerts.length > 0 ? (
+            <div className="alerts-list">
+              {stats.hotspotAlerts.map((alert: any) => (
+                <div key={alert.cluster_id} className="alert-card">
+                  <div className="alert-header">
+                    <span className="alert-district">{alert.district}</span>
+                    <span className="alert-count">{alert.case_count} Cases</span>
+                  </div>
+                  <p className="alert-explanation">{alert.explanation}</p>
+                </div>
+              ))}
+            </div>
+          ) : (
+            <p style={{ color: 'var(--text-muted)' }}>No active hotspots detected.</p>
+          )}
+        </div>
+      </div>
     </div>
   );
 }
