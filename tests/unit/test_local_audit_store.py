@@ -4,7 +4,7 @@ import json
 import tempfile
 import shutil
 
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "..", "functions", "shared"))
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "..", "functions", "setu_api", "shared"))
 
 import local_audit_store
 

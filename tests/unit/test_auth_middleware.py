@@ -1,6 +1,6 @@
 import sys
 import os
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "..", "functions", "shared"))
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "..", "functions", "setu_api", "shared"))
 
 import pytest
 from auth_middleware import can_access_case, enforce_or_raise, ScopeDeniedError

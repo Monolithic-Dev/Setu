@@ -4,7 +4,7 @@ import json
 
 # Setup paths
 repo_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '../..'))
-setu_api_path = os.path.join(repo_root, 'catalyst_functions', 'setu_api')
+setu_api_path = os.path.join(repo_root, 'functions', 'setu_api')
 sys.path.insert(0, setu_api_path)
 sys.path.insert(0, repo_root)
 

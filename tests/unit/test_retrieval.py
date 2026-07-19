@@ -1,6 +1,6 @@
 import sys
 import os
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "..", "functions", "shared", "retrieval"))
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "..", "functions", "setu_api", "shared", "retrieval"))
 
 from structured_search import StructuredQuery, build_zcql
 from semantic_search import SemanticMatch, merge_and_rank

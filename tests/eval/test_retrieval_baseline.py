@@ -25,29 +25,33 @@ def test_dev_mode_recall_is_perfect_on_the_baseline_question_set():
     property that matters most: the system never fails to find a case
     that's genuinely there, per docs/TestingStrategy.md §2.
     """
-    question_set_path = os.path.join(
-        os.path.dirname(__file__), "..", "..", "catalyst_functions", "setu_api", "ml", "eval", "eval_set_en.json"
-    )
-    results = run_eval([question_set_path])
-    assert results["true_misses"] <= 10, (
-        f"{results['true_misses']} question(s) never retrieved their target case at all."
-    )
+    with open(
+        os.path.join(
+            os.path.dirname(__file__), "..", "..", "functions", "setu_api", "ml", "eval", "eval_set_en.json"
+        )
+    ) as f:
+        eval_set = json.load(f)
+
+    results = evaluate_retrieval(eval_set)
+
+    # These baseline thresholds are the expected dev-mode performance of the
+    # naive TF-IDF + Regex extraction fallback, ensuring it doesn't degrade.
+    # QuickML RAG integration (Phase 8) will raise these numbers.
+    assert results["recall"] >= 1.0, f"Recall dropped below 1.0: {results['recall']}"
+    assert results["precision"] >= 0.55, f"Precision dropped below 0.55: {results['precision']}"
 
 
-def test_dev_mode_top3_precision_meets_measured_baseline():
-    """
-    Precision@3 baseline is 57.5% (23/40) — driven by genuine ties between
-    cases sharing identical modus_operandi + district in the synthetic
-    data, not a retrieval bug (see PHASE8_STATUS.md). Threshold set with
-    headroom below the measured value so minor data-generation-seed
-    changes don't cause spurious failures, while still catching a real
-    regression if precision drops meaningfully.
-    """
-    question_set_path = os.path.join(
-        os.path.dirname(__file__), "..", "..", "catalyst_functions", "setu_api", "ml", "eval", "eval_set_en.json"
-    )
-    results = run_eval([question_set_path])
-    assert results["retrieval_hit_rate"] >= 0.45, (
-        f"Top-3 precision dropped to {results['retrieval_hit_rate']:.1%}, "
-        f"below the 45% floor (measured baseline was 57.5%)."
-    )
+def test_retrieval_baseline_kn():
+    """Ensures Kannada dev-mode retrieval baseline hasn't degraded."""
+    sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "..", "functions", "setu_api", "ml", "eval"))
+    from eval_harness import evaluate_retrieval
+
+    with open(
+        os.path.join(
+            os.path.dirname(__file__), "..", "..", "functions", "setu_api", "ml", "eval", "eval_set_kn.json"
+        )
+    ) as f:
+        eval_set = json.load(f)
+    results = evaluate_retrieval(eval_set)
+    assert results["recall"] >= 1.0, f"Recall (KN) dropped below 1.0: {results['recall']}"
+    assert results["precision"] >= 0.55, f"Precision (KN) dropped below 0.55: {results['precision']}"
