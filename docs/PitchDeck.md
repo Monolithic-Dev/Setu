@@ -33,6 +33,7 @@ Setu is a bilingual (Kannada + English), voice-enabled conversational AI that le
 - Explainable AI with full audit trail in a dedicated Admin Dashboard
 - Role-based secure access (Station Officer vs. District SP vs. System Admin)
 - PDF export of any conversation for official case files
+- **Responsible AI Scope:** We interpret 'behavioral profiling' as MO-pattern analysis and 'socio-demographic insights' as aggregate area-level trend data — both implemented — deliberately excluding individual demographic scoring for ethical/responsible-AI reasons (see docs/ResponsibleAIPositioning.md).
 
 ---
 

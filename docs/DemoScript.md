@@ -41,3 +41,7 @@
 **Speaker:** "Finally, with great AI power comes great responsibility. How do we prevent misuse? I'll log in as a System Admin. Setu maintains an immutable Audit Trail. We log exactly who asked what, in what language, and exactly which cases the AI used to generate the answer. Total accountability."
 
 **Speaker:** "Setu bridges the gap between raw data and actionable intelligence. Thank you."
+
+## 6. Q&A / Prepared Responses
+**If asked about "Socio-Demographic Insights" or "Behavioral Profiling":**
+**Speaker:** "We looked closely at those requirements and made a deliberate call: we implement the legitimate version of both, without the part that causes real harm. We interpret 'behavioral profiling' strictly as modus operandi pattern analysis, and 'socio-demographic insights' strictly as aggregate area-level trend data. We deliberately excluded individual-level demographic scoring because those proxies can encode historical policing bias—a known failure mode we wanted to proactively avoid for real-world adoptability."
