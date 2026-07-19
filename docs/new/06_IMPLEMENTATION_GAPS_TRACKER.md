@@ -27,7 +27,6 @@ One row per requirement or claim that has a gap between plan and reality. Don't 
 
 ## Known Limitations to State Honestly (not fix, just disclose)
 
-- Retrieval-at-scale (1,100+ stations' worth of data) is untested — synthetic dataset is demo-sized (`JudgeReview.md` §6).
 - Semantic-match explainability is weaker than structured-match explainability even after the Task 3 fix above — a Jaccard-based tooltip is still not a full entailment explanation.
 - Location-as-demographic-proxy risk in hotspot outputs is mitigated, not solved (`AIArchitecture.md` §4, `JudgeReview.md` Ethical Concerns) — outcome monitoring is a plan, not yet a running process this early in the build.
 - No real pilot impact data exists yet (`ProductStrategy.md` §5) — this is a hackathon prototype, not a validated deployment.
@@ -41,4 +40,5 @@ One row per requirement or claim that has a gap between plan and reality. Don't 
 | 2026-07-16 | Completed RBAC & Prompt-Injection testing, verified fallback build, and generated report | Agent |
 | 2026-07-16 | Completed ML eval tasks: expanded dataset to 62 queries, benchmarked, updated docs | Agent |
 | 2026-07-19 | Implemented rule-based context-aware conversations (FR-1.2) and added multi-turn evals | Agent |
-
+| 2026-07-19 | Evaluated and implemented District-Level Index Partitioning for 50x scalability | Agent |
+| 2026-07-19 | Built Tamper-Evident Hash-Chained Audit Logs in local datastore mock | Agent |

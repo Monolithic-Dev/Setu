@@ -28,28 +28,38 @@ def _context_store_path(repo_root: str) -> str:
     return os.path.join(repo_root, "data", "dev_session_context.json")
 
 
+import hashlib
+
 def append_entry(repo_root: str, entry: dict) -> None:
     """
     Appends one audit entry. Attempts real Data Store persistence first,
     falls back to local dev-mode JSON on failure.
+    Includes a tamper-evident cryptographic hash-chain to prove log integrity.
     """
-    try:
-        import zcatalyst_sdk
-        app = zcatalyst_sdk.initialize()
-        datastore = app.datastore()
-        table = datastore.table("AUDIT_ENTRY")
-        table.insert_row(entry)
-        return
-    except Exception as e:
-        # Fall back to local JSON
-        pass
-
     path = _store_path(repo_root)
     with _LOCK:
         entries = []
         if os.path.exists(path):
             with open(path, encoding="utf-8") as f:
                 entries = json.load(f)
+                
+        # Cryptographic Hash Chaining
+        prev_hash = entries[-1].get("entry_hash", "GENESIS") if entries else "GENESIS"
+        entry["previous_hash"] = prev_hash
+        payload = json.dumps(entry, sort_keys=True).encode('utf-8')
+        entry["entry_hash"] = hashlib.sha256(payload).hexdigest()
+
+        try:
+            import zcatalyst_sdk
+            app = zcatalyst_sdk.initialize()
+            datastore = app.datastore()
+            table = datastore.table("AUDIT_ENTRY")
+            table.insert_row(entry)
+            # Intentionally NOT returning here so the local JSON stays synced
+            # with the latest hash, maintaining the chain even if ZCQL isn't used to query.
+        except Exception as e:
+            pass
+
         entries.append(entry)
         os.makedirs(os.path.dirname(path), exist_ok=True)
         with open(path, "w", encoding="utf-8") as f:
