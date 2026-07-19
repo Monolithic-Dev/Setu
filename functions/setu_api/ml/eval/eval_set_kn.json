@@ -230,5 +230,21 @@
     "language": "kn",
     "expected_case_ids": [],
     "notes": "Ambiguous query, should return nothing"
+  },
+  {
+    "question_id": "eval-kn-MT-01",
+    "query_text": "ಮೈಸೂರಿನಲ್ಲಿ ಸರಗಳ್ಳತನ ಪ್ರಕರಣಗಳನ್ನು ತೋರಿಸಿ",
+    "language": "kn",
+    "expected_case_ids": ["KA-2026-00001"],
+    "notes": "Context base turn",
+    "session_id": "mt-test-kn-1"
+  },
+  {
+    "question_id": "eval-kn-MT-02",
+    "query_text": "ಆ ಕೇಸ್‌ನಲ್ಲಿ ಆರೋಪಿಯ ಸಹಚರರು ಯಾರು?",
+    "language": "kn",
+    "expected_case_ids": ["KA-2026-00001"],
+    "notes": "Context follow-up turn",
+    "session_id": "mt-test-kn-1"
   }
 ]

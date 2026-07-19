@@ -88,5 +88,21 @@
       "KA-2026-00064"
     ],
     "notes": "Code-switched eval query"
+  },
+  {
+    "question_id": "eval-cs-MT-01",
+    "query_text": "Mysuru ನಲ್ಲಿ recent chain snatching cases ತೋರಿಸಿ",
+    "language": "kn-en",
+    "expected_case_ids": ["KA-2026-00001"],
+    "notes": "Context base turn",
+    "session_id": "mt-test-cs-1"
+  },
+  {
+    "question_id": "eval-cs-MT-02",
+    "query_text": "who are the associates of the suspect in that ಕೇಸ್?",
+    "language": "kn-en",
+    "expected_case_ids": ["KA-2026-00001"],
+    "notes": "Context follow-up turn",
+    "session_id": "mt-test-cs-1"
   }
 ]

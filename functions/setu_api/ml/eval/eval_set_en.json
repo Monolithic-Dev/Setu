@@ -230,5 +230,21 @@
     "language": "en",
     "expected_case_ids": [],
     "notes": "Ambiguous query, should return nothing"
+  },
+  {
+    "question_id": "eval-en-MT-01",
+    "query_text": "Show me chain snatching cases in Mysuru",
+    "language": "en",
+    "expected_case_ids": ["KA-2026-00001"],
+    "notes": "Context base turn",
+    "session_id": "mt-test-en-1"
+  },
+  {
+    "question_id": "eval-en-MT-02",
+    "query_text": "Who are the known associates of the suspect in that case?",
+    "language": "en",
+    "expected_case_ids": ["KA-2026-00001"],
+    "notes": "Context follow-up turn",
+    "session_id": "mt-test-en-1"
   }
 ]

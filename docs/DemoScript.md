@@ -21,6 +21,9 @@
 **Action:** Wait for the AI to return the result.
 **Speaker:** "Setu uses a Hybrid Retrieval system. It instantly pulls the relevant cases, generates a synthesized answer, and provides exact case citations so the officer can verify the truth. No hallucinations."
 
+**Action:** Type the follow-up: *"Who are the known associates of the suspect in that case?"*
+**Speaker:** "And Setu is truly conversational. Notice how I just said 'that case'—the AI remembers the context of my previous question and automatically applies it to find the associates without needing me to re-type the case details."
+
 ## 3. The Network Graph (30 seconds)
 **Action:** Point to the Network Graph on the right side of the screen.
 **Speaker:** "Data isn't just text. On the right, Setu automatically visualizes the criminal network using D3.js. Officers can instantly see how this chain-snatching suspect connects to other locations or known modus operandi, finding links they would have missed reading paper files."

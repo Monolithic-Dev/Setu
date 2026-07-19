@@ -57,8 +57,13 @@ def run_eval(question_set_paths: list[str]) -> dict:
         lang_stats[lang]["total"] += 1
         
         start = time.perf_counter()
-        result = handle_request({"text": q["query_text"]}, auth_context)
-        full_retrieval = retrieve(q["query_text"], EvalUser(), "scrb_analyst")
+        req_payload = {"text": q["query_text"]}
+        if "session_id" in q:
+            req_payload["session_id"] = q["session_id"]
+        result = handle_request(req_payload, auth_context)
+        
+        # pass empty dict for inherited_filters to retrieve since it's just for ranking eval here
+        full_retrieval, _ = retrieve(q["query_text"], EvalUser(), "scrb_analyst", {})
         latencies.append(time.perf_counter() - start)
 
         retrieved_ids = set(result["sources"])
