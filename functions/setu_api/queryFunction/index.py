@@ -82,17 +82,38 @@ def _load_dev_cases() -> list[dict]:
     return _dev_cases_cache
 
 
-def _get_dev_index(language: str) -> LocalTfidfIndex:
-    """Lazily builds and caches the TF-IDF index per language — expensive to rebuild per request."""
+def _get_dev_index(language: str, partition_district: str = None) -> LocalTfidfIndex:
+    """Lazily builds and caches the TF-IDF index per language and district — prevents linear scaling bottleneck."""
     global _dev_index_cache_en, _dev_index_cache_kn
-    if language == "kn":
-        if _dev_index_cache_kn is None:
-            _dev_index_cache_kn = LocalTfidfIndex(_load_dev_cases(), language_field="narrative_kn")
-        return _dev_index_cache_kn
-    else:
-        if _dev_index_cache_en is None:
-            _dev_index_cache_en = LocalTfidfIndex(_load_dev_cases(), language_field="narrative_en")
-        return _dev_index_cache_en
+    
+    if _dev_index_cache_en is None:
+        _dev_index_cache_en = {}
+    if _dev_index_cache_kn is None:
+        _dev_index_cache_kn = {}
+        
+    cache_dict = _dev_index_cache_kn if language == "kn" else _dev_index_cache_en
+    lang_field = "narrative_kn" if language == "kn" else "narrative_en"
+    
+    cache_key = partition_district or "ALL"
+    
+    if cache_key not in cache_dict:
+        cases = _load_dev_cases()
+        if partition_district:
+            cases = [c for c in cases if c.get("location", {}).get("district") == partition_district]
+            
+        if not cases:
+            class DummyIndex:
+                def search(self, *args, **kwargs): return []
+            cache_dict[cache_key] = DummyIndex()
+        else:
+            try:
+                cache_dict[cache_key] = LocalTfidfIndex(cases, language_field=lang_field)
+            except ValueError: # e.g. empty vocabulary
+                class DummyIndex:
+                    def search(self, *args, **kwargs): return []
+                cache_dict[cache_key] = DummyIndex()
+        
+    return cache_dict[cache_key]
 
 
 def _case_record_from_dict(d: dict) -> CaseRecord:
@@ -168,7 +189,15 @@ def retrieve(query_text: str, user, role_name, inherited_filters: dict = None) -
     try:
         semantic_results = query_knowledge_base(query_text, detect_language(query_text))
     except NotImplementedError:
-        semantic_results = _get_dev_index(detect_language(query_text)).search(query_text)
+        # Determine partition based on scope or explicit filter
+        partition_district = None
+        user_scope = getattr(user, "role_scope_level", "all")
+        if user_scope in ("station", "district"):
+            partition_district = getattr(user, "district_id", None) or None
+        elif filters.get("district"):
+            partition_district = filters.get("district")
+            
+        semantic_results = _get_dev_index(detect_language(query_text), partition_district).search(query_text)
 
     merged = merge_and_rank(structured_results, semantic_results)
 
