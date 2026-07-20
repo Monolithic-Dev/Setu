@@ -18,6 +18,8 @@ client/build/
 # Catalyst local state
 .catalystrc
 .catalyst-cache/
+catalyst-debug.log
+.build/
 
 # Data (regenerate via ml/data_generation, don't commit generated output)
 **/data/*.json
