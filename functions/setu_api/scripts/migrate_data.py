@@ -1,6 +1,7 @@
 import sys
 import os
 import json
+# pyrefly: ignore [missing-import]
 import zcatalyst_sdk
 
 def migrate():
