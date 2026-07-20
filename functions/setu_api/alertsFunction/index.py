@@ -15,6 +15,7 @@ import os
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "ml", "prediction_model"))
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "shared"))
 
+# pyrefly: ignore [missing-import]
 from hotspot_model import load_cases, detect_hotspots, explain_cluster
 
 
