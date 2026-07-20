@@ -109,7 +109,7 @@ def handler(request: Request):
             from collections import Counter
             from datetime import datetime
             
-            data_path = os.path.join(os.path.dirname(__file__), "..", "..", "data", "synthetic_cases.json")
+            data_path = os.path.join(os.path.dirname(__file__), "data", "synthetic_cases.json")
             
             prediction_model_path = os.path.join(os.path.dirname(__file__), "ml", "prediction_model")
             if prediction_model_path not in sys.path:

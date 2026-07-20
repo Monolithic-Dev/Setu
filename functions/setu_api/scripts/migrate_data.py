@@ -13,6 +13,7 @@ def migrate():
         print(e)
         return
 
+    # Path is relative to this script: ../data/synthetic_cases.json
     data_path = os.path.join(os.path.dirname(__file__), "..", "data", "synthetic_cases.json")
     if not os.path.exists(data_path):
         print(f"File not found: {data_path}")
