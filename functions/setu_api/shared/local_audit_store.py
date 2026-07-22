@@ -61,9 +61,12 @@ def append_entry(repo_root: str, entry: dict) -> None:
             pass
 
         entries.append(entry)
-        os.makedirs(os.path.dirname(path), exist_ok=True)
-        with open(path, "w", encoding="utf-8") as f:
-            json.dump(entries, f, indent=2)
+        try:
+            os.makedirs(os.path.dirname(path), exist_ok=True)
+            with open(path, "w", encoding="utf-8") as f:
+                json.dump(entries, f, indent=2)
+        except OSError:
+            pass
 
 
 def read_entries(repo_root: str, scope_filter: dict | None = None) -> list[dict]:
@@ -98,9 +101,12 @@ def append_feedback(repo_root: str, entry: dict) -> None:
             with open(path, encoding="utf-8") as f:
                 entries = json.load(f)
         entries.append(entry)
-        os.makedirs(os.path.dirname(path), exist_ok=True)
-        with open(path, "w", encoding="utf-8") as f:
-            json.dump(entries, f, indent=2)
+        try:
+            os.makedirs(os.path.dirname(path), exist_ok=True)
+            with open(path, "w", encoding="utf-8") as f:
+                json.dump(entries, f, indent=2)
+        except OSError:
+            pass
 
 def read_feedback(repo_root: str) -> list[dict]:
     path = _feedback_store_path(repo_root)
@@ -124,9 +130,12 @@ def append_context(repo_root: str, session_id: str, turn_data: dict, limit: int 
         contexts[session_id].append(turn_data)
         contexts[session_id] = contexts[session_id][-limit:]  # Keep only recent turns
         
-        os.makedirs(os.path.dirname(path), exist_ok=True)
-        with open(path, "w", encoding="utf-8") as f:
-            json.dump(contexts, f, indent=2)
+        try:
+            os.makedirs(os.path.dirname(path), exist_ok=True)
+            with open(path, "w", encoding="utf-8") as f:
+                json.dump(contexts, f, indent=2)
+        except OSError:
+            pass
 
 def get_context(repo_root: str, session_id: str) -> list[dict]:
     """Returns the rolling context turns for a given session."""
