@@ -1,0 +1,5581 @@
+{
+  "persons": [
+    {
+      "person_id": "P-0001",
+      "name": "Person 0001",
+      "role_in_case": ""
+    },
+    {
+      "person_id": "P-0002",
+      "name": "Person 0002",
+      "role_in_case": ""
+    },
+    {
+      "person_id": "P-0003",
+      "name": "Person 0003",
+      "role_in_case": ""
+    },
+    {
+      "person_id": "P-0004",
+      "name": "Person 0004",
+      "role_in_case": ""
+    },
+    {
+      "person_id": "P-0005",
+      "name": "Person 0005",
+      "role_in_case": ""
+    },
+    {
+      "person_id": "P-0006",
+      "name": "Person 0006",
+      "role_in_case": ""
+    },
+    {
+      "person_id": "P-0007",
+      "name": "Person 0007",
+      "role_in_case": ""
+    },
+    {
+      "person_id": "P-0008",
+      "name": "Person 0008",
+      "role_in_case": ""
+    },
+    {
+      "person_id": "P-0009",
+      "name": "Person 0009",
+      "role_in_case": ""
+    },
+    {
+      "person_id": "P-0010",
+      "name": "Person 0010",
+      "role_in_case": ""
+    },
+    {
+      "person_id": "P-0011",
+      "name": "Person 0011",
+      "role_in_case": ""
+    },
+    {
+      "person_id": "P-0012",
+      "name": "Person 0012",
+      "role_in_case": ""
+    },
+    {
+      "person_id": "P-0013",
+      "name": "Person 0013",
+      "role_in_case": ""
+    },
+    {
+      "person_id": "P-0014",
+      "name": "Person 0014",
+      "role_in_case": ""
+    },
+    {
+      "person_id": "P-0015",
+      "name": "Person 0015",
+      "role_in_case": ""
+    },
+    {
+      "person_id": "P-0016",
+      "name": "Person 0016",
+      "role_in_case": ""
+    },
+    {
+      "person_id": "P-0017",
+      "name": "Person 0017",
+      "role_in_case": ""
+    },
+    {
+      "person_id": "P-0018",
+      "name": "Person 0018",
+      "role_in_case": ""
+    },
+    {
+      "person_id": "P-0019",
+      "name": "Person 0019",
+      "role_in_case": ""
+    },
+    {
+      "person_id": "P-0020",
+      "name": "Person 0020",
+      "role_in_case": ""
+    },
+    {
+      "person_id": "P-0021",
+      "name": "Person 0021",
+      "role_in_case": ""
+    },
+    {
+      "person_id": "P-0022",
+      "name": "Person 0022",
+      "role_in_case": ""
+    },
+    {
+      "person_id": "P-0023",
+      "name": "Person 0023",
+      "role_in_case": ""
+    },
+    {
+      "person_id": "P-0024",
+      "name": "Person 0024",
+      "role_in_case": ""
+    },
+    {
+      "person_id": "P-0025",
+      "name": "Person 0025",
+      "role_in_case": ""
+    },
+    {
+      "person_id": "P-0026",
+      "name": "Person 0026",
+      "role_in_case": ""
+    },
+    {
+      "person_id": "P-0027",
+      "name": "Person 0027",
+      "role_in_case": ""
+    },
+    {
+      "person_id": "P-0028",
+      "name": "Person 0028",
+      "role_in_case": ""
+    },
+    {
+      "person_id": "P-0029",
+      "name": "Person 0029",
+      "role_in_case": ""
+    },
+    {
+      "person_id": "P-0030",
+      "name": "Person 0030",
+      "role_in_case": ""
+    },
+    {
+      "person_id": "P-0031",
+      "name": "Person 0031",
+      "role_in_case": ""
+    },
+    {
+      "person_id": "P-0032",
+      "name": "Person 0032",
+      "role_in_case": ""
+    },
+    {
+      "person_id": "P-0033",
+      "name": "Person 0033",
+      "role_in_case": ""
+    },
+    {
+      "person_id": "P-0034",
+      "name": "Person 0034",
+      "role_in_case": ""
+    },
+    {
+      "person_id": "P-0035",
+      "name": "Person 0035",
+      "role_in_case": ""
+    },
+    {
+      "person_id": "P-0036",
+      "name": "Person 0036",
+      "role_in_case": ""
+    },
+    {
+      "person_id": "P-0037",
+      "name": "Person 0037",
+      "role_in_case": ""
+    },
+    {
+      "person_id": "P-0038",
+      "name": "Person 0038",
+      "role_in_case": ""
+    },
+    {
+      "person_id": "P-0039",
+      "name": "Person 0039",
+      "role_in_case": ""
+    },
+    {
+      "person_id": "P-0040",
+      "name": "Person 0040",
+      "role_in_case": ""
+    },
+    {
+      "person_id": "P-0041",
+      "name": "Person 0041",
+      "role_in_case": ""
+    },
+    {
+      "person_id": "P-0042",
+      "name": "Person 0042",
+      "role_in_case": ""
+    },
+    {
+      "person_id": "P-0043",
+      "name": "Person 0043",
+      "role_in_case": ""
+    },
+    {
+      "person_id": "P-0044",
+      "name": "Person 0044",
+      "role_in_case": ""
+    },
+    {
+      "person_id": "P-0045",
+      "name": "Person 0045",
+      "role_in_case": ""
+    },
+    {
+      "person_id": "P-0046",
+      "name": "Person 0046",
+      "role_in_case": ""
+    },
+    {
+      "person_id": "P-0047",
+      "name": "Person 0047",
+      "role_in_case": ""
+    },
+    {
+      "person_id": "P-0048",
+      "name": "Person 0048",
+      "role_in_case": ""
+    },
+    {
+      "person_id": "P-0049",
+      "name": "Person 0049",
+      "role_in_case": ""
+    },
+    {
+      "person_id": "P-0050",
+      "name": "Person 0050",
+      "role_in_case": ""
+    },
+    {
+      "person_id": "P-0051",
+      "name": "Person 0051",
+      "role_in_case": ""
+    },
+    {
+      "person_id": "P-0052",
+      "name": "Person 0052",
+      "role_in_case": ""
+    },
+    {
+      "person_id": "P-0053",
+      "name": "Person 0053",
+      "role_in_case": ""
+    },
+    {
+      "person_id": "P-0054",
+      "name": "Person 0054",
+      "role_in_case": ""
+    },
+    {
+      "person_id": "P-0055",
+      "name": "Person 0055",
+      "role_in_case": ""
+    },
+    {
+      "person_id": "P-0056",
+      "name": "Person 0056",
+      "role_in_case": ""
+    },
+    {
+      "person_id": "P-0057",
+      "name": "Person 0057",
+      "role_in_case": ""
+    },
+    {
+      "person_id": "P-0058",
+      "name": "Person 0058",
+      "role_in_case": ""
+    },
+    {
+      "person_id": "P-0059",
+      "name": "Person 0059",
+      "role_in_case": ""
+    },
+    {
+      "person_id": "P-0060",
+      "name": "Person 0060",
+      "role_in_case": ""
+    },
+    {
+      "person_id": "P-0061",
+      "name": "Person 0061",
+      "role_in_case": ""
+    },
+    {
+      "person_id": "P-0062",
+      "name": "Person 0062",
+      "role_in_case": ""
+    },
+    {
+      "person_id": "P-0063",
+      "name": "Person 0063",
+      "role_in_case": ""
+    },
+    {
+      "person_id": "P-0064",
+      "name": "Person 0064",
+      "role_in_case": ""
+    },
+    {
+      "person_id": "P-0065",
+      "name": "Person 0065",
+      "role_in_case": ""
+    },
+    {
+      "person_id": "P-0066",
+      "name": "Person 0066",
+      "role_in_case": ""
+    },
+    {
+      "person_id": "P-0067",
+      "name": "Person 0067",
+      "role_in_case": ""
+    },
+    {
+      "person_id": "P-0068",
+      "name": "Person 0068",
+      "role_in_case": ""
+    },
+    {
+      "person_id": "P-0069",
+      "name": "Person 0069",
+      "role_in_case": ""
+    },
+    {
+      "person_id": "P-0070",
+      "name": "Person 0070",
+      "role_in_case": ""
+    },
+    {
+      "person_id": "P-0071",
+      "name": "Person 0071",
+      "role_in_case": ""
+    },
+    {
+      "person_id": "P-0072",
+      "name": "Person 0072",
+      "role_in_case": ""
+    },
+    {
+      "person_id": "P-0073",
+      "name": "Person 0073",
+      "role_in_case": ""
+    },
+    {
+      "person_id": "P-0074",
+      "name": "Person 0074",
+      "role_in_case": ""
+    },
+    {
+      "person_id": "P-0075",
+      "name": "Person 0075",
+      "role_in_case": ""
+    }
+  ],
+  "edges": [
+    {
+      "edge_id": "E-0001",
+      "person_id_a": "P-0021",
+      "person_id_b": "P-0063",
+      "relationship_type": "co-accused",
+      "confidence": 0.97
+    },
+    {
+      "edge_id": "E-0002",
+      "person_id_a": "P-0021",
+      "person_id_b": "P-0012",
+      "relationship_type": "co-accused",
+      "confidence": 0.86
+    },
+    {
+      "edge_id": "E-0003",
+      "person_id_a": "P-0063",
+      "person_id_b": "P-0012",
+      "relationship_type": "co-accused",
+      "confidence": 0.91
+    },
+    {
+      "edge_id": "E-0004",
+      "person_id_a": "P-0055",
+      "person_id_b": "P-0052",
+      "relationship_type": "co-accused",
+      "confidence": 0.87
+    },
+    {
+      "edge_id": "E-0005",
+      "person_id_a": "P-0050",
+      "person_id_b": "P-0001",
+      "relationship_type": "co-accused",
+      "confidence": 0.91
+    },
+    {
+      "edge_id": "E-0006",
+      "person_id_a": "P-0026",
+      "person_id_b": "P-0048",
+      "relationship_type": "co-accused",
+      "confidence": 0.81
+    },
+    {
+      "edge_id": "E-0007",
+      "person_id_a": "P-0026",
+      "person_id_b": "P-0002",
+      "relationship_type": "co-accused",
+      "confidence": 0.93
+    },
+    {
+      "edge_id": "E-0008",
+      "person_id_a": "P-0048",
+      "person_id_b": "P-0002",
+      "relationship_type": "co-accused",
+      "confidence": 0.67
+    },
+    {
+      "edge_id": "E-0009",
+      "person_id_a": "P-0017",
+      "person_id_b": "P-0014",
+      "relationship_type": "co-accused",
+      "confidence": 0.9
+    },
+    {
+      "edge_id": "E-0010",
+      "person_id_a": "P-0040",
+      "person_id_b": "P-0022",
+      "relationship_type": "co-accused",
+      "confidence": 0.88
+    },
+    {
+      "edge_id": "E-0011",
+      "person_id_a": "P-0040",
+      "person_id_b": "P-0009",
+      "relationship_type": "co-accused",
+      "confidence": 0.78
+    },
+    {
+      "edge_id": "E-0012",
+      "person_id_a": "P-0022",
+      "person_id_b": "P-0009",
+      "relationship_type": "co-accused",
+      "confidence": 0.6
+    },
+    {
+      "edge_id": "E-0013",
+      "person_id_a": "P-0059",
+      "person_id_b": "P-0067",
+      "relationship_type": "co-accused",
+      "confidence": 0.76
+    },
+    {
+      "edge_id": "E-0014",
+      "person_id_a": "P-0044",
+      "person_id_b": "P-0056",
+      "relationship_type": "co-accused",
+      "confidence": 0.65
+    },
+    {
+      "edge_id": "E-0015",
+      "person_id_a": "P-0044",
+      "person_id_b": "P-0018",
+      "relationship_type": "co-accused",
+      "confidence": 0.94
+    },
+    {
+      "edge_id": "E-0016",
+      "person_id_a": "P-0056",
+      "person_id_b": "P-0018",
+      "relationship_type": "co-accused",
+      "confidence": 0.84
+    },
+    {
+      "edge_id": "E-0017",
+      "person_id_a": "P-0025",
+      "person_id_b": "P-0022",
+      "relationship_type": "co-accused",
+      "confidence": 0.8
+    },
+    {
+      "edge_id": "E-0018",
+      "person_id_a": "P-0065",
+      "person_id_b": "P-0022",
+      "relationship_type": "co-accused",
+      "confidence": 0.72
+    },
+    {
+      "edge_id": "E-0019",
+      "person_id_a": "P-0065",
+      "person_id_b": "P-0016",
+      "relationship_type": "co-accused",
+      "confidence": 0.78
+    },
+    {
+      "edge_id": "E-0020",
+      "person_id_a": "P-0022",
+      "person_id_b": "P-0016",
+      "relationship_type": "co-accused",
+      "confidence": 0.7
+    },
+    {
+      "edge_id": "E-0021",
+      "person_id_a": "P-0069",
+      "person_id_b": "P-0007",
+      "relationship_type": "co-accused",
+      "confidence": 0.93
+    },
+    {
+      "edge_id": "E-0022",
+      "person_id_a": "P-0049",
+      "person_id_b": "P-0016",
+      "relationship_type": "co-accused",
+      "confidence": 0.62
+    },
+    {
+      "edge_id": "E-0023",
+      "person_id_a": "P-0061",
+      "person_id_b": "P-0020",
+      "relationship_type": "co-accused",
+      "confidence": 0.64
+    },
+    {
+      "edge_id": "E-0024",
+      "person_id_a": "P-0013",
+      "person_id_b": "P-0067",
+      "relationship_type": "co-accused",
+      "confidence": 0.66
+    },
+    {
+      "edge_id": "E-0025",
+      "person_id_a": "P-0018",
+      "person_id_b": "P-0054",
+      "relationship_type": "co-accused",
+      "confidence": 0.68
+    },
+    {
+      "edge_id": "E-0026",
+      "person_id_a": "P-0018",
+      "person_id_b": "P-0014",
+      "relationship_type": "co-accused",
+      "confidence": 0.7
+    },
+    {
+      "edge_id": "E-0027",
+      "person_id_a": "P-0054",
+      "person_id_b": "P-0014",
+      "relationship_type": "co-accused",
+      "confidence": 0.92
+    },
+    {
+      "edge_id": "E-0028",
+      "person_id_a": "P-0016",
+      "person_id_b": "P-0037",
+      "relationship_type": "co-accused",
+      "confidence": 0.64
+    },
+    {
+      "edge_id": "E-0029",
+      "person_id_a": "P-0016",
+      "person_id_b": "P-0015",
+      "relationship_type": "co-accused",
+      "confidence": 0.88
+    },
+    {
+      "edge_id": "E-0030",
+      "person_id_a": "P-0037",
+      "person_id_b": "P-0015",
+      "relationship_type": "co-accused",
+      "confidence": 0.7
+    },
+    {
+      "edge_id": "E-0031",
+      "person_id_a": "P-0067",
+      "person_id_b": "P-0026",
+      "relationship_type": "co-accused",
+      "confidence": 0.74
+    },
+    {
+      "edge_id": "E-0032",
+      "person_id_a": "P-0038",
+      "person_id_b": "P-0021",
+      "relationship_type": "co-accused",
+      "confidence": 0.81
+    },
+    {
+      "edge_id": "E-0033",
+      "person_id_a": "P-0064",
+      "person_id_b": "P-0027",
+      "relationship_type": "co-accused",
+      "confidence": 0.91
+    },
+    {
+      "edge_id": "E-0034",
+      "person_id_a": "P-0064",
+      "person_id_b": "P-0062",
+      "relationship_type": "co-accused",
+      "confidence": 0.73
+    },
+    {
+      "edge_id": "E-0035",
+      "person_id_a": "P-0027",
+      "person_id_b": "P-0062",
+      "relationship_type": "co-accused",
+      "confidence": 0.76
+    },
+    {
+      "edge_id": "E-0036",
+      "person_id_a": "P-0064",
+      "person_id_b": "P-0020",
+      "relationship_type": "co-accused",
+      "confidence": 0.73
+    },
+    {
+      "edge_id": "E-0037",
+      "person_id_a": "P-0064",
+      "person_id_b": "P-0012",
+      "relationship_type": "co-accused",
+      "confidence": 0.86
+    },
+    {
+      "edge_id": "E-0038",
+      "person_id_a": "P-0020",
+      "person_id_b": "P-0012",
+      "relationship_type": "co-accused",
+      "confidence": 0.83
+    },
+    {
+      "edge_id": "E-0039",
+      "person_id_a": "P-0034",
+      "person_id_b": "P-0060",
+      "relationship_type": "co-accused",
+      "confidence": 0.82
+    },
+    {
+      "edge_id": "E-0040",
+      "person_id_a": "P-0041",
+      "person_id_b": "P-0055",
+      "relationship_type": "co-accused",
+      "confidence": 0.85
+    },
+    {
+      "edge_id": "E-0041",
+      "person_id_a": "P-0046",
+      "person_id_b": "P-0057",
+      "relationship_type": "co-accused",
+      "confidence": 0.8
+    },
+    {
+      "edge_id": "E-0042",
+      "person_id_a": "P-0012",
+      "person_id_b": "P-0048",
+      "relationship_type": "co-accused",
+      "confidence": 0.97
+    },
+    {
+      "edge_id": "E-0043",
+      "person_id_a": "P-0052",
+      "person_id_b": "P-0059",
+      "relationship_type": "co-accused",
+      "confidence": 0.71
+    },
+    {
+      "edge_id": "E-0044",
+      "person_id_a": "P-0062",
+      "person_id_b": "P-0054",
+      "relationship_type": "co-accused",
+      "confidence": 0.72
+    },
+    {
+      "edge_id": "E-0045",
+      "person_id_a": "P-0062",
+      "person_id_b": "P-0073",
+      "relationship_type": "co-accused",
+      "confidence": 0.79
+    },
+    {
+      "edge_id": "E-0046",
+      "person_id_a": "P-0024",
+      "person_id_b": "P-0049",
+      "relationship_type": "co-accused",
+      "confidence": 0.89
+    },
+    {
+      "edge_id": "E-0047",
+      "person_id_a": "P-0004",
+      "person_id_b": "P-0017",
+      "relationship_type": "co-accused",
+      "confidence": 0.77
+    },
+    {
+      "edge_id": "E-0048",
+      "person_id_a": "P-0004",
+      "person_id_b": "P-0062",
+      "relationship_type": "co-accused",
+      "confidence": 0.63
+    },
+    {
+      "edge_id": "E-0049",
+      "person_id_a": "P-0017",
+      "person_id_b": "P-0062",
+      "relationship_type": "co-accused",
+      "confidence": 0.83
+    },
+    {
+      "edge_id": "E-0050",
+      "person_id_a": "P-0057",
+      "person_id_b": "P-0006",
+      "relationship_type": "co-accused",
+      "confidence": 0.78
+    },
+    {
+      "edge_id": "E-0051",
+      "person_id_a": "P-0041",
+      "person_id_b": "P-0002",
+      "relationship_type": "co-accused",
+      "confidence": 0.96
+    },
+    {
+      "edge_id": "E-0052",
+      "person_id_a": "P-0074",
+      "person_id_b": "P-0073",
+      "relationship_type": "co-accused",
+      "confidence": 0.93
+    },
+    {
+      "edge_id": "E-0053",
+      "person_id_a": "P-0074",
+      "person_id_b": "P-0029",
+      "relationship_type": "co-accused",
+      "confidence": 0.84
+    },
+    {
+      "edge_id": "E-0054",
+      "person_id_a": "P-0073",
+      "person_id_b": "P-0029",
+      "relationship_type": "co-accused",
+      "confidence": 0.95
+    },
+    {
+      "edge_id": "E-0055",
+      "person_id_a": "P-0067",
+      "person_id_b": "P-0013",
+      "relationship_type": "co-accused",
+      "confidence": 0.76
+    },
+    {
+      "edge_id": "E-0056",
+      "person_id_a": "P-0067",
+      "person_id_b": "P-0056",
+      "relationship_type": "co-accused",
+      "confidence": 0.83
+    },
+    {
+      "edge_id": "E-0057",
+      "person_id_a": "P-0013",
+      "person_id_b": "P-0056",
+      "relationship_type": "co-accused",
+      "confidence": 0.75
+    },
+    {
+      "edge_id": "E-0058",
+      "person_id_a": "P-0050",
+      "person_id_b": "P-0020",
+      "relationship_type": "co-accused",
+      "confidence": 0.94
+    },
+    {
+      "edge_id": "E-0059",
+      "person_id_a": "P-0007",
+      "person_id_b": "P-0002",
+      "relationship_type": "co-accused",
+      "confidence": 0.63
+    },
+    {
+      "edge_id": "E-0060",
+      "person_id_a": "P-0007",
+      "person_id_b": "P-0021",
+      "relationship_type": "co-accused",
+      "confidence": 0.73
+    },
+    {
+      "edge_id": "E-0061",
+      "person_id_a": "P-0002",
+      "person_id_b": "P-0021",
+      "relationship_type": "co-accused",
+      "confidence": 0.72
+    },
+    {
+      "edge_id": "E-0062",
+      "person_id_a": "P-0022",
+      "person_id_b": "P-0010",
+      "relationship_type": "co-accused",
+      "confidence": 0.85
+    },
+    {
+      "edge_id": "E-0063",
+      "person_id_a": "P-0031",
+      "person_id_b": "P-0043",
+      "relationship_type": "co-accused",
+      "confidence": 0.87
+    },
+    {
+      "edge_id": "E-0064",
+      "person_id_a": "P-0052",
+      "person_id_b": "P-0031",
+      "relationship_type": "co-accused",
+      "confidence": 0.83
+    },
+    {
+      "edge_id": "E-0065",
+      "person_id_a": "P-0057",
+      "person_id_b": "P-0074",
+      "relationship_type": "co-accused",
+      "confidence": 0.75
+    },
+    {
+      "edge_id": "E-0066",
+      "person_id_a": "P-0041",
+      "person_id_b": "P-0016",
+      "relationship_type": "co-accused",
+      "confidence": 0.94
+    },
+    {
+      "edge_id": "E-0067",
+      "person_id_a": "P-0053",
+      "person_id_b": "P-0005",
+      "relationship_type": "co-accused",
+      "confidence": 0.9
+    },
+    {
+      "edge_id": "E-0068",
+      "person_id_a": "P-0001",
+      "person_id_b": "P-0012",
+      "relationship_type": "co-accused",
+      "confidence": 0.96
+    },
+    {
+      "edge_id": "E-0069",
+      "person_id_a": "P-0001",
+      "person_id_b": "P-0039",
+      "relationship_type": "co-accused",
+      "confidence": 0.88
+    },
+    {
+      "edge_id": "E-0070",
+      "person_id_a": "P-0012",
+      "person_id_b": "P-0039",
+      "relationship_type": "co-accused",
+      "confidence": 0.8
+    },
+    {
+      "edge_id": "E-0071",
+      "person_id_a": "P-0047",
+      "person_id_b": "P-0007",
+      "relationship_type": "co-accused",
+      "confidence": 0.77
+    },
+    {
+      "edge_id": "E-0072",
+      "person_id_a": "P-0043",
+      "person_id_b": "P-0072",
+      "relationship_type": "co-accused",
+      "confidence": 0.66
+    },
+    {
+      "edge_id": "E-0073",
+      "person_id_a": "P-0061",
+      "person_id_b": "P-0047",
+      "relationship_type": "co-accused",
+      "confidence": 0.92
+    },
+    {
+      "edge_id": "E-0074",
+      "person_id_a": "P-0061",
+      "person_id_b": "P-0058",
+      "relationship_type": "co-accused",
+      "confidence": 0.65
+    },
+    {
+      "edge_id": "E-0075",
+      "person_id_a": "P-0047",
+      "person_id_b": "P-0058",
+      "relationship_type": "co-accused",
+      "confidence": 0.69
+    },
+    {
+      "edge_id": "E-0076",
+      "person_id_a": "P-0046",
+      "person_id_b": "P-0038",
+      "relationship_type": "co-accused",
+      "confidence": 0.7
+    },
+    {
+      "edge_id": "E-0077",
+      "person_id_a": "P-0048",
+      "person_id_b": "P-0014",
+      "relationship_type": "co-accused",
+      "confidence": 0.88
+    },
+    {
+      "edge_id": "E-0078",
+      "person_id_a": "P-0048",
+      "person_id_b": "P-0006",
+      "relationship_type": "co-accused",
+      "confidence": 0.88
+    },
+    {
+      "edge_id": "E-0079",
+      "person_id_a": "P-0014",
+      "person_id_b": "P-0006",
+      "relationship_type": "co-accused",
+      "confidence": 0.68
+    },
+    {
+      "edge_id": "E-0080",
+      "person_id_a": "P-0026",
+      "person_id_b": "P-0025",
+      "relationship_type": "co-accused",
+      "confidence": 0.75
+    },
+    {
+      "edge_id": "E-0081",
+      "person_id_a": "P-0026",
+      "person_id_b": "P-0016",
+      "relationship_type": "co-accused",
+      "confidence": 0.64
+    },
+    {
+      "edge_id": "E-0082",
+      "person_id_a": "P-0025",
+      "person_id_b": "P-0016",
+      "relationship_type": "co-accused",
+      "confidence": 0.96
+    },
+    {
+      "edge_id": "E-0083",
+      "person_id_a": "P-0025",
+      "person_id_b": "P-0044",
+      "relationship_type": "co-accused",
+      "confidence": 0.78
+    },
+    {
+      "edge_id": "E-0084",
+      "person_id_a": "P-0006",
+      "person_id_b": "P-0016",
+      "relationship_type": "co-accused",
+      "confidence": 0.62
+    },
+    {
+      "edge_id": "E-0085",
+      "person_id_a": "P-0065",
+      "person_id_b": "P-0018",
+      "relationship_type": "co-accused",
+      "confidence": 0.89
+    },
+    {
+      "edge_id": "E-0086",
+      "person_id_a": "P-0075",
+      "person_id_b": "P-0062",
+      "relationship_type": "co-accused",
+      "confidence": 0.8
+    },
+    {
+      "edge_id": "E-0087",
+      "person_id_a": "P-0042",
+      "person_id_b": "P-0065",
+      "relationship_type": "co-accused",
+      "confidence": 0.98
+    },
+    {
+      "edge_id": "E-0088",
+      "person_id_a": "P-0042",
+      "person_id_b": "P-0050",
+      "relationship_type": "co-accused",
+      "confidence": 0.64
+    },
+    {
+      "edge_id": "E-0089",
+      "person_id_a": "P-0065",
+      "person_id_b": "P-0050",
+      "relationship_type": "co-accused",
+      "confidence": 0.83
+    },
+    {
+      "edge_id": "E-0090",
+      "person_id_a": "P-0044",
+      "person_id_b": "P-0038",
+      "relationship_type": "co-accused",
+      "confidence": 0.63
+    },
+    {
+      "edge_id": "E-0091",
+      "person_id_a": "P-0066",
+      "person_id_b": "P-0039",
+      "relationship_type": "co-accused",
+      "confidence": 0.95
+    },
+    {
+      "edge_id": "E-0092",
+      "person_id_a": "P-0041",
+      "person_id_b": "P-0071",
+      "relationship_type": "co-accused",
+      "confidence": 0.75
+    },
+    {
+      "edge_id": "E-0093",
+      "person_id_a": "P-0041",
+      "person_id_b": "P-0028",
+      "relationship_type": "co-accused",
+      "confidence": 0.69
+    },
+    {
+      "edge_id": "E-0094",
+      "person_id_a": "P-0071",
+      "person_id_b": "P-0028",
+      "relationship_type": "co-accused",
+      "confidence": 0.88
+    },
+    {
+      "edge_id": "E-0095",
+      "person_id_a": "P-0038",
+      "person_id_b": "P-0045",
+      "relationship_type": "co-accused",
+      "confidence": 0.77
+    },
+    {
+      "edge_id": "E-0096",
+      "person_id_a": "P-0038",
+      "person_id_b": "P-0017",
+      "relationship_type": "co-accused",
+      "confidence": 0.65
+    },
+    {
+      "edge_id": "E-0097",
+      "person_id_a": "P-0045",
+      "person_id_b": "P-0017",
+      "relationship_type": "co-accused",
+      "confidence": 0.8
+    },
+    {
+      "edge_id": "E-0098",
+      "person_id_a": "P-0042",
+      "person_id_b": "P-0015",
+      "relationship_type": "co-accused",
+      "confidence": 0.66
+    },
+    {
+      "edge_id": "E-0099",
+      "person_id_a": "P-0042",
+      "person_id_b": "P-0046",
+      "relationship_type": "co-accused",
+      "confidence": 0.61
+    },
+    {
+      "edge_id": "E-0100",
+      "person_id_a": "P-0015",
+      "person_id_b": "P-0046",
+      "relationship_type": "co-accused",
+      "confidence": 0.74
+    },
+    {
+      "edge_id": "E-0101",
+      "person_id_a": "P-0074",
+      "person_id_b": "P-0054",
+      "relationship_type": "co-accused",
+      "confidence": 0.95
+    },
+    {
+      "edge_id": "E-0102",
+      "person_id_a": "P-0074",
+      "person_id_b": "P-0069",
+      "relationship_type": "co-accused",
+      "confidence": 0.93
+    },
+    {
+      "edge_id": "E-0103",
+      "person_id_a": "P-0054",
+      "person_id_b": "P-0069",
+      "relationship_type": "co-accused",
+      "confidence": 0.78
+    },
+    {
+      "edge_id": "E-0104",
+      "person_id_a": "P-0019",
+      "person_id_b": "P-0007",
+      "relationship_type": "co-accused",
+      "confidence": 0.93
+    },
+    {
+      "edge_id": "E-0105",
+      "person_id_a": "P-0021",
+      "person_id_b": "P-0037",
+      "relationship_type": "co-accused",
+      "confidence": 0.96
+    },
+    {
+      "edge_id": "E-0106",
+      "person_id_a": "P-0019",
+      "person_id_b": "P-0008",
+      "relationship_type": "co-accused",
+      "confidence": 0.81
+    },
+    {
+      "edge_id": "E-0107",
+      "person_id_a": "P-0027",
+      "person_id_b": "P-0070",
+      "relationship_type": "co-accused",
+      "confidence": 0.65
+    },
+    {
+      "edge_id": "E-0108",
+      "person_id_a": "P-0058",
+      "person_id_b": "P-0014",
+      "relationship_type": "co-accused",
+      "confidence": 0.96
+    },
+    {
+      "edge_id": "E-0109",
+      "person_id_a": "P-0029",
+      "person_id_b": "P-0072",
+      "relationship_type": "co-accused",
+      "confidence": 0.8
+    },
+    {
+      "edge_id": "E-0110",
+      "person_id_a": "P-0029",
+      "person_id_b": "P-0050",
+      "relationship_type": "co-accused",
+      "confidence": 0.82
+    },
+    {
+      "edge_id": "E-0111",
+      "person_id_a": "P-0072",
+      "person_id_b": "P-0050",
+      "relationship_type": "co-accused",
+      "confidence": 0.77
+    },
+    {
+      "edge_id": "E-0112",
+      "person_id_a": "P-0007",
+      "person_id_b": "P-0049",
+      "relationship_type": "co-accused",
+      "confidence": 0.88
+    },
+    {
+      "edge_id": "E-0113",
+      "person_id_a": "P-0041",
+      "person_id_b": "P-0071",
+      "relationship_type": "co-accused",
+      "confidence": 0.93
+    },
+    {
+      "edge_id": "E-0114",
+      "person_id_a": "P-0070",
+      "person_id_b": "P-0026",
+      "relationship_type": "co-accused",
+      "confidence": 0.77
+    },
+    {
+      "edge_id": "E-0115",
+      "person_id_a": "P-0070",
+      "person_id_b": "P-0025",
+      "relationship_type": "co-accused",
+      "confidence": 0.84
+    },
+    {
+      "edge_id": "E-0116",
+      "person_id_a": "P-0026",
+      "person_id_b": "P-0025",
+      "relationship_type": "co-accused",
+      "confidence": 0.8
+    },
+    {
+      "edge_id": "E-0117",
+      "person_id_a": "P-0016",
+      "person_id_b": "P-0049",
+      "relationship_type": "co-accused",
+      "confidence": 0.95
+    },
+    {
+      "edge_id": "E-0118",
+      "person_id_a": "P-0016",
+      "person_id_b": "P-0006",
+      "relationship_type": "co-accused",
+      "confidence": 0.78
+    },
+    {
+      "edge_id": "E-0119",
+      "person_id_a": "P-0049",
+      "person_id_b": "P-0006",
+      "relationship_type": "co-accused",
+      "confidence": 0.69
+    },
+    {
+      "edge_id": "E-0120",
+      "person_id_a": "P-0034",
+      "person_id_b": "P-0017",
+      "relationship_type": "co-accused",
+      "confidence": 0.63
+    },
+    {
+      "edge_id": "E-0121",
+      "person_id_a": "P-0034",
+      "person_id_b": "P-0021",
+      "relationship_type": "co-accused",
+      "confidence": 0.72
+    },
+    {
+      "edge_id": "E-0122",
+      "person_id_a": "P-0017",
+      "person_id_b": "P-0021",
+      "relationship_type": "co-accused",
+      "confidence": 0.76
+    },
+    {
+      "edge_id": "E-0123",
+      "person_id_a": "P-0020",
+      "person_id_b": "P-0006",
+      "relationship_type": "co-accused",
+      "confidence": 0.66
+    },
+    {
+      "edge_id": "E-0124",
+      "person_id_a": "P-0007",
+      "person_id_b": "P-0039",
+      "relationship_type": "co-accused",
+      "confidence": 0.6
+    },
+    {
+      "edge_id": "E-0125",
+      "person_id_a": "P-0071",
+      "person_id_b": "P-0046",
+      "relationship_type": "co-accused",
+      "confidence": 0.8
+    },
+    {
+      "edge_id": "E-0126",
+      "person_id_a": "P-0071",
+      "person_id_b": "P-0010",
+      "relationship_type": "co-accused",
+      "confidence": 0.89
+    },
+    {
+      "edge_id": "E-0127",
+      "person_id_a": "P-0046",
+      "person_id_b": "P-0010",
+      "relationship_type": "co-accused",
+      "confidence": 0.65
+    },
+    {
+      "edge_id": "E-0128",
+      "person_id_a": "P-0029",
+      "person_id_b": "P-0024",
+      "relationship_type": "co-accused",
+      "confidence": 0.71
+    },
+    {
+      "edge_id": "E-0129",
+      "person_id_a": "P-0029",
+      "person_id_b": "P-0067",
+      "relationship_type": "co-accused",
+      "confidence": 0.8
+    },
+    {
+      "edge_id": "E-0130",
+      "person_id_a": "P-0024",
+      "person_id_b": "P-0067",
+      "relationship_type": "co-accused",
+      "confidence": 0.86
+    },
+    {
+      "edge_id": "E-0131",
+      "person_id_a": "P-0069",
+      "person_id_b": "P-0052",
+      "relationship_type": "co-accused",
+      "confidence": 0.79
+    },
+    {
+      "edge_id": "E-0132",
+      "person_id_a": "P-0069",
+      "person_id_b": "P-0012",
+      "relationship_type": "co-accused",
+      "confidence": 0.89
+    },
+    {
+      "edge_id": "E-0133",
+      "person_id_a": "P-0052",
+      "person_id_b": "P-0012",
+      "relationship_type": "co-accused",
+      "confidence": 0.71
+    },
+    {
+      "edge_id": "E-0134",
+      "person_id_a": "P-0047",
+      "person_id_b": "P-0038",
+      "relationship_type": "co-accused",
+      "confidence": 0.89
+    },
+    {
+      "edge_id": "E-0135",
+      "person_id_a": "P-0068",
+      "person_id_b": "P-0061",
+      "relationship_type": "co-accused",
+      "confidence": 0.9
+    },
+    {
+      "edge_id": "E-0136",
+      "person_id_a": "P-0068",
+      "person_id_b": "P-0072",
+      "relationship_type": "co-accused",
+      "confidence": 0.83
+    },
+    {
+      "edge_id": "E-0137",
+      "person_id_a": "P-0061",
+      "person_id_b": "P-0072",
+      "relationship_type": "co-accused",
+      "confidence": 0.9
+    },
+    {
+      "edge_id": "E-0138",
+      "person_id_a": "P-0031",
+      "person_id_b": "P-0032",
+      "relationship_type": "co-accused",
+      "confidence": 0.81
+    },
+    {
+      "edge_id": "E-0139",
+      "person_id_a": "P-0049",
+      "person_id_b": "P-0015",
+      "relationship_type": "co-accused",
+      "confidence": 0.67
+    },
+    {
+      "edge_id": "E-0140",
+      "person_id_a": "P-0070",
+      "person_id_b": "P-0037",
+      "relationship_type": "co-accused",
+      "confidence": 0.94
+    },
+    {
+      "edge_id": "E-0141",
+      "person_id_a": "P-0048",
+      "person_id_b": "P-0066",
+      "relationship_type": "co-accused",
+      "confidence": 0.77
+    },
+    {
+      "edge_id": "E-0142",
+      "person_id_a": "P-0048",
+      "person_id_b": "P-0058",
+      "relationship_type": "co-accused",
+      "confidence": 0.69
+    },
+    {
+      "edge_id": "E-0143",
+      "person_id_a": "P-0066",
+      "person_id_b": "P-0058",
+      "relationship_type": "co-accused",
+      "confidence": 0.87
+    },
+    {
+      "edge_id": "E-0144",
+      "person_id_a": "P-0025",
+      "person_id_b": "P-0042",
+      "relationship_type": "co-accused",
+      "confidence": 0.85
+    },
+    {
+      "edge_id": "E-0145",
+      "person_id_a": "P-0001",
+      "person_id_b": "P-0009",
+      "relationship_type": "co-accused",
+      "confidence": 0.91
+    },
+    {
+      "edge_id": "E-0146",
+      "person_id_a": "P-0001",
+      "person_id_b": "P-0027",
+      "relationship_type": "co-accused",
+      "confidence": 0.68
+    },
+    {
+      "edge_id": "E-0147",
+      "person_id_a": "P-0009",
+      "person_id_b": "P-0027",
+      "relationship_type": "co-accused",
+      "confidence": 0.63
+    },
+    {
+      "edge_id": "E-0148",
+      "person_id_a": "P-0056",
+      "person_id_b": "P-0010",
+      "relationship_type": "co-accused",
+      "confidence": 0.84
+    },
+    {
+      "edge_id": "E-0149",
+      "person_id_a": "P-0056",
+      "person_id_b": "P-0020",
+      "relationship_type": "co-accused",
+      "confidence": 0.8
+    },
+    {
+      "edge_id": "E-0150",
+      "person_id_a": "P-0010",
+      "person_id_b": "P-0020",
+      "relationship_type": "co-accused",
+      "confidence": 0.9
+    },
+    {
+      "edge_id": "E-0151",
+      "person_id_a": "P-0005",
+      "person_id_b": "P-0012",
+      "relationship_type": "co-accused",
+      "confidence": 0.83
+    },
+    {
+      "edge_id": "E-0152",
+      "person_id_a": "P-0072",
+      "person_id_b": "P-0010",
+      "relationship_type": "co-accused",
+      "confidence": 0.86
+    },
+    {
+      "edge_id": "E-0153",
+      "person_id_a": "P-0050",
+      "person_id_b": "P-0058",
+      "relationship_type": "co-accused",
+      "confidence": 0.7
+    },
+    {
+      "edge_id": "E-0154",
+      "person_id_a": "P-0056",
+      "person_id_b": "P-0041",
+      "relationship_type": "co-accused",
+      "confidence": 0.85
+    },
+    {
+      "edge_id": "E-0155",
+      "person_id_a": "P-0016",
+      "person_id_b": "P-0069",
+      "relationship_type": "co-accused",
+      "confidence": 0.8
+    },
+    {
+      "edge_id": "E-0156",
+      "person_id_a": "P-0009",
+      "person_id_b": "P-0075",
+      "relationship_type": "co-accused",
+      "confidence": 0.7
+    },
+    {
+      "edge_id": "E-0157",
+      "person_id_a": "P-0009",
+      "person_id_b": "P-0006",
+      "relationship_type": "co-accused",
+      "confidence": 0.67
+    },
+    {
+      "edge_id": "E-0158",
+      "person_id_a": "P-0075",
+      "person_id_b": "P-0006",
+      "relationship_type": "co-accused",
+      "confidence": 0.63
+    },
+    {
+      "edge_id": "E-0159",
+      "person_id_a": "P-0065",
+      "person_id_b": "P-0014",
+      "relationship_type": "co-accused",
+      "confidence": 0.65
+    },
+    {
+      "edge_id": "E-0160",
+      "person_id_a": "P-0012",
+      "person_id_b": "P-0037",
+      "relationship_type": "co-accused",
+      "confidence": 0.64
+    },
+    {
+      "edge_id": "E-0161",
+      "person_id_a": "P-0051",
+      "person_id_b": "P-0004",
+      "relationship_type": "co-accused",
+      "confidence": 0.77
+    },
+    {
+      "edge_id": "E-0162",
+      "person_id_a": "P-0070",
+      "person_id_b": "P-0038",
+      "relationship_type": "co-accused",
+      "confidence": 0.77
+    },
+    {
+      "edge_id": "E-0163",
+      "person_id_a": "P-0002",
+      "person_id_b": "P-0071",
+      "relationship_type": "co-accused",
+      "confidence": 0.87
+    },
+    {
+      "edge_id": "E-0164",
+      "person_id_a": "P-0051",
+      "person_id_b": "P-0069",
+      "relationship_type": "co-accused",
+      "confidence": 0.79
+    },
+    {
+      "edge_id": "E-0165",
+      "person_id_a": "P-0051",
+      "person_id_b": "P-0071",
+      "relationship_type": "co-accused",
+      "confidence": 0.72
+    },
+    {
+      "edge_id": "E-0166",
+      "person_id_a": "P-0069",
+      "person_id_b": "P-0071",
+      "relationship_type": "co-accused",
+      "confidence": 0.66
+    },
+    {
+      "edge_id": "E-0167",
+      "person_id_a": "P-0019",
+      "person_id_b": "P-0021",
+      "relationship_type": "co-accused",
+      "confidence": 0.97
+    },
+    {
+      "edge_id": "E-0168",
+      "person_id_a": "P-0019",
+      "person_id_b": "P-0024",
+      "relationship_type": "co-accused",
+      "confidence": 0.61
+    },
+    {
+      "edge_id": "E-0169",
+      "person_id_a": "P-0021",
+      "person_id_b": "P-0024",
+      "relationship_type": "co-accused",
+      "confidence": 0.97
+    },
+    {
+      "edge_id": "E-0170",
+      "person_id_a": "P-0025",
+      "person_id_b": "P-0015",
+      "relationship_type": "co-accused",
+      "confidence": 0.71
+    },
+    {
+      "edge_id": "E-0171",
+      "person_id_a": "P-0007",
+      "person_id_b": "P-0071",
+      "relationship_type": "co-accused",
+      "confidence": 0.65
+    },
+    {
+      "edge_id": "E-0172",
+      "person_id_a": "P-0007",
+      "person_id_b": "P-0060",
+      "relationship_type": "co-accused",
+      "confidence": 0.77
+    },
+    {
+      "edge_id": "E-0173",
+      "person_id_a": "P-0071",
+      "person_id_b": "P-0060",
+      "relationship_type": "co-accused",
+      "confidence": 0.6
+    },
+    {
+      "edge_id": "E-0174",
+      "person_id_a": "P-0063",
+      "person_id_b": "P-0043",
+      "relationship_type": "co-accused",
+      "confidence": 0.63
+    },
+    {
+      "edge_id": "E-0175",
+      "person_id_a": "P-0063",
+      "person_id_b": "P-0046",
+      "relationship_type": "co-accused",
+      "confidence": 0.61
+    },
+    {
+      "edge_id": "E-0176",
+      "person_id_a": "P-0043",
+      "person_id_b": "P-0046",
+      "relationship_type": "co-accused",
+      "confidence": 0.68
+    },
+    {
+      "edge_id": "E-0177",
+      "person_id_a": "P-0009",
+      "person_id_b": "P-0025",
+      "relationship_type": "co-accused",
+      "confidence": 0.76
+    },
+    {
+      "edge_id": "E-0178",
+      "person_id_a": "P-0058",
+      "person_id_b": "P-0043",
+      "relationship_type": "co-accused",
+      "confidence": 0.9
+    },
+    {
+      "edge_id": "E-0179",
+      "person_id_a": "P-0075",
+      "person_id_b": "P-0020",
+      "relationship_type": "co-accused",
+      "confidence": 0.79
+    },
+    {
+      "edge_id": "E-0180",
+      "person_id_a": "P-0047",
+      "person_id_b": "P-0041",
+      "relationship_type": "co-accused",
+      "confidence": 0.74
+    },
+    {
+      "edge_id": "E-0181",
+      "person_id_a": "P-0047",
+      "person_id_b": "P-0055",
+      "relationship_type": "co-accused",
+      "confidence": 0.86
+    },
+    {
+      "edge_id": "E-0182",
+      "person_id_a": "P-0041",
+      "person_id_b": "P-0055",
+      "relationship_type": "co-accused",
+      "confidence": 0.61
+    },
+    {
+      "edge_id": "E-0183",
+      "person_id_a": "P-0032",
+      "person_id_b": "P-0029",
+      "relationship_type": "co-accused",
+      "confidence": 0.63
+    },
+    {
+      "edge_id": "E-0184",
+      "person_id_a": "P-0036",
+      "person_id_b": "P-0047",
+      "relationship_type": "co-accused",
+      "confidence": 0.89
+    },
+    {
+      "edge_id": "E-0185",
+      "person_id_a": "P-0062",
+      "person_id_b": "P-0060",
+      "relationship_type": "co-accused",
+      "confidence": 0.66
+    },
+    {
+      "edge_id": "E-0186",
+      "person_id_a": "P-0040",
+      "person_id_b": "P-0063",
+      "relationship_type": "co-accused",
+      "confidence": 0.7
+    },
+    {
+      "edge_id": "E-0187",
+      "person_id_a": "P-0011",
+      "person_id_b": "P-0036",
+      "relationship_type": "co-accused",
+      "confidence": 0.75
+    },
+    {
+      "edge_id": "E-0188",
+      "person_id_a": "P-0011",
+      "person_id_b": "P-0018",
+      "relationship_type": "co-accused",
+      "confidence": 0.81
+    },
+    {
+      "edge_id": "E-0189",
+      "person_id_a": "P-0036",
+      "person_id_b": "P-0018",
+      "relationship_type": "co-accused",
+      "confidence": 0.67
+    },
+    {
+      "edge_id": "E-0190",
+      "person_id_a": "P-0010",
+      "person_id_b": "P-0003",
+      "relationship_type": "co-accused",
+      "confidence": 0.94
+    },
+    {
+      "edge_id": "E-0191",
+      "person_id_a": "P-0052",
+      "person_id_b": "P-0028",
+      "relationship_type": "co-accused",
+      "confidence": 0.7
+    },
+    {
+      "edge_id": "E-0192",
+      "person_id_a": "P-0052",
+      "person_id_b": "P-0005",
+      "relationship_type": "co-accused",
+      "confidence": 0.74
+    },
+    {
+      "edge_id": "E-0193",
+      "person_id_a": "P-0028",
+      "person_id_b": "P-0005",
+      "relationship_type": "co-accused",
+      "confidence": 0.6
+    },
+    {
+      "edge_id": "E-0194",
+      "person_id_a": "P-0070",
+      "person_id_b": "P-0061",
+      "relationship_type": "co-accused",
+      "confidence": 0.97
+    },
+    {
+      "edge_id": "E-0195",
+      "person_id_a": "P-0070",
+      "person_id_b": "P-0020",
+      "relationship_type": "co-accused",
+      "confidence": 0.87
+    },
+    {
+      "edge_id": "E-0196",
+      "person_id_a": "P-0061",
+      "person_id_b": "P-0020",
+      "relationship_type": "co-accused",
+      "confidence": 0.75
+    },
+    {
+      "edge_id": "E-0197",
+      "person_id_a": "P-0066",
+      "person_id_b": "P-0012",
+      "relationship_type": "co-accused",
+      "confidence": 0.97
+    },
+    {
+      "edge_id": "E-0198",
+      "person_id_a": "P-0066",
+      "person_id_b": "P-0051",
+      "relationship_type": "co-accused",
+      "confidence": 0.69
+    },
+    {
+      "edge_id": "E-0199",
+      "person_id_a": "P-0012",
+      "person_id_b": "P-0051",
+      "relationship_type": "co-accused",
+      "confidence": 0.98
+    },
+    {
+      "edge_id": "E-0200",
+      "person_id_a": "P-0022",
+      "person_id_b": "P-0066",
+      "relationship_type": "co-accused",
+      "confidence": 0.68
+    },
+    {
+      "edge_id": "E-0201",
+      "person_id_a": "P-0022",
+      "person_id_b": "P-0018",
+      "relationship_type": "co-accused",
+      "confidence": 0.88
+    },
+    {
+      "edge_id": "E-0202",
+      "person_id_a": "P-0066",
+      "person_id_b": "P-0018",
+      "relationship_type": "co-accused",
+      "confidence": 0.64
+    },
+    {
+      "edge_id": "E-0203",
+      "person_id_a": "P-0019",
+      "person_id_b": "P-0062",
+      "relationship_type": "co-accused",
+      "confidence": 0.85
+    },
+    {
+      "edge_id": "E-0204",
+      "person_id_a": "P-0019",
+      "person_id_b": "P-0046",
+      "relationship_type": "co-accused",
+      "confidence": 0.68
+    },
+    {
+      "edge_id": "E-0205",
+      "person_id_a": "P-0062",
+      "person_id_b": "P-0046",
+      "relationship_type": "co-accused",
+      "confidence": 0.75
+    },
+    {
+      "edge_id": "E-0206",
+      "person_id_a": "P-0030",
+      "person_id_b": "P-0009",
+      "relationship_type": "co-accused",
+      "confidence": 0.97
+    },
+    {
+      "edge_id": "E-0207",
+      "person_id_a": "P-0030",
+      "person_id_b": "P-0006",
+      "relationship_type": "co-accused",
+      "confidence": 0.96
+    },
+    {
+      "edge_id": "E-0208",
+      "person_id_a": "P-0050",
+      "person_id_b": "P-0061",
+      "relationship_type": "co-accused",
+      "confidence": 0.66
+    },
+    {
+      "edge_id": "E-0209",
+      "person_id_a": "P-0014",
+      "person_id_b": "P-0067",
+      "relationship_type": "co-accused",
+      "confidence": 0.88
+    },
+    {
+      "edge_id": "E-0210",
+      "person_id_a": "P-0034",
+      "person_id_b": "P-0075",
+      "relationship_type": "co-accused",
+      "confidence": 0.88
+    },
+    {
+      "edge_id": "E-0211",
+      "person_id_a": "P-0023",
+      "person_id_b": "P-0049",
+      "relationship_type": "co-accused",
+      "confidence": 0.81
+    },
+    {
+      "edge_id": "E-0212",
+      "person_id_a": "P-0023",
+      "person_id_b": "P-0047",
+      "relationship_type": "co-accused",
+      "confidence": 0.65
+    },
+    {
+      "edge_id": "E-0213",
+      "person_id_a": "P-0049",
+      "person_id_b": "P-0047",
+      "relationship_type": "co-accused",
+      "confidence": 0.78
+    },
+    {
+      "edge_id": "E-0214",
+      "person_id_a": "P-0049",
+      "person_id_b": "P-0029",
+      "relationship_type": "co-accused",
+      "confidence": 0.71
+    },
+    {
+      "edge_id": "E-0215",
+      "person_id_a": "P-0046",
+      "person_id_b": "P-0045",
+      "relationship_type": "co-accused",
+      "confidence": 0.74
+    },
+    {
+      "edge_id": "E-0216",
+      "person_id_a": "P-0001",
+      "person_id_b": "P-0065",
+      "relationship_type": "co-accused",
+      "confidence": 0.62
+    },
+    {
+      "edge_id": "E-0217",
+      "person_id_a": "P-0022",
+      "person_id_b": "P-0030",
+      "relationship_type": "co-accused",
+      "confidence": 0.85
+    },
+    {
+      "edge_id": "E-0218",
+      "person_id_a": "P-0036",
+      "person_id_b": "P-0028",
+      "relationship_type": "co-accused",
+      "confidence": 0.97
+    },
+    {
+      "edge_id": "E-0219",
+      "person_id_a": "P-0036",
+      "person_id_b": "P-0020",
+      "relationship_type": "co-accused",
+      "confidence": 0.69
+    },
+    {
+      "edge_id": "E-0220",
+      "person_id_a": "P-0028",
+      "person_id_b": "P-0020",
+      "relationship_type": "co-accused",
+      "confidence": 0.76
+    },
+    {
+      "edge_id": "E-0221",
+      "person_id_a": "P-0016",
+      "person_id_b": "P-0030",
+      "relationship_type": "co-accused",
+      "confidence": 0.61
+    },
+    {
+      "edge_id": "E-0222",
+      "person_id_a": "P-0015",
+      "person_id_b": "P-0062",
+      "relationship_type": "co-accused",
+      "confidence": 0.9
+    },
+    {
+      "edge_id": "E-0223",
+      "person_id_a": "P-0062",
+      "person_id_b": "P-0027",
+      "relationship_type": "co-accused",
+      "confidence": 0.82
+    },
+    {
+      "edge_id": "E-0224",
+      "person_id_a": "P-0021",
+      "person_id_b": "P-0018",
+      "relationship_type": "co-accused",
+      "confidence": 0.75
+    },
+    {
+      "edge_id": "E-0225",
+      "person_id_a": "P-0021",
+      "person_id_b": "P-0066",
+      "relationship_type": "co-accused",
+      "confidence": 0.69
+    },
+    {
+      "edge_id": "E-0226",
+      "person_id_a": "P-0018",
+      "person_id_b": "P-0066",
+      "relationship_type": "co-accused",
+      "confidence": 0.97
+    },
+    {
+      "edge_id": "E-0227",
+      "person_id_a": "P-0073",
+      "person_id_b": "P-0003",
+      "relationship_type": "co-accused",
+      "confidence": 0.82
+    },
+    {
+      "edge_id": "E-0228",
+      "person_id_a": "P-0011",
+      "person_id_b": "P-0028",
+      "relationship_type": "co-accused",
+      "confidence": 0.86
+    },
+    {
+      "edge_id": "E-0229",
+      "person_id_a": "P-0061",
+      "person_id_b": "P-0062",
+      "relationship_type": "co-accused",
+      "confidence": 0.86
+    },
+    {
+      "edge_id": "E-0230",
+      "person_id_a": "P-0061",
+      "person_id_b": "P-0022",
+      "relationship_type": "co-accused",
+      "confidence": 0.66
+    },
+    {
+      "edge_id": "E-0231",
+      "person_id_a": "P-0062",
+      "person_id_b": "P-0022",
+      "relationship_type": "co-accused",
+      "confidence": 0.89
+    },
+    {
+      "edge_id": "E-0232",
+      "person_id_a": "P-0019",
+      "person_id_b": "P-0075",
+      "relationship_type": "co-accused",
+      "confidence": 0.69
+    },
+    {
+      "edge_id": "E-0233",
+      "person_id_a": "P-0019",
+      "person_id_b": "P-0024",
+      "relationship_type": "co-accused",
+      "confidence": 0.79
+    },
+    {
+      "edge_id": "E-0234",
+      "person_id_a": "P-0075",
+      "person_id_b": "P-0024",
+      "relationship_type": "co-accused",
+      "confidence": 0.86
+    },
+    {
+      "edge_id": "E-0235",
+      "person_id_a": "P-0034",
+      "person_id_b": "P-0022",
+      "relationship_type": "co-accused",
+      "confidence": 0.73
+    },
+    {
+      "edge_id": "E-0236",
+      "person_id_a": "P-0034",
+      "person_id_b": "P-0044",
+      "relationship_type": "co-accused",
+      "confidence": 0.97
+    },
+    {
+      "edge_id": "E-0237",
+      "person_id_a": "P-0022",
+      "person_id_b": "P-0044",
+      "relationship_type": "co-accused",
+      "confidence": 0.89
+    },
+    {
+      "edge_id": "E-0238",
+      "person_id_a": "P-0009",
+      "person_id_b": "P-0030",
+      "relationship_type": "co-accused",
+      "confidence": 0.62
+    },
+    {
+      "edge_id": "E-0239",
+      "person_id_a": "P-0009",
+      "person_id_b": "P-0049",
+      "relationship_type": "co-accused",
+      "confidence": 0.74
+    },
+    {
+      "edge_id": "E-0240",
+      "person_id_a": "P-0030",
+      "person_id_b": "P-0049",
+      "relationship_type": "co-accused",
+      "confidence": 0.66
+    },
+    {
+      "edge_id": "E-0241",
+      "person_id_a": "P-0054",
+      "person_id_b": "P-0020",
+      "relationship_type": "co-accused",
+      "confidence": 0.8
+    },
+    {
+      "edge_id": "E-0242",
+      "person_id_a": "P-0054",
+      "person_id_b": "P-0013",
+      "relationship_type": "co-accused",
+      "confidence": 0.64
+    },
+    {
+      "edge_id": "E-0243",
+      "person_id_a": "P-0020",
+      "person_id_b": "P-0013",
+      "relationship_type": "co-accused",
+      "confidence": 0.79
+    },
+    {
+      "edge_id": "E-0244",
+      "person_id_a": "P-0005",
+      "person_id_b": "P-0069",
+      "relationship_type": "co-accused",
+      "confidence": 0.72
+    },
+    {
+      "edge_id": "E-0245",
+      "person_id_a": "P-0005",
+      "person_id_b": "P-0065",
+      "relationship_type": "co-accused",
+      "confidence": 0.81
+    },
+    {
+      "edge_id": "E-0246",
+      "person_id_a": "P-0069",
+      "person_id_b": "P-0065",
+      "relationship_type": "co-accused",
+      "confidence": 0.84
+    },
+    {
+      "edge_id": "E-0247",
+      "person_id_a": "P-0017",
+      "person_id_b": "P-0070",
+      "relationship_type": "co-accused",
+      "confidence": 0.73
+    },
+    {
+      "edge_id": "E-0248",
+      "person_id_a": "P-0067",
+      "person_id_b": "P-0054",
+      "relationship_type": "co-accused",
+      "confidence": 0.94
+    },
+    {
+      "edge_id": "E-0249",
+      "person_id_a": "P-0030",
+      "person_id_b": "P-0062",
+      "relationship_type": "co-accused",
+      "confidence": 0.88
+    },
+    {
+      "edge_id": "E-0250",
+      "person_id_a": "P-0074",
+      "person_id_b": "P-0013",
+      "relationship_type": "co-accused",
+      "confidence": 0.61
+    },
+    {
+      "edge_id": "E-0251",
+      "person_id_a": "P-0030",
+      "person_id_b": "P-0011",
+      "relationship_type": "co-accused",
+      "confidence": 0.74
+    },
+    {
+      "edge_id": "E-0252",
+      "person_id_a": "P-0070",
+      "person_id_b": "P-0053",
+      "relationship_type": "co-accused",
+      "confidence": 0.88
+    },
+    {
+      "edge_id": "E-0253",
+      "person_id_a": "P-0070",
+      "person_id_b": "P-0033",
+      "relationship_type": "co-accused",
+      "confidence": 0.7
+    },
+    {
+      "edge_id": "E-0254",
+      "person_id_a": "P-0053",
+      "person_id_b": "P-0033",
+      "relationship_type": "co-accused",
+      "confidence": 0.62
+    },
+    {
+      "edge_id": "E-0255",
+      "person_id_a": "P-0016",
+      "person_id_b": "P-0067",
+      "relationship_type": "co-accused",
+      "confidence": 0.87
+    },
+    {
+      "edge_id": "E-0256",
+      "person_id_a": "P-0016",
+      "person_id_b": "P-0001",
+      "relationship_type": "co-accused",
+      "confidence": 0.81
+    },
+    {
+      "edge_id": "E-0257",
+      "person_id_a": "P-0067",
+      "person_id_b": "P-0001",
+      "relationship_type": "co-accused",
+      "confidence": 0.81
+    },
+    {
+      "edge_id": "E-0258",
+      "person_id_a": "P-0047",
+      "person_id_b": "P-0014",
+      "relationship_type": "co-accused",
+      "confidence": 0.79
+    },
+    {
+      "edge_id": "E-0259",
+      "person_id_a": "P-0075",
+      "person_id_b": "P-0033",
+      "relationship_type": "co-accused",
+      "confidence": 0.82
+    },
+    {
+      "edge_id": "E-0260",
+      "person_id_a": "P-0055",
+      "person_id_b": "P-0073",
+      "relationship_type": "co-accused",
+      "confidence": 0.81
+    },
+    {
+      "edge_id": "E-0261",
+      "person_id_a": "P-0055",
+      "person_id_b": "P-0047",
+      "relationship_type": "co-accused",
+      "confidence": 0.72
+    },
+    {
+      "edge_id": "E-0262",
+      "person_id_a": "P-0073",
+      "person_id_b": "P-0047",
+      "relationship_type": "co-accused",
+      "confidence": 0.78
+    },
+    {
+      "edge_id": "E-0263",
+      "person_id_a": "P-0027",
+      "person_id_b": "P-0053",
+      "relationship_type": "co-accused",
+      "confidence": 0.93
+    },
+    {
+      "edge_id": "E-0264",
+      "person_id_a": "P-0062",
+      "person_id_b": "P-0023",
+      "relationship_type": "co-accused",
+      "confidence": 0.83
+    },
+    {
+      "edge_id": "E-0265",
+      "person_id_a": "P-0062",
+      "person_id_b": "P-0048",
+      "relationship_type": "co-accused",
+      "confidence": 0.93
+    },
+    {
+      "edge_id": "E-0266",
+      "person_id_a": "P-0023",
+      "person_id_b": "P-0048",
+      "relationship_type": "co-accused",
+      "confidence": 0.66
+    },
+    {
+      "edge_id": "E-0267",
+      "person_id_a": "P-0033",
+      "person_id_b": "P-0040",
+      "relationship_type": "co-accused",
+      "confidence": 0.8
+    },
+    {
+      "edge_id": "E-0268",
+      "person_id_a": "P-0051",
+      "person_id_b": "P-0018",
+      "relationship_type": "co-accused",
+      "confidence": 0.77
+    },
+    {
+      "edge_id": "E-0269",
+      "person_id_a": "P-0021",
+      "person_id_b": "P-0013",
+      "relationship_type": "co-accused",
+      "confidence": 0.91
+    },
+    {
+      "edge_id": "E-0270",
+      "person_id_a": "P-0052",
+      "person_id_b": "P-0044",
+      "relationship_type": "co-accused",
+      "confidence": 0.81
+    },
+    {
+      "edge_id": "E-0271",
+      "person_id_a": "P-0052",
+      "person_id_b": "P-0071",
+      "relationship_type": "co-accused",
+      "confidence": 0.77
+    },
+    {
+      "edge_id": "E-0272",
+      "person_id_a": "P-0044",
+      "person_id_b": "P-0071",
+      "relationship_type": "co-accused",
+      "confidence": 0.89
+    },
+    {
+      "edge_id": "E-0273",
+      "person_id_a": "P-0001",
+      "person_id_b": "P-0012",
+      "relationship_type": "co-accused",
+      "confidence": 0.79
+    },
+    {
+      "edge_id": "E-0274",
+      "person_id_a": "P-0056",
+      "person_id_b": "P-0012",
+      "relationship_type": "co-accused",
+      "confidence": 0.88
+    },
+    {
+      "edge_id": "E-0275",
+      "person_id_a": "P-0029",
+      "person_id_b": "P-0048",
+      "relationship_type": "co-accused",
+      "confidence": 0.94
+    },
+    {
+      "edge_id": "E-0276",
+      "person_id_a": "P-0005",
+      "person_id_b": "P-0050",
+      "relationship_type": "co-accused",
+      "confidence": 0.84
+    },
+    {
+      "edge_id": "E-0277",
+      "person_id_a": "P-0005",
+      "person_id_b": "P-0052",
+      "relationship_type": "co-accused",
+      "confidence": 0.74
+    },
+    {
+      "edge_id": "E-0278",
+      "person_id_a": "P-0050",
+      "person_id_b": "P-0052",
+      "relationship_type": "co-accused",
+      "confidence": 0.84
+    },
+    {
+      "edge_id": "E-0279",
+      "person_id_a": "P-0037",
+      "person_id_b": "P-0008",
+      "relationship_type": "co-accused",
+      "confidence": 0.72
+    },
+    {
+      "edge_id": "E-0280",
+      "person_id_a": "P-0037",
+      "person_id_b": "P-0023",
+      "relationship_type": "co-accused",
+      "confidence": 0.62
+    },
+    {
+      "edge_id": "E-0281",
+      "person_id_a": "P-0008",
+      "person_id_b": "P-0023",
+      "relationship_type": "co-accused",
+      "confidence": 0.97
+    },
+    {
+      "edge_id": "E-0282",
+      "person_id_a": "P-0002",
+      "person_id_b": "P-0026",
+      "relationship_type": "co-accused",
+      "confidence": 0.91
+    },
+    {
+      "edge_id": "E-0283",
+      "person_id_a": "P-0037",
+      "person_id_b": "P-0025",
+      "relationship_type": "co-accused",
+      "confidence": 0.67
+    },
+    {
+      "edge_id": "E-0284",
+      "person_id_a": "P-0037",
+      "person_id_b": "P-0005",
+      "relationship_type": "co-accused",
+      "confidence": 0.86
+    },
+    {
+      "edge_id": "E-0285",
+      "person_id_a": "P-0025",
+      "person_id_b": "P-0005",
+      "relationship_type": "co-accused",
+      "confidence": 0.89
+    },
+    {
+      "edge_id": "E-0286",
+      "person_id_a": "P-0030",
+      "person_id_b": "P-0022",
+      "relationship_type": "co-accused",
+      "confidence": 0.66
+    },
+    {
+      "edge_id": "E-0287",
+      "person_id_a": "P-0030",
+      "person_id_b": "P-0005",
+      "relationship_type": "co-accused",
+      "confidence": 0.71
+    },
+    {
+      "edge_id": "E-0288",
+      "person_id_a": "P-0022",
+      "person_id_b": "P-0005",
+      "relationship_type": "co-accused",
+      "confidence": 0.76
+    },
+    {
+      "edge_id": "E-0289",
+      "person_id_a": "P-0046",
+      "person_id_b": "P-0051",
+      "relationship_type": "co-accused",
+      "confidence": 0.72
+    },
+    {
+      "edge_id": "E-0290",
+      "person_id_a": "P-0026",
+      "person_id_b": "P-0067",
+      "relationship_type": "co-accused",
+      "confidence": 0.64
+    },
+    {
+      "edge_id": "E-0291",
+      "person_id_a": "P-0026",
+      "person_id_b": "P-0002",
+      "relationship_type": "co-accused",
+      "confidence": 0.85
+    },
+    {
+      "edge_id": "E-0292",
+      "person_id_a": "P-0067",
+      "person_id_b": "P-0002",
+      "relationship_type": "co-accused",
+      "confidence": 0.62
+    },
+    {
+      "edge_id": "E-0293",
+      "person_id_a": "P-0037",
+      "person_id_b": "P-0072",
+      "relationship_type": "co-accused",
+      "confidence": 0.96
+    },
+    {
+      "edge_id": "E-0294",
+      "person_id_a": "P-0037",
+      "person_id_b": "P-0075",
+      "relationship_type": "co-accused",
+      "confidence": 0.67
+    },
+    {
+      "edge_id": "E-0295",
+      "person_id_a": "P-0072",
+      "person_id_b": "P-0075",
+      "relationship_type": "co-accused",
+      "confidence": 0.61
+    },
+    {
+      "edge_id": "E-0296",
+      "person_id_a": "P-0029",
+      "person_id_b": "P-0025",
+      "relationship_type": "co-accused",
+      "confidence": 0.64
+    },
+    {
+      "edge_id": "E-0297",
+      "person_id_a": "P-0074",
+      "person_id_b": "P-0001",
+      "relationship_type": "co-accused",
+      "confidence": 0.67
+    },
+    {
+      "edge_id": "E-0298",
+      "person_id_a": "P-0014",
+      "person_id_b": "P-0072",
+      "relationship_type": "co-accused",
+      "confidence": 0.61
+    },
+    {
+      "edge_id": "E-0299",
+      "person_id_a": "P-0014",
+      "person_id_b": "P-0010",
+      "relationship_type": "co-accused",
+      "confidence": 0.84
+    },
+    {
+      "edge_id": "E-0300",
+      "person_id_a": "P-0072",
+      "person_id_b": "P-0010",
+      "relationship_type": "co-accused",
+      "confidence": 0.75
+    },
+    {
+      "edge_id": "E-0301",
+      "person_id_a": "P-0015",
+      "person_id_b": "P-0066",
+      "relationship_type": "co-accused",
+      "confidence": 0.79
+    },
+    {
+      "edge_id": "E-0302",
+      "person_id_a": "P-0074",
+      "person_id_b": "P-0033",
+      "relationship_type": "co-accused",
+      "confidence": 0.84
+    },
+    {
+      "edge_id": "E-0303",
+      "person_id_a": "P-0074",
+      "person_id_b": "P-0057",
+      "relationship_type": "co-accused",
+      "confidence": 0.82
+    },
+    {
+      "edge_id": "E-0304",
+      "person_id_a": "P-0033",
+      "person_id_b": "P-0057",
+      "relationship_type": "co-accused",
+      "confidence": 0.62
+    },
+    {
+      "edge_id": "E-0305",
+      "person_id_a": "P-0032",
+      "person_id_b": "P-0044",
+      "relationship_type": "co-accused",
+      "confidence": 0.68
+    },
+    {
+      "edge_id": "E-0306",
+      "person_id_a": "P-0004",
+      "person_id_b": "P-0062",
+      "relationship_type": "co-accused",
+      "confidence": 0.87
+    },
+    {
+      "edge_id": "E-0307",
+      "person_id_a": "P-0009",
+      "person_id_b": "P-0049",
+      "relationship_type": "co-accused",
+      "confidence": 0.6
+    },
+    {
+      "edge_id": "E-0308",
+      "person_id_a": "P-0053",
+      "person_id_b": "P-0046",
+      "relationship_type": "co-accused",
+      "confidence": 0.95
+    },
+    {
+      "edge_id": "E-0309",
+      "person_id_a": "P-0002",
+      "person_id_b": "P-0034",
+      "relationship_type": "co-accused",
+      "confidence": 0.85
+    },
+    {
+      "edge_id": "E-0310",
+      "person_id_a": "P-0002",
+      "person_id_b": "P-0032",
+      "relationship_type": "co-accused",
+      "confidence": 0.95
+    },
+    {
+      "edge_id": "E-0311",
+      "person_id_a": "P-0034",
+      "person_id_b": "P-0032",
+      "relationship_type": "co-accused",
+      "confidence": 0.92
+    },
+    {
+      "edge_id": "E-0312",
+      "person_id_a": "P-0044",
+      "person_id_b": "P-0010",
+      "relationship_type": "co-accused",
+      "confidence": 0.78
+    },
+    {
+      "edge_id": "E-0313",
+      "person_id_a": "P-0046",
+      "person_id_b": "P-0028",
+      "relationship_type": "co-accused",
+      "confidence": 0.84
+    },
+    {
+      "edge_id": "E-0314",
+      "person_id_a": "P-0024",
+      "person_id_b": "P-0025",
+      "relationship_type": "co-accused",
+      "confidence": 0.74
+    },
+    {
+      "edge_id": "E-0315",
+      "person_id_a": "P-0046",
+      "person_id_b": "P-0020",
+      "relationship_type": "co-accused",
+      "confidence": 0.88
+    },
+    {
+      "edge_id": "E-0316",
+      "person_id_a": "P-0046",
+      "person_id_b": "P-0014",
+      "relationship_type": "co-accused",
+      "confidence": 0.94
+    },
+    {
+      "edge_id": "E-0317",
+      "person_id_a": "P-0020",
+      "person_id_b": "P-0014",
+      "relationship_type": "co-accused",
+      "confidence": 0.91
+    },
+    {
+      "edge_id": "E-0318",
+      "person_id_a": "P-0001",
+      "person_id_b": "P-0070",
+      "relationship_type": "co-accused",
+      "confidence": 0.9
+    },
+    {
+      "edge_id": "E-0319",
+      "person_id_a": "P-0048",
+      "person_id_b": "P-0041",
+      "relationship_type": "co-accused",
+      "confidence": 0.62
+    },
+    {
+      "edge_id": "E-0320",
+      "person_id_a": "P-0036",
+      "person_id_b": "P-0063",
+      "relationship_type": "co-accused",
+      "confidence": 0.83
+    },
+    {
+      "edge_id": "E-0321",
+      "person_id_a": "P-0036",
+      "person_id_b": "P-0024",
+      "relationship_type": "co-accused",
+      "confidence": 0.8
+    },
+    {
+      "edge_id": "E-0322",
+      "person_id_a": "P-0063",
+      "person_id_b": "P-0024",
+      "relationship_type": "co-accused",
+      "confidence": 0.88
+    },
+    {
+      "edge_id": "E-0323",
+      "person_id_a": "P-0029",
+      "person_id_b": "P-0074",
+      "relationship_type": "co-accused",
+      "confidence": 0.92
+    },
+    {
+      "edge_id": "E-0324",
+      "person_id_a": "P-0062",
+      "person_id_b": "P-0070",
+      "relationship_type": "co-accused",
+      "confidence": 0.63
+    },
+    {
+      "edge_id": "E-0325",
+      "person_id_a": "P-0045",
+      "person_id_b": "P-0051",
+      "relationship_type": "co-accused",
+      "confidence": 0.68
+    },
+    {
+      "edge_id": "E-0326",
+      "person_id_a": "P-0045",
+      "person_id_b": "P-0023",
+      "relationship_type": "co-accused",
+      "confidence": 0.8
+    },
+    {
+      "edge_id": "E-0327",
+      "person_id_a": "P-0051",
+      "person_id_b": "P-0023",
+      "relationship_type": "co-accused",
+      "confidence": 0.64
+    },
+    {
+      "edge_id": "E-0328",
+      "person_id_a": "P-0059",
+      "person_id_b": "P-0041",
+      "relationship_type": "co-accused",
+      "confidence": 0.69
+    },
+    {
+      "edge_id": "E-0329",
+      "person_id_a": "P-0059",
+      "person_id_b": "P-0002",
+      "relationship_type": "co-accused",
+      "confidence": 0.75
+    },
+    {
+      "edge_id": "E-0330",
+      "person_id_a": "P-0041",
+      "person_id_b": "P-0002",
+      "relationship_type": "co-accused",
+      "confidence": 0.67
+    },
+    {
+      "edge_id": "E-0331",
+      "person_id_a": "P-0013",
+      "person_id_b": "P-0042",
+      "relationship_type": "co-accused",
+      "confidence": 0.85
+    },
+    {
+      "edge_id": "E-0332",
+      "person_id_a": "P-0013",
+      "person_id_b": "P-0047",
+      "relationship_type": "co-accused",
+      "confidence": 0.82
+    },
+    {
+      "edge_id": "E-0333",
+      "person_id_a": "P-0042",
+      "person_id_b": "P-0047",
+      "relationship_type": "co-accused",
+      "confidence": 0.96
+    },
+    {
+      "edge_id": "E-0334",
+      "person_id_a": "P-0031",
+      "person_id_b": "P-0035",
+      "relationship_type": "co-accused",
+      "confidence": 0.81
+    },
+    {
+      "edge_id": "E-0335",
+      "person_id_a": "P-0044",
+      "person_id_b": "P-0047",
+      "relationship_type": "co-accused",
+      "confidence": 0.81
+    },
+    {
+      "edge_id": "E-0336",
+      "person_id_a": "P-0044",
+      "person_id_b": "P-0024",
+      "relationship_type": "co-accused",
+      "confidence": 0.88
+    },
+    {
+      "edge_id": "E-0337",
+      "person_id_a": "P-0047",
+      "person_id_b": "P-0024",
+      "relationship_type": "co-accused",
+      "confidence": 0.89
+    },
+    {
+      "edge_id": "E-0338",
+      "person_id_a": "P-0047",
+      "person_id_b": "P-0052",
+      "relationship_type": "co-accused",
+      "confidence": 0.82
+    },
+    {
+      "edge_id": "E-0339",
+      "person_id_a": "P-0024",
+      "person_id_b": "P-0074",
+      "relationship_type": "co-accused",
+      "confidence": 0.86
+    }
+  ],
+  "case_person_links": [
+    {
+      "case_id": "KA-2026-00001",
+      "person_id": "P-0022",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00002",
+      "person_id": "P-0021",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00002",
+      "person_id": "P-0063",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00002",
+      "person_id": "P-0012",
+      "relationship": "complainant"
+    },
+    {
+      "case_id": "KA-2025-00003",
+      "person_id": "P-0055",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00003",
+      "person_id": "P-0052",
+      "relationship": "witness"
+    },
+    {
+      "case_id": "KA-2025-00004",
+      "person_id": "P-0050",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00004",
+      "person_id": "P-0001",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00005",
+      "person_id": "P-0026",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00005",
+      "person_id": "P-0048",
+      "relationship": "witness"
+    },
+    {
+      "case_id": "KA-2025-00005",
+      "person_id": "P-0002",
+      "relationship": "complainant"
+    },
+    {
+      "case_id": "KA-2025-00006",
+      "person_id": "P-0003",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00007",
+      "person_id": "P-0032",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2026-00008",
+      "person_id": "P-0045",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00009",
+      "person_id": "P-0017",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00009",
+      "person_id": "P-0014",
+      "relationship": "witness"
+    },
+    {
+      "case_id": "KA-2025-00010",
+      "person_id": "P-0040",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00010",
+      "person_id": "P-0022",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00010",
+      "person_id": "P-0009",
+      "relationship": "witness"
+    },
+    {
+      "case_id": "KA-2026-00011",
+      "person_id": "P-0059",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2026-00011",
+      "person_id": "P-0067",
+      "relationship": "complainant"
+    },
+    {
+      "case_id": "KA-2025-00012",
+      "person_id": "P-0044",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00012",
+      "person_id": "P-0056",
+      "relationship": "witness"
+    },
+    {
+      "case_id": "KA-2025-00012",
+      "person_id": "P-0018",
+      "relationship": "witness"
+    },
+    {
+      "case_id": "KA-2026-00013",
+      "person_id": "P-0025",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2026-00013",
+      "person_id": "P-0022",
+      "relationship": "witness"
+    },
+    {
+      "case_id": "KA-2025-00014",
+      "person_id": "P-0030",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00015",
+      "person_id": "P-0017",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2026-00016",
+      "person_id": "P-0003",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00017",
+      "person_id": "P-0065",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00017",
+      "person_id": "P-0022",
+      "relationship": "witness"
+    },
+    {
+      "case_id": "KA-2024-00017",
+      "person_id": "P-0016",
+      "relationship": "complainant"
+    },
+    {
+      "case_id": "KA-2025-00018",
+      "person_id": "P-0049",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00019",
+      "person_id": "P-0069",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00019",
+      "person_id": "P-0007",
+      "relationship": "complainant"
+    },
+    {
+      "case_id": "KA-2025-00020",
+      "person_id": "P-0014",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2026-00021",
+      "person_id": "P-0007",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2026-00022",
+      "person_id": "P-0054",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00023",
+      "person_id": "P-0049",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00023",
+      "person_id": "P-0016",
+      "relationship": "complainant"
+    },
+    {
+      "case_id": "KA-2026-00024",
+      "person_id": "P-0061",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2026-00024",
+      "person_id": "P-0020",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2026-00025",
+      "person_id": "P-0039",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00026",
+      "person_id": "P-0013",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00026",
+      "person_id": "P-0067",
+      "relationship": "witness"
+    },
+    {
+      "case_id": "KA-2025-00027",
+      "person_id": "P-0018",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00027",
+      "person_id": "P-0054",
+      "relationship": "complainant"
+    },
+    {
+      "case_id": "KA-2025-00027",
+      "person_id": "P-0014",
+      "relationship": "complainant"
+    },
+    {
+      "case_id": "KA-2024-00028",
+      "person_id": "P-0016",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00028",
+      "person_id": "P-0037",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00028",
+      "person_id": "P-0015",
+      "relationship": "witness"
+    },
+    {
+      "case_id": "KA-2024-00029",
+      "person_id": "P-0026",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00030",
+      "person_id": "P-0067",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00030",
+      "person_id": "P-0026",
+      "relationship": "witness"
+    },
+    {
+      "case_id": "KA-2024-00031",
+      "person_id": "P-0038",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00031",
+      "person_id": "P-0021",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00032",
+      "person_id": "P-0064",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00032",
+      "person_id": "P-0027",
+      "relationship": "witness"
+    },
+    {
+      "case_id": "KA-2024-00032",
+      "person_id": "P-0062",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2026-00033",
+      "person_id": "P-0002",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00034",
+      "person_id": "P-0015",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00035",
+      "person_id": "P-0064",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00035",
+      "person_id": "P-0020",
+      "relationship": "complainant"
+    },
+    {
+      "case_id": "KA-2024-00035",
+      "person_id": "P-0012",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2026-00036",
+      "person_id": "P-0033",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2026-00037",
+      "person_id": "P-0059",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00038",
+      "person_id": "P-0034",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00038",
+      "person_id": "P-0060",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00039",
+      "person_id": "P-0023",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2026-00040",
+      "person_id": "P-0038",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00041",
+      "person_id": "P-0041",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00041",
+      "person_id": "P-0055",
+      "relationship": "complainant"
+    },
+    {
+      "case_id": "KA-2024-00042",
+      "person_id": "P-0013",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2026-00043",
+      "person_id": "P-0002",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00044",
+      "person_id": "P-0022",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2026-00045",
+      "person_id": "P-0046",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2026-00045",
+      "person_id": "P-0057",
+      "relationship": "complainant"
+    },
+    {
+      "case_id": "KA-2025-00046",
+      "person_id": "P-0012",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00046",
+      "person_id": "P-0048",
+      "relationship": "witness"
+    },
+    {
+      "case_id": "KA-2024-00047",
+      "person_id": "P-0015",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00048",
+      "person_id": "P-0052",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00048",
+      "person_id": "P-0059",
+      "relationship": "witness"
+    },
+    {
+      "case_id": "KA-2024-00049",
+      "person_id": "P-0062",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00049",
+      "person_id": "P-0054",
+      "relationship": "complainant"
+    },
+    {
+      "case_id": "KA-2026-00050",
+      "person_id": "P-0015",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00051",
+      "person_id": "P-0008",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00052",
+      "person_id": "P-0014",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2026-00053",
+      "person_id": "P-0062",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2026-00053",
+      "person_id": "P-0073",
+      "relationship": "complainant"
+    },
+    {
+      "case_id": "KA-2024-00054",
+      "person_id": "P-0024",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00054",
+      "person_id": "P-0049",
+      "relationship": "witness"
+    },
+    {
+      "case_id": "KA-2024-00055",
+      "person_id": "P-0004",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00055",
+      "person_id": "P-0017",
+      "relationship": "witness"
+    },
+    {
+      "case_id": "KA-2024-00055",
+      "person_id": "P-0062",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00056",
+      "person_id": "P-0057",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00056",
+      "person_id": "P-0006",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2026-00057",
+      "person_id": "P-0041",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2026-00057",
+      "person_id": "P-0002",
+      "relationship": "complainant"
+    },
+    {
+      "case_id": "KA-2024-00058",
+      "person_id": "P-0074",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00058",
+      "person_id": "P-0073",
+      "relationship": "complainant"
+    },
+    {
+      "case_id": "KA-2024-00058",
+      "person_id": "P-0029",
+      "relationship": "witness"
+    },
+    {
+      "case_id": "KA-2025-00059",
+      "person_id": "P-0067",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00059",
+      "person_id": "P-0013",
+      "relationship": "complainant"
+    },
+    {
+      "case_id": "KA-2025-00059",
+      "person_id": "P-0056",
+      "relationship": "complainant"
+    },
+    {
+      "case_id": "KA-2024-00060",
+      "person_id": "P-0062",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00061",
+      "person_id": "P-0050",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00061",
+      "person_id": "P-0020",
+      "relationship": "complainant"
+    },
+    {
+      "case_id": "KA-2024-00062",
+      "person_id": "P-0007",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00062",
+      "person_id": "P-0002",
+      "relationship": "complainant"
+    },
+    {
+      "case_id": "KA-2024-00062",
+      "person_id": "P-0021",
+      "relationship": "witness"
+    },
+    {
+      "case_id": "KA-2024-00063",
+      "person_id": "P-0022",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00063",
+      "person_id": "P-0010",
+      "relationship": "witness"
+    },
+    {
+      "case_id": "KA-2026-00064",
+      "person_id": "P-0031",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2026-00064",
+      "person_id": "P-0043",
+      "relationship": "witness"
+    },
+    {
+      "case_id": "KA-2024-00065",
+      "person_id": "P-0065",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00066",
+      "person_id": "P-0071",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00067",
+      "person_id": "P-0052",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00067",
+      "person_id": "P-0031",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00068",
+      "person_id": "P-0057",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00068",
+      "person_id": "P-0074",
+      "relationship": "witness"
+    },
+    {
+      "case_id": "KA-2025-00069",
+      "person_id": "P-0064",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00070",
+      "person_id": "P-0041",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00070",
+      "person_id": "P-0016",
+      "relationship": "witness"
+    },
+    {
+      "case_id": "KA-2025-00071",
+      "person_id": "P-0014",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2026-00072",
+      "person_id": "P-0053",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2026-00072",
+      "person_id": "P-0005",
+      "relationship": "complainant"
+    },
+    {
+      "case_id": "KA-2025-00073",
+      "person_id": "P-0001",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00073",
+      "person_id": "P-0012",
+      "relationship": "complainant"
+    },
+    {
+      "case_id": "KA-2025-00073",
+      "person_id": "P-0039",
+      "relationship": "complainant"
+    },
+    {
+      "case_id": "KA-2025-00074",
+      "person_id": "P-0059",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00075",
+      "person_id": "P-0047",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00075",
+      "person_id": "P-0007",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00076",
+      "person_id": "P-0043",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00076",
+      "person_id": "P-0072",
+      "relationship": "complainant"
+    },
+    {
+      "case_id": "KA-2025-00077",
+      "person_id": "P-0061",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00077",
+      "person_id": "P-0047",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00077",
+      "person_id": "P-0058",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00078",
+      "person_id": "P-0001",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00079",
+      "person_id": "P-0046",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00079",
+      "person_id": "P-0038",
+      "relationship": "complainant"
+    },
+    {
+      "case_id": "KA-2024-00080",
+      "person_id": "P-0048",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00080",
+      "person_id": "P-0014",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00080",
+      "person_id": "P-0006",
+      "relationship": "witness"
+    },
+    {
+      "case_id": "KA-2025-00081",
+      "person_id": "P-0053",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00082",
+      "person_id": "P-0033",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00083",
+      "person_id": "P-0026",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00083",
+      "person_id": "P-0025",
+      "relationship": "witness"
+    },
+    {
+      "case_id": "KA-2025-00083",
+      "person_id": "P-0016",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00084",
+      "person_id": "P-0025",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00084",
+      "person_id": "P-0044",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00085",
+      "person_id": "P-0006",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00085",
+      "person_id": "P-0016",
+      "relationship": "witness"
+    },
+    {
+      "case_id": "KA-2024-00086",
+      "person_id": "P-0065",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00086",
+      "person_id": "P-0018",
+      "relationship": "witness"
+    },
+    {
+      "case_id": "KA-2025-00087",
+      "person_id": "P-0068",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00088",
+      "person_id": "P-0071",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00089",
+      "person_id": "P-0075",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00089",
+      "person_id": "P-0062",
+      "relationship": "complainant"
+    },
+    {
+      "case_id": "KA-2024-00090",
+      "person_id": "P-0075",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00091",
+      "person_id": "P-0017",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2026-00092",
+      "person_id": "P-0050",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00093",
+      "person_id": "P-0042",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00093",
+      "person_id": "P-0065",
+      "relationship": "witness"
+    },
+    {
+      "case_id": "KA-2024-00093",
+      "person_id": "P-0050",
+      "relationship": "complainant"
+    },
+    {
+      "case_id": "KA-2024-00094",
+      "person_id": "P-0036",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2026-00095",
+      "person_id": "P-0044",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2026-00095",
+      "person_id": "P-0038",
+      "relationship": "witness"
+    },
+    {
+      "case_id": "KA-2026-00096",
+      "person_id": "P-0018",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2026-00097",
+      "person_id": "P-0066",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2026-00097",
+      "person_id": "P-0039",
+      "relationship": "complainant"
+    },
+    {
+      "case_id": "KA-2025-00098",
+      "person_id": "P-0041",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00098",
+      "person_id": "P-0071",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00098",
+      "person_id": "P-0028",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00099",
+      "person_id": "P-0038",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00099",
+      "person_id": "P-0045",
+      "relationship": "complainant"
+    },
+    {
+      "case_id": "KA-2024-00099",
+      "person_id": "P-0017",
+      "relationship": "complainant"
+    },
+    {
+      "case_id": "KA-2024-00100",
+      "person_id": "P-0065",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00101",
+      "person_id": "P-0042",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00101",
+      "person_id": "P-0015",
+      "relationship": "complainant"
+    },
+    {
+      "case_id": "KA-2024-00101",
+      "person_id": "P-0046",
+      "relationship": "witness"
+    },
+    {
+      "case_id": "KA-2025-00102",
+      "person_id": "P-0074",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00102",
+      "person_id": "P-0054",
+      "relationship": "witness"
+    },
+    {
+      "case_id": "KA-2025-00102",
+      "person_id": "P-0069",
+      "relationship": "witness"
+    },
+    {
+      "case_id": "KA-2024-00103",
+      "person_id": "P-0067",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00104",
+      "person_id": "P-0004",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00105",
+      "person_id": "P-0019",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00105",
+      "person_id": "P-0007",
+      "relationship": "complainant"
+    },
+    {
+      "case_id": "KA-2024-00106",
+      "person_id": "P-0026",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00107",
+      "person_id": "P-0021",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00107",
+      "person_id": "P-0037",
+      "relationship": "complainant"
+    },
+    {
+      "case_id": "KA-2026-00108",
+      "person_id": "P-0019",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2026-00108",
+      "person_id": "P-0008",
+      "relationship": "complainant"
+    },
+    {
+      "case_id": "KA-2025-00109",
+      "person_id": "P-0027",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00109",
+      "person_id": "P-0070",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00110",
+      "person_id": "P-0058",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00110",
+      "person_id": "P-0014",
+      "relationship": "complainant"
+    },
+    {
+      "case_id": "KA-2024-00111",
+      "person_id": "P-0029",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00111",
+      "person_id": "P-0072",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00111",
+      "person_id": "P-0050",
+      "relationship": "complainant"
+    },
+    {
+      "case_id": "KA-2026-00112",
+      "person_id": "P-0007",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2026-00112",
+      "person_id": "P-0049",
+      "relationship": "witness"
+    },
+    {
+      "case_id": "KA-2026-00113",
+      "person_id": "P-0041",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2026-00113",
+      "person_id": "P-0071",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2026-00114",
+      "person_id": "P-0033",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2026-00115",
+      "person_id": "P-0057",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00116",
+      "person_id": "P-0048",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00117",
+      "person_id": "P-0070",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00117",
+      "person_id": "P-0026",
+      "relationship": "witness"
+    },
+    {
+      "case_id": "KA-2024-00117",
+      "person_id": "P-0025",
+      "relationship": "witness"
+    },
+    {
+      "case_id": "KA-2025-00118",
+      "person_id": "P-0010",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00119",
+      "person_id": "P-0023",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00120",
+      "person_id": "P-0016",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00120",
+      "person_id": "P-0049",
+      "relationship": "witness"
+    },
+    {
+      "case_id": "KA-2024-00120",
+      "person_id": "P-0006",
+      "relationship": "witness"
+    },
+    {
+      "case_id": "KA-2025-00121",
+      "person_id": "P-0034",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00121",
+      "person_id": "P-0017",
+      "relationship": "complainant"
+    },
+    {
+      "case_id": "KA-2025-00121",
+      "person_id": "P-0021",
+      "relationship": "witness"
+    },
+    {
+      "case_id": "KA-2026-00122",
+      "person_id": "P-0043",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00123",
+      "person_id": "P-0020",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00123",
+      "person_id": "P-0006",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00124",
+      "person_id": "P-0007",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00124",
+      "person_id": "P-0039",
+      "relationship": "witness"
+    },
+    {
+      "case_id": "KA-2025-00125",
+      "person_id": "P-0071",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00125",
+      "person_id": "P-0046",
+      "relationship": "complainant"
+    },
+    {
+      "case_id": "KA-2025-00125",
+      "person_id": "P-0010",
+      "relationship": "witness"
+    },
+    {
+      "case_id": "KA-2025-00126",
+      "person_id": "P-0029",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00126",
+      "person_id": "P-0024",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00126",
+      "person_id": "P-0067",
+      "relationship": "complainant"
+    },
+    {
+      "case_id": "KA-2025-00127",
+      "person_id": "P-0054",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00128",
+      "person_id": "P-0069",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00128",
+      "person_id": "P-0052",
+      "relationship": "witness"
+    },
+    {
+      "case_id": "KA-2024-00128",
+      "person_id": "P-0012",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2026-00129",
+      "person_id": "P-0043",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00130",
+      "person_id": "P-0047",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00130",
+      "person_id": "P-0038",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00131",
+      "person_id": "P-0068",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00131",
+      "person_id": "P-0061",
+      "relationship": "complainant"
+    },
+    {
+      "case_id": "KA-2024-00131",
+      "person_id": "P-0072",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00132",
+      "person_id": "P-0045",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00133",
+      "person_id": "P-0031",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00133",
+      "person_id": "P-0032",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00134",
+      "person_id": "P-0049",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00134",
+      "person_id": "P-0015",
+      "relationship": "witness"
+    },
+    {
+      "case_id": "KA-2025-00135",
+      "person_id": "P-0070",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00135",
+      "person_id": "P-0037",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00136",
+      "person_id": "P-0048",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00136",
+      "person_id": "P-0066",
+      "relationship": "witness"
+    },
+    {
+      "case_id": "KA-2025-00136",
+      "person_id": "P-0058",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2026-00137",
+      "person_id": "P-0025",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2026-00137",
+      "person_id": "P-0042",
+      "relationship": "complainant"
+    },
+    {
+      "case_id": "KA-2025-00138",
+      "person_id": "P-0013",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00139",
+      "person_id": "P-0069",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00140",
+      "person_id": "P-0001",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00140",
+      "person_id": "P-0009",
+      "relationship": "complainant"
+    },
+    {
+      "case_id": "KA-2025-00140",
+      "person_id": "P-0027",
+      "relationship": "complainant"
+    },
+    {
+      "case_id": "KA-2025-00141",
+      "person_id": "P-0055",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00142",
+      "person_id": "P-0027",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2026-00143",
+      "person_id": "P-0056",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2026-00143",
+      "person_id": "P-0010",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2026-00143",
+      "person_id": "P-0020",
+      "relationship": "witness"
+    },
+    {
+      "case_id": "KA-2024-00144",
+      "person_id": "P-0005",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00144",
+      "person_id": "P-0012",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00145",
+      "person_id": "P-0023",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00146",
+      "person_id": "P-0072",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00146",
+      "person_id": "P-0010",
+      "relationship": "complainant"
+    },
+    {
+      "case_id": "KA-2025-00147",
+      "person_id": "P-0034",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00148",
+      "person_id": "P-0050",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00148",
+      "person_id": "P-0058",
+      "relationship": "complainant"
+    },
+    {
+      "case_id": "KA-2025-00149",
+      "person_id": "P-0056",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00149",
+      "person_id": "P-0041",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00150",
+      "person_id": "P-0016",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00150",
+      "person_id": "P-0069",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00151",
+      "person_id": "P-0009",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00151",
+      "person_id": "P-0075",
+      "relationship": "complainant"
+    },
+    {
+      "case_id": "KA-2024-00151",
+      "person_id": "P-0006",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00152",
+      "person_id": "P-0065",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00152",
+      "person_id": "P-0014",
+      "relationship": "witness"
+    },
+    {
+      "case_id": "KA-2026-00153",
+      "person_id": "P-0012",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2026-00153",
+      "person_id": "P-0037",
+      "relationship": "witness"
+    },
+    {
+      "case_id": "KA-2024-00154",
+      "person_id": "P-0051",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00154",
+      "person_id": "P-0004",
+      "relationship": "witness"
+    },
+    {
+      "case_id": "KA-2025-00155",
+      "person_id": "P-0069",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00156",
+      "person_id": "P-0018",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2026-00157",
+      "person_id": "P-0070",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2026-00157",
+      "person_id": "P-0038",
+      "relationship": "complainant"
+    },
+    {
+      "case_id": "KA-2024-00158",
+      "person_id": "P-0039",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2026-00159",
+      "person_id": "P-0002",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2026-00159",
+      "person_id": "P-0071",
+      "relationship": "complainant"
+    },
+    {
+      "case_id": "KA-2026-00160",
+      "person_id": "P-0016",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00161",
+      "person_id": "P-0001",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00162",
+      "person_id": "P-0051",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00162",
+      "person_id": "P-0069",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00162",
+      "person_id": "P-0071",
+      "relationship": "witness"
+    },
+    {
+      "case_id": "KA-2024-00163",
+      "person_id": "P-0045",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00164",
+      "person_id": "P-0053",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00165",
+      "person_id": "P-0019",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00165",
+      "person_id": "P-0021",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00165",
+      "person_id": "P-0024",
+      "relationship": "complainant"
+    },
+    {
+      "case_id": "KA-2024-00166",
+      "person_id": "P-0025",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00166",
+      "person_id": "P-0015",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2026-00167",
+      "person_id": "P-0007",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2026-00167",
+      "person_id": "P-0071",
+      "relationship": "complainant"
+    },
+    {
+      "case_id": "KA-2026-00167",
+      "person_id": "P-0060",
+      "relationship": "complainant"
+    },
+    {
+      "case_id": "KA-2025-00168",
+      "person_id": "P-0038",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00169",
+      "person_id": "P-0033",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00170",
+      "person_id": "P-0026",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00171",
+      "person_id": "P-0063",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00171",
+      "person_id": "P-0043",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00171",
+      "person_id": "P-0046",
+      "relationship": "complainant"
+    },
+    {
+      "case_id": "KA-2024-00172",
+      "person_id": "P-0013",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00173",
+      "person_id": "P-0009",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00173",
+      "person_id": "P-0025",
+      "relationship": "witness"
+    },
+    {
+      "case_id": "KA-2026-00174",
+      "person_id": "P-0058",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2026-00174",
+      "person_id": "P-0043",
+      "relationship": "complainant"
+    },
+    {
+      "case_id": "KA-2024-00175",
+      "person_id": "P-0075",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00175",
+      "person_id": "P-0020",
+      "relationship": "complainant"
+    },
+    {
+      "case_id": "KA-2024-00176",
+      "person_id": "P-0047",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00176",
+      "person_id": "P-0041",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00176",
+      "person_id": "P-0055",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00177",
+      "person_id": "P-0032",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00177",
+      "person_id": "P-0029",
+      "relationship": "complainant"
+    },
+    {
+      "case_id": "KA-2024-00178",
+      "person_id": "P-0036",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00178",
+      "person_id": "P-0047",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00179",
+      "person_id": "P-0062",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00179",
+      "person_id": "P-0060",
+      "relationship": "witness"
+    },
+    {
+      "case_id": "KA-2024-00180",
+      "person_id": "P-0040",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00180",
+      "person_id": "P-0063",
+      "relationship": "complainant"
+    },
+    {
+      "case_id": "KA-2024-00181",
+      "person_id": "P-0023",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00182",
+      "person_id": "P-0011",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00182",
+      "person_id": "P-0036",
+      "relationship": "complainant"
+    },
+    {
+      "case_id": "KA-2025-00182",
+      "person_id": "P-0018",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00183",
+      "person_id": "P-0010",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00183",
+      "person_id": "P-0003",
+      "relationship": "complainant"
+    },
+    {
+      "case_id": "KA-2025-00184",
+      "person_id": "P-0075",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00185",
+      "person_id": "P-0052",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00185",
+      "person_id": "P-0028",
+      "relationship": "complainant"
+    },
+    {
+      "case_id": "KA-2024-00185",
+      "person_id": "P-0005",
+      "relationship": "witness"
+    },
+    {
+      "case_id": "KA-2025-00186",
+      "person_id": "P-0070",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00186",
+      "person_id": "P-0061",
+      "relationship": "witness"
+    },
+    {
+      "case_id": "KA-2025-00186",
+      "person_id": "P-0020",
+      "relationship": "witness"
+    },
+    {
+      "case_id": "KA-2026-00187",
+      "person_id": "P-0038",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00188",
+      "person_id": "P-0060",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00189",
+      "person_id": "P-0066",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00189",
+      "person_id": "P-0012",
+      "relationship": "witness"
+    },
+    {
+      "case_id": "KA-2024-00189",
+      "person_id": "P-0051",
+      "relationship": "complainant"
+    },
+    {
+      "case_id": "KA-2025-00190",
+      "person_id": "P-0031",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00191",
+      "person_id": "P-0022",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00191",
+      "person_id": "P-0066",
+      "relationship": "witness"
+    },
+    {
+      "case_id": "KA-2025-00191",
+      "person_id": "P-0018",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00192",
+      "person_id": "P-0073",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00193",
+      "person_id": "P-0019",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00193",
+      "person_id": "P-0062",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00193",
+      "person_id": "P-0046",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00194",
+      "person_id": "P-0030",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00194",
+      "person_id": "P-0009",
+      "relationship": "witness"
+    },
+    {
+      "case_id": "KA-2024-00195",
+      "person_id": "P-0030",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00195",
+      "person_id": "P-0006",
+      "relationship": "complainant"
+    },
+    {
+      "case_id": "KA-2024-00196",
+      "person_id": "P-0067",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00197",
+      "person_id": "P-0050",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00197",
+      "person_id": "P-0061",
+      "relationship": "witness"
+    },
+    {
+      "case_id": "KA-2024-00198",
+      "person_id": "P-0006",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00199",
+      "person_id": "P-0014",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00199",
+      "person_id": "P-0067",
+      "relationship": "complainant"
+    },
+    {
+      "case_id": "KA-2025-00200",
+      "person_id": "P-0034",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00200",
+      "person_id": "P-0075",
+      "relationship": "complainant"
+    },
+    {
+      "case_id": "KA-2025-00201",
+      "person_id": "P-0023",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00201",
+      "person_id": "P-0049",
+      "relationship": "complainant"
+    },
+    {
+      "case_id": "KA-2025-00201",
+      "person_id": "P-0047",
+      "relationship": "complainant"
+    },
+    {
+      "case_id": "KA-2024-00202",
+      "person_id": "P-0067",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00203",
+      "person_id": "P-0049",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00203",
+      "person_id": "P-0029",
+      "relationship": "complainant"
+    },
+    {
+      "case_id": "KA-2024-00204",
+      "person_id": "P-0046",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00204",
+      "person_id": "P-0045",
+      "relationship": "witness"
+    },
+    {
+      "case_id": "KA-2025-00205",
+      "person_id": "P-0001",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00205",
+      "person_id": "P-0065",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00206",
+      "person_id": "P-0022",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00206",
+      "person_id": "P-0030",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00207",
+      "person_id": "P-0036",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00207",
+      "person_id": "P-0028",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00207",
+      "person_id": "P-0020",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00208",
+      "person_id": "P-0016",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00208",
+      "person_id": "P-0030",
+      "relationship": "witness"
+    },
+    {
+      "case_id": "KA-2025-00209",
+      "person_id": "P-0015",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00209",
+      "person_id": "P-0062",
+      "relationship": "complainant"
+    },
+    {
+      "case_id": "KA-2025-00210",
+      "person_id": "P-0062",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00210",
+      "person_id": "P-0027",
+      "relationship": "complainant"
+    },
+    {
+      "case_id": "KA-2024-00211",
+      "person_id": "P-0053",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2026-00212",
+      "person_id": "P-0032",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00213",
+      "person_id": "P-0017",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00214",
+      "person_id": "P-0021",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00214",
+      "person_id": "P-0018",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00214",
+      "person_id": "P-0066",
+      "relationship": "complainant"
+    },
+    {
+      "case_id": "KA-2025-00215",
+      "person_id": "P-0008",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00216",
+      "person_id": "P-0034",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00217",
+      "person_id": "P-0067",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00218",
+      "person_id": "P-0073",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00218",
+      "person_id": "P-0003",
+      "relationship": "complainant"
+    },
+    {
+      "case_id": "KA-2025-00219",
+      "person_id": "P-0011",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00219",
+      "person_id": "P-0028",
+      "relationship": "witness"
+    },
+    {
+      "case_id": "KA-2024-00220",
+      "person_id": "P-0061",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00220",
+      "person_id": "P-0062",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00220",
+      "person_id": "P-0022",
+      "relationship": "witness"
+    },
+    {
+      "case_id": "KA-2026-00221",
+      "person_id": "P-0019",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2026-00221",
+      "person_id": "P-0075",
+      "relationship": "complainant"
+    },
+    {
+      "case_id": "KA-2026-00221",
+      "person_id": "P-0024",
+      "relationship": "complainant"
+    },
+    {
+      "case_id": "KA-2024-00222",
+      "person_id": "P-0034",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00222",
+      "person_id": "P-0022",
+      "relationship": "witness"
+    },
+    {
+      "case_id": "KA-2024-00222",
+      "person_id": "P-0044",
+      "relationship": "complainant"
+    },
+    {
+      "case_id": "KA-2026-00223",
+      "person_id": "P-0009",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2026-00223",
+      "person_id": "P-0030",
+      "relationship": "witness"
+    },
+    {
+      "case_id": "KA-2026-00223",
+      "person_id": "P-0049",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00224",
+      "person_id": "P-0003",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00225",
+      "person_id": "P-0067",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00226",
+      "person_id": "P-0054",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00226",
+      "person_id": "P-0020",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00226",
+      "person_id": "P-0013",
+      "relationship": "witness"
+    },
+    {
+      "case_id": "KA-2024-00227",
+      "person_id": "P-0005",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00227",
+      "person_id": "P-0069",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00227",
+      "person_id": "P-0065",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00228",
+      "person_id": "P-0017",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00228",
+      "person_id": "P-0070",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00229",
+      "person_id": "P-0067",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00229",
+      "person_id": "P-0054",
+      "relationship": "witness"
+    },
+    {
+      "case_id": "KA-2026-00230",
+      "person_id": "P-0068",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00231",
+      "person_id": "P-0030",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00231",
+      "person_id": "P-0062",
+      "relationship": "witness"
+    },
+    {
+      "case_id": "KA-2024-00232",
+      "person_id": "P-0074",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00232",
+      "person_id": "P-0013",
+      "relationship": "witness"
+    },
+    {
+      "case_id": "KA-2026-00233",
+      "person_id": "P-0033",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2026-00234",
+      "person_id": "P-0030",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2026-00234",
+      "person_id": "P-0011",
+      "relationship": "witness"
+    },
+    {
+      "case_id": "KA-2024-00235",
+      "person_id": "P-0070",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00235",
+      "person_id": "P-0053",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00235",
+      "person_id": "P-0033",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00236",
+      "person_id": "P-0074",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00237",
+      "person_id": "P-0016",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00237",
+      "person_id": "P-0067",
+      "relationship": "witness"
+    },
+    {
+      "case_id": "KA-2024-00237",
+      "person_id": "P-0001",
+      "relationship": "complainant"
+    },
+    {
+      "case_id": "KA-2024-00238",
+      "person_id": "P-0041",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00239",
+      "person_id": "P-0047",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00239",
+      "person_id": "P-0014",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00240",
+      "person_id": "P-0075",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00240",
+      "person_id": "P-0033",
+      "relationship": "witness"
+    },
+    {
+      "case_id": "KA-2024-00241",
+      "person_id": "P-0055",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00241",
+      "person_id": "P-0073",
+      "relationship": "complainant"
+    },
+    {
+      "case_id": "KA-2024-00241",
+      "person_id": "P-0047",
+      "relationship": "witness"
+    },
+    {
+      "case_id": "KA-2025-00242",
+      "person_id": "P-0027",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00242",
+      "person_id": "P-0053",
+      "relationship": "complainant"
+    },
+    {
+      "case_id": "KA-2024-00243",
+      "person_id": "P-0062",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00243",
+      "person_id": "P-0023",
+      "relationship": "complainant"
+    },
+    {
+      "case_id": "KA-2024-00243",
+      "person_id": "P-0048",
+      "relationship": "complainant"
+    },
+    {
+      "case_id": "KA-2024-00244",
+      "person_id": "P-0033",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00244",
+      "person_id": "P-0040",
+      "relationship": "complainant"
+    },
+    {
+      "case_id": "KA-2025-00245",
+      "person_id": "P-0051",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00245",
+      "person_id": "P-0018",
+      "relationship": "complainant"
+    },
+    {
+      "case_id": "KA-2026-00246",
+      "person_id": "P-0030",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00247",
+      "person_id": "P-0021",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00247",
+      "person_id": "P-0013",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2026-00248",
+      "person_id": "P-0052",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2026-00248",
+      "person_id": "P-0044",
+      "relationship": "complainant"
+    },
+    {
+      "case_id": "KA-2026-00248",
+      "person_id": "P-0071",
+      "relationship": "complainant"
+    },
+    {
+      "case_id": "KA-2025-00249",
+      "person_id": "P-0021",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00250",
+      "person_id": "P-0001",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00250",
+      "person_id": "P-0012",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00251",
+      "person_id": "P-0056",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00251",
+      "person_id": "P-0012",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00252",
+      "person_id": "P-0029",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00252",
+      "person_id": "P-0048",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00253",
+      "person_id": "P-0005",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00253",
+      "person_id": "P-0050",
+      "relationship": "complainant"
+    },
+    {
+      "case_id": "KA-2025-00253",
+      "person_id": "P-0052",
+      "relationship": "complainant"
+    },
+    {
+      "case_id": "KA-2024-00254",
+      "person_id": "P-0037",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00254",
+      "person_id": "P-0008",
+      "relationship": "complainant"
+    },
+    {
+      "case_id": "KA-2024-00254",
+      "person_id": "P-0023",
+      "relationship": "witness"
+    },
+    {
+      "case_id": "KA-2025-00255",
+      "person_id": "P-0002",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00255",
+      "person_id": "P-0026",
+      "relationship": "complainant"
+    },
+    {
+      "case_id": "KA-2025-00256",
+      "person_id": "P-0037",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00256",
+      "person_id": "P-0025",
+      "relationship": "complainant"
+    },
+    {
+      "case_id": "KA-2025-00256",
+      "person_id": "P-0005",
+      "relationship": "complainant"
+    },
+    {
+      "case_id": "KA-2024-00257",
+      "person_id": "P-0030",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00257",
+      "person_id": "P-0022",
+      "relationship": "witness"
+    },
+    {
+      "case_id": "KA-2024-00257",
+      "person_id": "P-0005",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00258",
+      "person_id": "P-0021",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00259",
+      "person_id": "P-0036",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00260",
+      "person_id": "P-0046",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00260",
+      "person_id": "P-0051",
+      "relationship": "witness"
+    },
+    {
+      "case_id": "KA-2026-00261",
+      "person_id": "P-0026",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2026-00261",
+      "person_id": "P-0067",
+      "relationship": "complainant"
+    },
+    {
+      "case_id": "KA-2026-00261",
+      "person_id": "P-0002",
+      "relationship": "complainant"
+    },
+    {
+      "case_id": "KA-2025-00262",
+      "person_id": "P-0012",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00263",
+      "person_id": "P-0037",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00263",
+      "person_id": "P-0072",
+      "relationship": "witness"
+    },
+    {
+      "case_id": "KA-2024-00263",
+      "person_id": "P-0075",
+      "relationship": "witness"
+    },
+    {
+      "case_id": "KA-2025-00264",
+      "person_id": "P-0029",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00264",
+      "person_id": "P-0025",
+      "relationship": "witness"
+    },
+    {
+      "case_id": "KA-2024-00265",
+      "person_id": "P-0074",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00265",
+      "person_id": "P-0001",
+      "relationship": "witness"
+    },
+    {
+      "case_id": "KA-2026-00266",
+      "person_id": "P-0053",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00267",
+      "person_id": "P-0014",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00267",
+      "person_id": "P-0072",
+      "relationship": "complainant"
+    },
+    {
+      "case_id": "KA-2024-00267",
+      "person_id": "P-0010",
+      "relationship": "witness"
+    },
+    {
+      "case_id": "KA-2024-00268",
+      "person_id": "P-0015",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00268",
+      "person_id": "P-0066",
+      "relationship": "witness"
+    },
+    {
+      "case_id": "KA-2024-00269",
+      "person_id": "P-0074",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00269",
+      "person_id": "P-0033",
+      "relationship": "witness"
+    },
+    {
+      "case_id": "KA-2024-00269",
+      "person_id": "P-0057",
+      "relationship": "complainant"
+    },
+    {
+      "case_id": "KA-2024-00270",
+      "person_id": "P-0032",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00270",
+      "person_id": "P-0044",
+      "relationship": "witness"
+    },
+    {
+      "case_id": "KA-2025-00271",
+      "person_id": "P-0004",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00271",
+      "person_id": "P-0062",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00272",
+      "person_id": "P-0009",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00272",
+      "person_id": "P-0049",
+      "relationship": "complainant"
+    },
+    {
+      "case_id": "KA-2025-00273",
+      "person_id": "P-0030",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2026-00274",
+      "person_id": "P-0053",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2026-00274",
+      "person_id": "P-0046",
+      "relationship": "complainant"
+    },
+    {
+      "case_id": "KA-2024-00275",
+      "person_id": "P-0002",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00275",
+      "person_id": "P-0034",
+      "relationship": "witness"
+    },
+    {
+      "case_id": "KA-2024-00275",
+      "person_id": "P-0032",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00276",
+      "person_id": "P-0044",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00276",
+      "person_id": "P-0010",
+      "relationship": "complainant"
+    },
+    {
+      "case_id": "KA-2024-00277",
+      "person_id": "P-0061",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00278",
+      "person_id": "P-0046",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00278",
+      "person_id": "P-0028",
+      "relationship": "complainant"
+    },
+    {
+      "case_id": "KA-2024-00279",
+      "person_id": "P-0024",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00279",
+      "person_id": "P-0025",
+      "relationship": "witness"
+    },
+    {
+      "case_id": "KA-2026-00280",
+      "person_id": "P-0031",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00281",
+      "person_id": "P-0034",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00282",
+      "person_id": "P-0030",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00283",
+      "person_id": "P-0032",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00284",
+      "person_id": "P-0046",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00284",
+      "person_id": "P-0020",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00284",
+      "person_id": "P-0014",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00285",
+      "person_id": "P-0001",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00285",
+      "person_id": "P-0070",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2026-00286",
+      "person_id": "P-0048",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2026-00286",
+      "person_id": "P-0041",
+      "relationship": "witness"
+    },
+    {
+      "case_id": "KA-2025-00287",
+      "person_id": "P-0036",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00287",
+      "person_id": "P-0063",
+      "relationship": "complainant"
+    },
+    {
+      "case_id": "KA-2025-00287",
+      "person_id": "P-0024",
+      "relationship": "witness"
+    },
+    {
+      "case_id": "KA-2026-00288",
+      "person_id": "P-0029",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2026-00288",
+      "person_id": "P-0074",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00289",
+      "person_id": "P-0068",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00290",
+      "person_id": "P-0062",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00290",
+      "person_id": "P-0070",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00291",
+      "person_id": "P-0045",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00291",
+      "person_id": "P-0051",
+      "relationship": "witness"
+    },
+    {
+      "case_id": "KA-2024-00291",
+      "person_id": "P-0023",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00292",
+      "person_id": "P-0059",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00292",
+      "person_id": "P-0041",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00292",
+      "person_id": "P-0002",
+      "relationship": "complainant"
+    },
+    {
+      "case_id": "KA-2024-00293",
+      "person_id": "P-0049",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00294",
+      "person_id": "P-0013",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00294",
+      "person_id": "P-0042",
+      "relationship": "complainant"
+    },
+    {
+      "case_id": "KA-2025-00294",
+      "person_id": "P-0047",
+      "relationship": "witness"
+    },
+    {
+      "case_id": "KA-2025-00295",
+      "person_id": "P-0071",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2026-00296",
+      "person_id": "P-0031",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2026-00296",
+      "person_id": "P-0035",
+      "relationship": "witness"
+    },
+    {
+      "case_id": "KA-2025-00297",
+      "person_id": "P-0044",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00297",
+      "person_id": "P-0047",
+      "relationship": "witness"
+    },
+    {
+      "case_id": "KA-2025-00297",
+      "person_id": "P-0024",
+      "relationship": "witness"
+    },
+    {
+      "case_id": "KA-2024-00298",
+      "person_id": "P-0054",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00299",
+      "person_id": "P-0047",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2024-00299",
+      "person_id": "P-0052",
+      "relationship": "witness"
+    },
+    {
+      "case_id": "KA-2025-00300",
+      "person_id": "P-0024",
+      "relationship": "accused"
+    },
+    {
+      "case_id": "KA-2025-00300",
+      "person_id": "P-0074",
+      "relationship": "accused"
+    }
+  ]
+}

@@ -34,6 +34,7 @@ from typing import Tuple
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "shared"))
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "shared", "retrieval"))
 
+# pyrefly: ignore [missing-import]
 from auth_middleware import can_access_case, ScopeDeniedError
 from grounding_verifier import verify_answer
 from models import AuditEntry, QueryLog, CaseRecord, SensitivityLevel

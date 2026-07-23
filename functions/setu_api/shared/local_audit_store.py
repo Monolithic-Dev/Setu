@@ -66,7 +66,7 @@ def append_entry(repo_root: str, entry: dict) -> None:
             with open(path, "w", encoding="utf-8") as f:
                 json.dump(entries, f, indent=2)
         except OSError:
-            pass # Ignore read-only filesystem errors in cloud
+            pass
 
 
 def read_entries(repo_root: str, scope_filter: dict | None = None) -> list[dict]:
