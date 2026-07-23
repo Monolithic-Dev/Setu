@@ -18,7 +18,7 @@ import json
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "shared"))
 
-_DEV_NETWORK_PATH = os.path.join(os.path.dirname(__file__), "..", "..", "..", "data", "synthetic_network.json")
+_DEV_NETWORK_PATH = os.path.join(os.path.dirname(__file__), "..", "data", "synthetic_network.json")
 _dev_network_cache = None
 
 

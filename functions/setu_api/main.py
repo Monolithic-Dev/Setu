@@ -16,8 +16,8 @@ from alertsFunction.index import handle_request as alerts_handle_request
 def get_mock_auth_context(request: Request):
     """Mocks Catalyst authentication context using headers."""
     role = request.headers.get("X-Dev-Role", "Station Officer")
-    station = request.headers.get("X-Dev-Station", "S-101")
-    district = request.headers.get("X-Dev-District", "D-10")
+    station = request.headers.get("X-Dev-Station", "Bengaluru Urban Station 1")
+    district = request.headers.get("X-Dev-District", "Bengaluru Urban")
     user_id = request.headers.get("X-Dev-User", "dev_user")
     
     class MockUser:
@@ -51,7 +51,7 @@ def handler(request: Request):
         elif path.startswith("/api/network/") and method == 'GET':
             auth_context = get_mock_auth_context(request)
             entity_id = path.split("/")[-1]
-            result = network_handle_request({"entity_id": entity_id}, auth_context)
+            result = network_handle_request(entity_id, auth_context)
             return jsonify(result), 200
             
         elif path == "/api/alerts/hotspots" and method == 'GET':
@@ -118,90 +118,4 @@ def handler(request: Request):
             
     except Exception as e:
         print(f"Error: {e}")
-<<<<<<< HEAD
-        raise HTTPException(status_code=400, detail={"status": "error", "error_code": "BAD_REQUEST", "message": str(e)})
-
-@app.get("/api/dashboard/stats")
-async def api_dashboard_stats(request: Request):
-    import json
-    from collections import Counter
-    from datetime import datetime
-    
-    data_path = os.path.join(os.path.dirname(__file__), "..", "..", "data", "synthetic_cases.json")
-    
-    prediction_model_path = os.path.join(os.path.dirname(__file__), "ml", "prediction_model")
-    if prediction_model_path not in sys.path:
-        sys.path.insert(0, prediction_model_path)
-    from hotspot_model import load_cases, detect_hotspots, explain_cluster
-    
-    try:
-        cases = load_cases(data_path)
-    except FileNotFoundError:
-        cases = []
-        
-    clusters = detect_hotspots(cases)
-    
-    total_cases = len(cases)
-    resolved_cases = sum(1 for c in cases if c.get("status", "").lower() in ("closed", "resolved", "solved", "closed - solved"))
-    
-    # If no resolved cases in synthetic data for demo purposes, mock a ratio
-    if total_cases > 0 and resolved_cases == 0:
-        resolved_cases = int(total_cases * 0.6)
-
-    active_hotspots = len(clusters)
-    
-    monthly_counter = Counter()
-    for c in cases:
-        date_str = c.get("filed_date", "")
-        if date_str:
-            try:
-                dt = datetime.strptime(date_str, "%Y-%m-%d")
-                monthly_counter[dt.strftime("%b %Y")] += 1
-            except ValueError:
-                pass
-                
-    def sort_key(k):
-        try:
-            return datetime.strptime(k, "%b %Y")
-        except:
-            return datetime.min
-            
-    sorted_months = sorted(monthly_counter.keys(), key=sort_key)
-    monthly_trend = [{"month": m, "crimes": monthly_counter[m]} for m in sorted_months][-6:]
-    
-    # If the synthetic dataset has no months (empty), fallback to dummy so the chart renders something
-    if not monthly_trend:
-        monthly_trend = [{"month": "Jan", "crimes": 0}]
-
-    mo_counter = Counter(c.get("modus_operandi", "Other") for c in cases)
-    crime_types = [{"name": k, "value": v} for k, v in mo_counter.most_common(5)]
-    
-    hotspot_alerts = [
-        {
-            "cluster_id": c.cluster_id,
-            "district": c.district,
-            "explanation": explain_cluster(c),
-            "case_count": c.case_count,
-        }
-        for c in clusters[:10]
-    ]
-
-    return {
-        "status": "success",
-        "data": {
-            "totalCases": total_cases,
-            "activeHotspots": active_hotspots,
-            "resolvedCases": resolved_cases,
-            "monthlyTrend": monthly_trend,
-            "crimeTypes": crime_types,
-            "hotspotAlerts": hotspot_alerts
-        }
-    }
-
-if __name__ == "__main__":
-    import uvicorn
-    print("Starting Catalyst local dev mock server on port 3000 using FastAPI...")
-    uvicorn.run("main:app", host="127.0.0.1", port=3000, reload=True)
-=======
         return jsonify({"status": "error", "error_code": "BAD_REQUEST", "message": str(e)}), 400
->>>>>>> 0aebbee81d7848ded2d880c952271ca9448dfb5c

@@ -23,7 +23,9 @@ export function Dashboard({ }: DashboardProps) {
   const [stats, setStats] = useState<any>(null);
 
   useEffect(() => {
-    fetch("http://127.0.0.1:3000/api/dashboard/stats")
+    // VITE_API_BASE handles local dev, fallback to Catalyst default route
+    const API_BASE = import.meta.env?.VITE_API_BASE ?? "/server/setu_api";
+    fetch(`${API_BASE}/api/dashboard/stats`)
       .then(res => res.json())
       .then(data => setStats(data.data))
       .catch(console.error);

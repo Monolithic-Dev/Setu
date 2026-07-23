@@ -46,7 +46,7 @@ from conversation_context import resolve_context
 
 _REPO_ROOT = os.path.join(os.path.dirname(__file__), "..", "..", "..")
 
-_DEV_DATA_PATH = os.path.join(os.path.dirname(__file__), "..", "..", "..", "data", "synthetic_cases.json")
+_DEV_DATA_PATH = os.path.join(os.path.dirname(__file__), "..", "data", "synthetic_cases.json")
 _dev_cases_cache = None
 _dev_index_cache_en = None
 _dev_index_cache_kn = None

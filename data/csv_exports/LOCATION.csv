@@ -1,0 +1,109 @@
+location_id,latitude,longitude,district,station_jurisdiction
+LOC-fa94b86e,12.248301,76.616903,Mysuru,Mysuru Station 4
+LOC-9963984c,15.850236,74.450354,Belagavi,Belagavi Station 6
+LOC-9eddee38,15.330248,75.169721,Hubballi-Dharwad,Hubballi-Dharwad Station 1
+LOC-debddecb,13.341523,77.164612,Tumakuru,Tumakuru Station 5
+LOC-efc8be33,12.331332,76.676048,Mysuru,Mysuru Station 5
+LOC-abb83e3d,12.306713,76.606514,Mysuru,Mysuru Station 1
+LOC-d9f4033d,15.88188,74.528205,Belagavi,Belagavi Station 11
+LOC-ed2cf155,13.302187,77.081263,Tumakuru,Tumakuru Station 3
+LOC-7924c096,13.929252,75.593678,Shivamogga,Shivamogga Station 8
+LOC-61f2aa9a,13.905041,75.573423,Shivamogga,Shivamogga Station 1
+LOC-2c475c2b,15.411889,75.150196,Hubballi-Dharwad,Hubballi-Dharwad Station 9
+LOC-ebf2e9db,13.971749,75.577994,Shivamogga,Shivamogga Station 10
+LOC-c8e888c0,12.254365,76.637999,Mysuru,Mysuru Station 7
+LOC-e167733d,15.892591,74.523227,Belagavi,Belagavi Station 2
+LOC-d1ea1ed7,17.281803,76.839692,Kalaburagi,Kalaburagi Station 6
+LOC-b47cff09,12.255493,76.632505,Mysuru,Mysuru Station 2
+LOC-13e5539f,15.818859,74.501329,Belagavi,Belagavi Station 9
+LOC-a1b34319,12.938064,77.544816,Bengaluru Urban,Bengaluru Urban Station 4
+LOC-f22e7bd7,12.979518,77.59882,Bengaluru Urban,Bengaluru Urban Station 2
+LOC-a60397df,12.870952,74.812796,Mangaluru,Mangaluru Station 10
+LOC-ee0c9478,14.466678,75.965271,Davanagere,Davanagere Station 2
+LOC-3ef1929e,17.308199,76.828118,Kalaburagi,Kalaburagi Station 2
+LOC-56d22747,13.895445,75.546276,Shivamogga,Shivamogga Station 7
+LOC-4e14b28c,15.319109,75.107356,Hubballi-Dharwad,Hubballi-Dharwad Station 12
+LOC-dcf6fdc2,12.918659,74.88946,Mangaluru,Mangaluru Station 1
+LOC-72cf862a,17.300708,76.809253,Kalaburagi,Kalaburagi Station 1
+LOC-97a56ecd,12.937756,74.839219,Mangaluru,Mangaluru Station 4
+LOC-fcc578a4,15.349815,75.124941,Hubballi-Dharwad,Hubballi-Dharwad Station 10
+LOC-e1b15159,15.123969,76.950043,Ballari,Ballari Station 1
+LOC-c21c2fe1,13.972458,75.571945,Shivamogga,Shivamogga Station 5
+LOC-d4a508e1,15.144194,76.871441,Ballari,Ballari Station 4
+LOC-c5bc5f46,13.927219,75.608218,Shivamogga,Shivamogga Station 4
+LOC-47cf4138,15.814435,74.452321,Belagavi,Belagavi Station 3
+LOC-fac8511a,13.301234,77.113764,Tumakuru,Tumakuru Station 8
+LOC-659c63f0,13.313819,77.092024,Tumakuru,Tumakuru Station 6
+LOC-155f4b8b,17.369003,76.792358,Kalaburagi,Kalaburagi Station 9
+LOC-42b2061e,15.174745,76.966743,Ballari,Ballari Station 6
+LOC-17217a9c,15.161818,76.955451,Ballari,Ballari Station 8
+LOC-ca21c162,12.869128,74.84391,Mangaluru,Mangaluru Station 2
+LOC-57e7bc17,13.289838,77.121242,Tumakuru,Tumakuru Station 10
+LOC-17e5ffff,12.887954,74.853356,Mangaluru,Mangaluru Station 3
+LOC-abab2dbf,15.32551,75.076568,Hubballi-Dharwad,Hubballi-Dharwad Station 5
+LOC-e3555bc1,14.494953,75.951423,Davanagere,Davanagere Station 6
+LOC-e698308f,13.006558,77.626833,Bengaluru Urban,Bengaluru Urban Station 11
+LOC-c76be2fe,15.376291,75.165962,Hubballi-Dharwad,Hubballi-Dharwad Station 8
+LOC-1e18bcd6,15.874748,74.504685,Belagavi,Belagavi Station 5
+LOC-7cbdccba,17.307666,76.843916,Kalaburagi,Kalaburagi Station 4
+LOC-27afb41e,13.343247,77.101676,Tumakuru,Tumakuru Station 12
+LOC-8abc449f,15.835788,74.477927,Belagavi,Belagavi Station 8
+LOC-293993da,12.333072,76.646806,Mysuru,Mysuru Station 8
+LOC-e917dece,14.474013,75.933642,Davanagere,Davanagere Station 1
+LOC-a7db6519,14.510411,75.881723,Davanagere,Davanagere Station 3
+LOC-026f7c02,15.393483,75.136506,Hubballi-Dharwad,Hubballi-Dharwad Station 2
+LOC-50abd51f,12.938192,77.575361,Bengaluru Urban,Bengaluru Urban Station 9
+LOC-1961fc6f,14.509479,75.971757,Davanagere,Davanagere Station 7
+LOC-8bebebb4,13.375985,77.115771,Tumakuru,Tumakuru Station 2
+LOC-967b3156,13.382606,77.132071,Tumakuru,Tumakuru Station 4
+LOC-fe68a7f0,13.343027,77.105659,Tumakuru,Tumakuru Station 1
+LOC-102cfde3,15.134934,76.903578,Ballari,Ballari Station 12
+LOC-355b1478,13.917901,75.549766,Shivamogga,Shivamogga Station 2
+LOC-754e9341,13.921105,75.58628,Shivamogga,Shivamogga Station 3
+LOC-5ba65b80,15.845815,74.473098,Belagavi,Belagavi Station 10
+LOC-01faf156,17.337181,76.883569,Kalaburagi,Kalaburagi Station 5
+LOC-b2d7c0a8,12.873113,74.835511,Mangaluru,Mangaluru Station 8
+LOC-6728d136,15.389356,75.107872,Hubballi-Dharwad,Hubballi-Dharwad Station 7
+LOC-98c9c0d3,13.299512,77.09078,Tumakuru,Tumakuru Station 11
+LOC-57b896fd,14.511509,75.876858,Davanagere,Davanagere Station 4
+LOC-9173be6a,12.865586,74.884998,Mangaluru,Mangaluru Station 9
+LOC-723fe4c3,12.320367,76.637025,Mysuru,Mysuru Station 11
+LOC-e35ce1d9,12.927683,77.592498,Bengaluru Urban,Bengaluru Urban Station 3
+LOC-692cee04,15.162361,76.902655,Ballari,Ballari Station 2
+LOC-9186bdc2,17.314802,76.802441,Kalaburagi,Kalaburagi Station 7
+LOC-9a45fc99,15.137966,76.915604,Ballari,Ballari Station 10
+LOC-bed5ae5e,12.965222,77.590575,Bengaluru Urban,Bengaluru Urban Station 1
+LOC-395bdba4,12.285377,76.620427,Mysuru,Mysuru Station 6
+LOC-9a7c468c,17.352438,76.866195,Kalaburagi,Kalaburagi Station 11
+LOC-62209f35,17.36287,76.791973,Kalaburagi,Kalaburagi Station 8
+LOC-28072b01,13.947738,75.546515,Shivamogga,Shivamogga Station 12
+LOC-d2f3bf9e,14.495304,75.888354,Davanagere,Davanagere Station 8
+LOC-75e32a72,13.921766,75.534306,Shivamogga,Shivamogga Station 9
+LOC-485742ff,12.91898,74.878723,Mangaluru,Mangaluru Station 7
+LOC-3c7ae7ae,13.906572,75.526361,Shivamogga,Shivamogga Station 11
+LOC-4e36c192,15.378647,75.153148,Hubballi-Dharwad,Hubballi-Dharwad Station 11
+LOC-0d0f32f2,12.291004,76.679268,Mysuru,Mysuru Station 12
+LOC-2a434cf1,12.94347,74.856876,Mangaluru,Mangaluru Station 6
+LOC-635818c2,13.368266,77.122465,Tumakuru,Tumakuru Station 7
+LOC-8894a6dc,15.139686,76.958221,Ballari,Ballari Station 9
+LOC-7a143af2,13.329462,77.113744,Tumakuru,Tumakuru Station 9
+LOC-edff0fc4,14.456213,75.968069,Davanagere,Davanagere Station 5
+LOC-f7690c1e,12.981291,77.571153,Bengaluru Urban,Bengaluru Urban Station 10
+LOC-0dfcfde7,15.178976,76.910853,Ballari,Ballari Station 11
+LOC-4b9f5b48,15.410103,75.104195,Hubballi-Dharwad,Hubballi-Dharwad Station 3
+LOC-ef103e46,13.004477,77.634889,Bengaluru Urban,Bengaluru Urban Station 8
+LOC-fc38ae24,12.946073,77.549024,Bengaluru Urban,Bengaluru Urban Station 12
+LOC-87d3c340,14.44629,75.931592,Davanagere,Davanagere Station 9
+LOC-0a850880,12.948446,77.611967,Bengaluru Urban,Bengaluru Urban Station 6
+LOC-139cd0fb,14.472314,75.913558,Davanagere,Davanagere Station 11
+LOC-d105019f,15.850273,74.48502,Belagavi,Belagavi Station 12
+LOC-eace0100,12.279859,76.666301,Mysuru,Mysuru Station 9
+LOC-09caf132,12.932271,74.86101,Mangaluru,Mangaluru Station 5
+LOC-8ac1518b,12.957092,74.880049,Mangaluru,Mangaluru Station 11
+LOC-9ef5308a,13.908767,75.596174,Shivamogga,Shivamogga Station 6
+LOC-f60365ed,15.138346,76.929143,Ballari,Ballari Station 5
+LOC-28067e4f,15.862508,74.462837,Belagavi,Belagavi Station 7
+LOC-2bfc8cd0,12.961686,74.879235,Mangaluru,Mangaluru Station 12
+LOC-8e05bd52,17.354234,76.8081,Kalaburagi,Kalaburagi Station 12
+LOC-77743fdf,12.963937,77.643428,Bengaluru Urban,Bengaluru Urban Station 7
+LOC-caae9160,12.93882,77.584897,Bengaluru Urban,Bengaluru Urban Station 5
