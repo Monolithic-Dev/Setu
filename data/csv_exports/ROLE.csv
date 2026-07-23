@@ -1,0 +1,5 @@
+role_id,role_name,scope_level
+R-01,Station Officer,Own station + read-linked
+R-02,SCRB Analyst,All (read)
+R-03,District SP,District-scoped (read)
+R-04,System Admin,All

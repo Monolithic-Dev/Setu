@@ -16,8 +16,8 @@ from alertsFunction.index import handle_request as alerts_handle_request
 def get_mock_auth_context(request: Request):
     """Mocks Catalyst authentication context using headers."""
     role = request.headers.get("X-Dev-Role", "Station Officer")
-    station = request.headers.get("X-Dev-Station", "S-101")
-    district = request.headers.get("X-Dev-District", "D-10")
+    station = request.headers.get("X-Dev-Station", "Bengaluru Urban Station 1")
+    district = request.headers.get("X-Dev-District", "Bengaluru Urban")
     user_id = request.headers.get("X-Dev-User", "dev_user")
     
     class MockUser:
@@ -51,7 +51,7 @@ def handler(request: Request):
         elif path.startswith("/api/network/") and method == 'GET':
             auth_context = get_mock_auth_context(request)
             entity_id = path.split("/")[-1]
-            result = network_handle_request({"entity_id": entity_id}, auth_context)
+            result = network_handle_request(entity_id, auth_context)
             return jsonify(result), 200
             
         elif path == "/api/alerts/hotspots" and method == 'GET':

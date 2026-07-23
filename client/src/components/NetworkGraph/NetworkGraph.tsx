@@ -20,6 +20,11 @@ export function NetworkGraph({ language }: NetworkGraphProps) {
   useEffect(() => {
     if (!svgRef.current || !data) return;
 
+    if (!data.nodes || !data.edges) {
+      console.error("NetworkGraph received malformed data from API:", data);
+      return;
+    }
+
     const svg = d3.select(svgRef.current);
     svg.selectAll("*").remove();
 
