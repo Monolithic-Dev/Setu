@@ -25,10 +25,25 @@ export function Dashboard({ }: DashboardProps) {
   useEffect(() => {
     // VITE_API_BASE handles local dev, fallback to Catalyst default route
     const API_BASE = import.meta.env?.VITE_API_BASE ?? "/server/setu_api";
-    fetch(`${API_BASE}/api/dashboard/stats`)
-      .then(res => res.json())
-      .then(data => setStats(data.data))
-      .catch(console.error);
+    
+    Promise.all([
+      fetch(`${API_BASE}/api/dashboard/stats`).then(res => res.json()),
+      fetch(`${API_BASE}/api/alerts/hotspots`, {
+        // Need to pass mock auth headers for dev mode, same as queryClient
+        headers: {
+          "X-Dev-Role": "Station Officer",
+          "X-Dev-Station": "Bengaluru Urban Station 1",
+          "X-Dev-District": "Bengaluru Urban"
+        }
+      }).then(res => res.json()).catch(() => ({ alerts: [] }))
+    ])
+    .then(([statsData, alertsData]) => {
+      setStats({
+        ...statsData.data,
+        hotspotAlerts: alertsData.alerts || []
+      });
+    })
+    .catch(console.error);
   }, []);
 
   if (!stats) {
