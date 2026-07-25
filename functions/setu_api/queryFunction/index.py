@@ -282,7 +282,6 @@ def handle_request(request_body: dict, auth_context: dict) -> dict:
         }
 
     generated = generate_answer(modified_query, retrieved, language)
-    generated["answer"] = f"DEBUG: role_name={role_name.value}, retrieved_count={len(retrieved)}, query={modified_query}\n\n" + generated["answer"]
 
     source_texts = [r.get("narrative_en", "") or r.get("matched_text", "") for r in retrieved]
     verification = verify_answer(generated["answer"], source_texts) if source_texts else None
