@@ -15,10 +15,10 @@ from alertsFunction.index import handle_request as alerts_handle_request
 
 def get_mock_auth_context(request: Request):
     """Mocks Catalyst authentication context using headers."""
-    role = request.headers.get("X-Dev-Role", "Station Officer")
+    role = request.headers.get("X-Dev-Role", "SCRB Analyst")
     station = request.headers.get("X-Dev-Station", "Bengaluru Urban Station 1")
     district = request.headers.get("X-Dev-District", "Bengaluru Urban")
-    user_id = request.headers.get("X-Dev-User", "dev_user")
+    user_id = request.headers.get("X-Dev-User", "demo_analyst")
     
     class MockUser:
         def __init__(self, uid, rsl, stid, did):
@@ -35,12 +35,18 @@ def handler(request: Request):
     # Initialize Catalyst SDK per request
     app = zcatalyst_sdk.initialize()
     
+    # Handle CORS preflight (OPTIONS) — browsers send this before POST/PUT requests
+    if request.method == 'OPTIONS':
+        response = make_response('', 204)
+        response.headers['Access-Control-Allow-Origin'] = '*'
+        response.headers['Access-Control-Allow-Methods'] = 'GET, POST, OPTIONS'
+        response.headers['Access-Control-Allow-Headers'] = 'Content-Type, X-Dev-Role, X-Dev-Station, X-Dev-District, X-Dev-User'
+        response.headers['Access-Control-Max-Age'] = '3600'
+        return response
+    
     try:
         path = request.path
         method = request.method
-        
-        # Enable CORS headers (Catalyst does this automatically if configured, but good to ensure response allows it)
-        # However, advanced I/O usually handles CORS via catalyst.json or similar, we'll return standard jsonify
         
         if path == "/api/query" and method == 'POST':
             auth_context = get_mock_auth_context(request)
