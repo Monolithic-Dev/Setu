@@ -90,8 +90,6 @@ def handler(request: Request):
             return jsonify({"audio": base64.b64encode(result["audio_bytes"]).decode("utf-8"), "provider": result["provider"]}), 200
             
         elif path == "/api/migrate" and method == 'GET':
-            import sys
-            import os
             script_path = os.path.join(os.path.dirname(__file__), "scripts")
             if script_path not in sys.path:
                 sys.path.insert(0, script_path)
@@ -105,7 +103,7 @@ def handler(request: Request):
             return jsonify({"status": "migrated", "logs": f.getvalue()}), 200
             
         elif path == "/api/dashboard/stats" and method == 'GET':
-            import json
+            # json already imported at module level
             from collections import Counter
             from datetime import datetime
             
