@@ -56,7 +56,7 @@ def handler(request: Request):
             
         elif path == "/api/alerts/hotspots" and method == 'GET':
             auth_context = get_mock_auth_context(request)
-            result = alerts_handle_request({}, auth_context)
+            result = alerts_handle_request(auth_context)
             return jsonify(result), 200
             
         elif path == "/api/audit/logs" and method == 'GET':
