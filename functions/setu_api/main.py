@@ -15,21 +15,20 @@ from alertsFunction.index import handle_request as alerts_handle_request
 
 def get_mock_auth_context(request: Request):
     """Mocks Catalyst authentication context using headers."""
-    role = request.headers.get("X-Dev-Role", "SCRB Analyst")
-    station = request.headers.get("X-Dev-Station", "Bengaluru Urban Station 1")
-    district = request.headers.get("X-Dev-District", "Bengaluru Urban")
-    user_id = request.headers.get("X-Dev-User", "demo_analyst")
+    # Temporarily import auth_middleware to reuse its Enum definitions and mapping
+    script_path = os.path.join(os.path.dirname(__file__), "shared")
+    if script_path not in sys.path:
+        sys.path.insert(0, script_path)
+    from auth_middleware import get_dev_auth_context as real_mock
     
-    class MockUser:
-        def __init__(self, uid, rsl, stid, did):
-            self.user_id = uid
-            self.role_scope_level = rsl
-            self.station_id = stid
-            self.district_id = did
-            
-    scope_level = "district" if role == "District SP" else ("all" if role == "System Admin" else "station")
-    user = MockUser(user_id, scope_level, station, district)
-    return {"user": user, "role_name": role}
+    # Actually just delegate to the correct shared function which handles Enums properly
+    # Ensure default headers are injected if they are missing
+    headers = dict(request.headers)
+    if "X-Dev-Role" not in headers:
+        headers["X-Dev-Role"] = "SCRB Analyst"
+        headers["X-Dev-User"] = "demo_analyst"
+        
+    return real_mock(headers)
 
 def handler(request: Request):
     # Initialize Catalyst SDK per request
