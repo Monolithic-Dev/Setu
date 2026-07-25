@@ -15,7 +15,7 @@ from alertsFunction.index import handle_request as alerts_handle_request
 
 def get_mock_auth_context(request: Request):
     """Mocks Catalyst authentication context using headers."""
-    role = request.headers.get("X-Dev-Role", "Station Officer")
+    role = request.headers.get("X-Dev-Role", "System Admin")
     station = request.headers.get("X-Dev-Station", "Bengaluru Urban Station 1")
     district = request.headers.get("X-Dev-District", "Bengaluru Urban")
     user_id = request.headers.get("X-Dev-User", "dev_user")

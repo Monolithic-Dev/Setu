@@ -21,7 +21,7 @@ declare global {
 }
 
 export function Login({ language, onLogin }: LoginProps) {
-  const [role, setRole] = useState(ROLES[0]);
+  const [role, setRole] = useState("System Admin");
   const [stationId, setStationId] = useState("Bengaluru Urban Station 1");
   const [districtId, setDistrictId] = useState("Bengaluru Urban");
   
