@@ -120,9 +120,9 @@ export function ChatWindow({ language }: { language: Language }) {
                   <details className="sources">
                     <summary>{t(language, "sources")}</summary>
                     <ul>
-                      {turn.response.sources.map((s) => (
-                        <li key={s.case_id}>
-                          {s.case_id} ({s.relevance})
+                      {turn.response.sources.map((s, index) => (
+                        <li key={typeof s === "string" ? s : (s as any).case_id || index}>
+                          {typeof s === "string" ? s : `${(s as any).case_id} (${(s as any).relevance})`}
                         </li>
                       ))}
                     </ul>
