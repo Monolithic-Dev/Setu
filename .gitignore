@@ -1,46 +1,96 @@
-# Environment / secrets
+# =============================================================================
+# Setu Intelligence Platform — .gitignore
+# =============================================================================
+
+# ──────────────────────────────────────
+# Environment & Secrets
+# ──────────────────────────────────────
 .env
 *.env
 !.env.example
 
+# ──────────────────────────────────────
 # Python
+# ──────────────────────────────────────
 __pycache__/
-*.pyc
+*.py[cod]
+*$py.class
+*.pyo
 .pytest_cache/
+.mypy_cache/
+.ruff_cache/
 venv/
+.venv/
+env/
 *.egg-info/
+.eggs/
+dist/
+build/
+*.dist-info/
+htmlcov/
+coverage/
+.coverage
+.coverage.*
+*.cover
 
-# Node / frontend
+# ──────────────────────────────────────
+# Node / Frontend
+# ──────────────────────────────────────
 node_modules/
 client/dist/
 client/build/
+client/.pnpm-store/
+client/node_modules/.cache/
+*.tsbuildinfo
 
-# Catalyst local state
+# ──────────────────────────────────────
+# Zoho Catalyst
+# ──────────────────────────────────────
 .catalystrc
 .catalyst-cache/
 catalyst-debug.log
 .build/
 
-# Data (regenerate via ml/data_generation, don't commit generated output)
-**/data/*.json
-!**/data/.gitkeep
+# ──────────────────────────────────────
+# Data — generated files (not committed)
+# Only the bundled synthetic data for the function is committed.
+# ──────────────────────────────────────
+**/data/*.csv
+**/data/csv_exports/
+data/
+
 !functions/setu_api/data/*.json
 
-# OS
-.DS_Store
+# ──────────────────────────────────────
+# Dev & Scratch Artifacts
+# ──────────────────────────────────────
+*_results.json
+tree_output.txt
+*.log
+scratch/
+PHASE8_STATUS.md
+uv.lock
 
-# IDEs & Editor
+# ──────────────────────────────────────
+# OS
+# ──────────────────────────────────────
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# ──────────────────────────────────────
+# IDE & Editor
+# ──────────────────────────────────────
 .vscode/
 .idea/
 *.swp
 *.swo
+*.sublime-workspace
 
-# AI Agents
+# ──────────────────────────────────────
+# AI Agents & Tools
+# ──────────────────────────────────────
 .gemini/
 .agents/
-scratch/
 
-# Build artifacts
-dist/
-build/
-coverage/

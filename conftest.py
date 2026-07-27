@@ -17,19 +17,8 @@ import random
 import sys
 
 REPO_ROOT = os.path.dirname(os.path.abspath(__file__))
-DATA_PATH = os.path.join(REPO_ROOT, "data", "synthetic_cases.json")
-
-# Ensure 'data' exists at root since index.py might expect it elsewhere, wait, index.py expects it at catalyst_functions/setu_api/../../data = root/data, because:
-# dirname(index.py) = catalyst_functions/setu_api/queryFunction
-# .. = setu_api
-# .. = catalyst_functions
-# NO wait, queryFunction is in setu_api.
-# os.path.join(os.path.dirname(__file__), "..", "..", "data", "synthetic_cases.json")
-# = root/catalyst_functions/setu_api/queryFunction/../../data/synthetic_cases.json
-# = root/catalyst_functions/data/synthetic_cases.json.
-# But conftest.py creates it in REPO_ROOT/data. 
-# Let's write to both or just fix index.py? Actually, conftest uses REPO_ROOT/data.
-# I will change conftest.py to generate in REPO_ROOT/data, and I will also copy it to catalyst_functions/data.
+# Canonical data location: inside the function bundle (committed, deployed with the function)
+DATA_PATH = os.path.join(REPO_ROOT, "functions", "setu_api", "data", "synthetic_cases.json")
 
 def ensure_synthetic_data(n_cases: int = 300, seed: int = 42) -> str:
     """Generates the synthetic dataset if it doesn't already exist. Idempotent —
@@ -47,17 +36,10 @@ def ensure_synthetic_data(n_cases: int = 300, seed: int = 42) -> str:
     with open(DATA_PATH, "w", encoding="utf-8") as f:
         json.dump(cases, f, ensure_ascii=False, indent=2)
 
-    # Also write to where index.py looks for it
-    cf_data = os.path.join(REPO_ROOT, "functions", "data")
-    os.makedirs(cf_data, exist_ok=True)
-    cf_file = os.path.join(cf_data, "synthetic_cases.json")
-    with open(cf_file, "w", encoding="utf-8") as f:
-        json.dump(cases, f, ensure_ascii=False, indent=2)
-
     return DATA_PATH
 
 
-NETWORK_PATH = os.path.join(REPO_ROOT, "data", "synthetic_network.json")
+NETWORK_PATH = os.path.join(REPO_ROOT, "functions", "setu_api", "data", "synthetic_network.json")
 
 
 def ensure_network_data() -> str:
