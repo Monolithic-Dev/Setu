@@ -1,159 +1,172 @@
 <div align="center">
-  <h1>🛡️ Setu — Crime Records Assistant</h1>
-  <p><i>Intelligent Conversational AI for the Karnataka State Police Crime Database</i></p>
+  <img src="docs/assets/dashboard.png" alt="Setu Network Dashboard" width="800"/>
+  <br/><br/>
+  <h1>Setu Intelligence Platform</h1>
+  <p><b>Advanced Conversational AI & Analytics for the Karnataka State Police</b></p>
+
+  <p>
+    <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React" />
+    <img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" />
+    <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python" />
+    <img src="https://img.shields.io/badge/Zoho_Catalyst-4353FF?style=for-the-badge&logo=zoho&logoColor=white" alt="Zoho Catalyst" />
+  </p>
+</div>
+
+<br/>
+
+## Overview
+
+Setu is an enterprise-grade, bilingual (Kannada & English) conversational AI designed exclusively for law enforcement. It empowers investigators to query vast crime databases using natural language, providing source-cited intelligence, advanced network visualization, and proactive pattern recognition. 
+
+Built natively on **Zoho Catalyst**, the platform ensures all intelligence is strictly grounded in case evidence.
+
+<div align="center">
+  <img src="docs/assets/login.png" alt="Setu Authentication" width="400" style="border-radius: 8px;"/>
 </div>
 
 ---
 
-![Setu Dashboard](docs/assets/demo.png)
+## Core Capabilities
 
-## 📖 What is Setu?
+- **Bilingual Conversational Interface**: Native support for English and Kannada via both text and voice.
+- **Explainable RAG**: Retrieval-Augmented Generation provides deterministic answers backed by explicitly cited, clickable case sources.
+- **Criminal Network Visualization**: Interactive D3.js node graphs identifying relationships between suspects, locations, and modus operandi.
+- **Tamper-Evident Auditing**: Immutable hash-chained query logs ensure complete transparency.
+- **Strict Role-Based Access Control**: Enforces jurisdiction boundaries automatically (e.g., Station Officer vs. State Analyst).
+- **High-Performance Hybrid Search**: Proprietary District-Level Index Partitioning achieving sub-100ms retrieval latency at scale.
 
-**Setu** is a bilingual (Kannada + English), voice-enabled conversational AI that empowers Karnataka Police investigators to query crime records in plain language. It provides source-cited, explainable answers, visualizes criminal networks, and delivers proactive crime-pattern early warnings. 
+---
 
-Built natively on **Zoho Catalyst**, Setu ensures all data is grounded in actual case evidence rather than demographic profiling, strictly adhering to role-based access control (RBAC).
+## System Architecture
 
-## 🏗️ System Architecture
-
-Our solution uses a serverless Catalyst Functions layer to orchestrate a hybrid RAG pipeline (structured ZCQL + District-partitioned semantic search), a QuickML LLM summarizer, and a tamper-evident audit store.
+The architecture utilizes a serverless event-driven design, leveraging Zoho Catalyst Advanced I/O functions for orchestration, hybrid semantic search, and LLM synthesis.
 
 ```mermaid
 graph TD
-    %% Styling
-    classDef client fill:#3b82f6,stroke:#1d4ed8,stroke-width:2px,color:#fff
-    classDef serverless fill:#10b981,stroke:#047857,stroke-width:2px,color:#fff
-    classDef data fill:#8b5cf6,stroke:#6d28d9,stroke-width:2px,color:#fff
-    classDef external fill:#f59e0b,stroke:#b45309,stroke-width:2px,color:#fff
+    classDef client fill:#000000,stroke:#333333,stroke-width:1px,color:#ffffff
+    classDef serverless fill:#1e293b,stroke:#334155,stroke-width:1px,color:#ffffff
+    classDef data fill:#0f172a,stroke:#334155,stroke-width:1px,color:#ffffff
+    classDef external fill:#171717,stroke:#404040,stroke-width:1px,color:#ffffff
 
-    User((Police<br>Officer))
+    User((Investigator))
     
-    subgraph Frontend [React + Vite Web App]
-        Chat[Chat Interface]:::client
-        Voice[Voice Capture]:::client
+    subgraph Frontend Client
+        Chat[Web Application<br/>React + Vite]:::client
     end
     
-    subgraph Catalyst Backend [Serverless Advanced I/O]
-        API[setu_api API Gateway]:::serverless
-        RBAC[RBAC & Sensitivity Gate]:::serverless
-        RAG[Hybrid Retrieval Engine]:::serverless
+    subgraph Serverless Backend
+        API[API Gateway]:::serverless
+        RBAC[Auth & Security Gate]:::serverless
+        RAG[Hybrid Search Engine]:::serverless
     end
     
-    subgraph Data Stores
-        Index[(Local TF-IDF<br>District Index)]:::data
+    subgraph Data Layer
+        Index[(Local Partitioned<br>TF-IDF Index)]:::data
         Audit[(Catalyst<br>Audit Store)]:::data
     end
     
     subgraph AI Services
         LLM[QuickML LLM]:::external
-        Transcribe[Speech-to-Text<br>API]:::external
     end
     
-    User -->|Queries / Voice| Frontend
-    Voice -->|Audio| Transcribe
-    Transcribe -->|Text| Chat
-    Chat -->|REST API Request| API
+    User -->|Voice / Text| Frontend
+    Chat -->|HTTPS Request| API
     
     API --> RBAC
     RBAC -->|Authorized| RAG
-    RBAC -->|Logs Queries| Audit
+    RBAC -->|Log Request| Audit
     
-    RAG -->|Fetches Cases| Index
-    RAG -->|Passes Context| LLM
-    LLM -->|Synthesized Answer| API
+    RAG -->|Filter & Score| Index
+    RAG -->|Context Injection| LLM
+    LLM -->|Synthesized Analysis| API
     
-    API -->|Sends Source-Cited Answer| Chat
+    API -->|Encrypted Payload| Chat
 ```
 
-## 🔄 User Journey & Data Flow
+---
 
-How does a typical query propagate through the system? 
+## User Flow
 
 ```mermaid
 sequenceDiagram
     autonumber
-    actor Officer as Investigator (User)
-    participant UI as Setu Frontend
-    participant Auth as RBAC Middleware
-    participant Engine as Retrieval Engine
-    participant DB as Hybrid Data Store
-    participant LLM as QuickML Model
+    actor Investigator
+    participant UI as Setu Web Client
+    participant API as Security API
+    participant Index as Retrieval Engine
+    participant LLM as AI Synthesizer
     
-    Officer->>UI: "Show me recent cyber fraud cases in Tumakuru"
-    UI->>Auth: POST /api/query (Includes X-Dev-Role Headers)
+    Investigator->>UI: Voice/Text Query Input
+    UI->>API: Authenticated POST Request
     
-    Auth->>Auth: Enforce Jurisdiction & Sensitivity
-    Auth-->>Engine: Authorized Request
+    API->>API: Enforce Jurisdiction (RBAC)
+    API-->>Index: Scoped Request
     
-    Engine->>DB: Extract Entities (District: Tumakuru, MO: cyber fraud)
-    DB-->>Engine: Top-K Matching Cases
+    Index->>Index: Semantic & Structured Match
+    Index-->>API: Extracted Case Sources
     
-    Engine->>Auth: Apply Sensitivity Mask (Drop Restricted Cases)
-    Auth-->>Engine: Filtered Safe Cases
+    API->>API: Mask Restricted Cases
     
-    Engine->>LLM: Provide Case Context + Query
-    LLM-->>Engine: Generate Summarized Answer
+    API->>LLM: Provide Sanitized Context
+    LLM-->>API: Intelligence Summary
     
-    Engine->>UI: Return Answer + Citations
-    UI->>Officer: Displays Answer & Source Links
+    API->>UI: Source-Cited Answer payload
+    UI->>Investigator: Actionable Dashboard UI
 ```
 
-## ✨ Key Features
+---
 
-- 🗣️ **Bilingual Queries**: Query naturally in Kannada or English using text or voice.
-- 📑 **Explainable AI**: RAG-grounded answers with explicit, clickable source case citations.
-- 🔐 **Secure & Tamper-Evident**: Strict Role-Based Access Control (RBAC) and immutable hash-chained query audit logs.
-- ⚡ **High Performance**: Highly scalable hybrid retrieval utilizing on-the-fly **District-Level Index Partitioning** (measured sub-100ms at 50x load).
-- 🕸️ **Advanced Analytics**: Interactive criminal network visualization and early-warning alerts.
+## Technical Stack
 
-## 💻 Tech Stack
+| Component | Technology | Purpose |
+|---|---|---|
+| **Frontend** | React, TypeScript, Vite, D3.js | High-performance, reactive user interface and data visualization. |
+| **Backend** | Python 3.10+ | Orchestration, text processing, and security middleware. |
+| **Infrastructure** | Zoho Catalyst | Serverless Advanced I/O, Data Store, and Edge Caching. |
+| **AI/ML** | QuickML, TF-IDF, BM25 | Hybrid retrieval and generative summarization. |
 
-- **Frontend**: React, TypeScript, Vite, D3.js
-- **Backend**: Python 3.10+ (Catalyst Advanced I/O Functions)
-- **Retrieval**: TF-IDF + BM25, Local NLP Heuristics
-- **Cloud Platform**: Zoho Catalyst (Data Store, QuickML, Caching)
+---
 
-## 🚀 Setup & Installation
+## Installation & Deployment
 
-**1. Clone the repo**
+**1. Repository Setup**
 ```bash
-git clone https://github.com/<org>/setu-ksp-datathon.git
-cd setu-ksp-datathon
+git clone https://github.com/Monolithic-Dev/Datathon-Hack.git
+cd Datathon-Hack
 ```
 
-**2. Setup Zoho Catalyst CLI**
+**2. Catalyst CLI Initialization**
 ```bash
 npm install -g zcatalyst-cli
 catalyst login
 catalyst init
 ```
 
-**3. Install Dependencies**
+**3. Dependency Management**
 ```bash
-# Frontend
+# Initialize client environment
 cd client && npm install
 
-# Backend
+# Initialize serverless functions
 cd ../functions/setu_api && pip install -r requirements.txt --break-system-packages
 ```
 
-**4. Run Locally**
+**4. Local Development**
 ```bash
-# Serve functions locally via Catalyst CLI
+# Boot the Catalyst local server
 catalyst serve
 
-# In a separate terminal, run the frontend
+# Start the frontend dev server (in a separate terminal)
 cd client && npm run dev
 ```
 
-## ⚖️ Responsible AI
-
-Setu's predictive and pattern-detection features are deliberately grounded in **modus-operandi and case-level evidence only**. We strictly prohibit demographic, caste, religion, or socio-economic profiling. This restriction is enforced directly at the data-schema level, ensuring ethical and responsible AI usage by the police force.
-
-## 🗄️ Documentation
-
-The complete planning and design process — including hackathon analysis, architecture blueprints, engineering plans, and deployment strategies — can be found in the [`docs/`](./docs) directory.
-
 ---
+
+## Responsible AI Commitment
+
+Setu is engineered with strict ethical guardrails. Predictive models and pattern recognition engines operate exclusively on **modus operandi and case-level evidence**. The system actively strips and prohibits filtering by demographic, religious, caste, or socio-economic indicators at the schema level.
+
+<br/>
 <div align="center">
-  <p>Built for the <b>Karnataka State Police Datathon 2026</b></p>
+  <p><i>Developed for the Karnataka State Police Datathon 2026</i></p>
 </div>
