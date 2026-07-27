@@ -1,74 +1,142 @@
-# Setu — Conversational AI for the KSP Crime Database
-
-*Karnataka State Police Datathon 2026 · Challenge 1: Intelligent Conversational AI for the KSP Crime Database*
-
-> Working name — see `docs/PRD.md` for naming caveats.
+<div align="center">
+  <h1>🛡️ Setu — Crime Records Assistant</h1>
+  <p><i>Intelligent Conversational AI for the Karnataka State Police Crime Database</i></p>
+</div>
 
 ---
 
-## What This Is
+![Setu Dashboard](docs/assets/demo.png)
 
-Setu is a bilingual (Kannada + English), voice-enabled conversational AI that lets Karnataka Police investigators query crime records in plain language, get source-cited and explainable answers, visualize criminal networks, and receive proactive crime-pattern early warnings — all grounded in case evidence, never demographic profiling. Built natively on Zoho Catalyst.
+## 📖 What is Setu?
 
-Full problem framing, research, and product decisions are in [`docs/`](./docs) — this README covers what you need to run the project.
+**Setu** is a bilingual (Kannada + English), voice-enabled conversational AI that empowers Karnataka Police investigators to query crime records in plain language. It provides source-cited, explainable answers, visualizes criminal networks, and delivers proactive crime-pattern early warnings. 
 
-## Problem Statement
+Built natively on **Zoho Catalyst**, Setu ensures all data is grounded in actual case evidence rather than demographic profiling, strictly adhering to role-based access control (RBAC).
 
-SCRB manages crime data from 1,100+ police stations across Karnataka. Current tooling is static dashboards and manual queries, with no real-time or deep analysis. See `docs/HackathonAnalysis.md` and `docs/Research.md` for the full problem framing.
+## 🏗️ System Architecture
 
-## Features
+Our solution uses a serverless Catalyst Functions layer to orchestrate a hybrid RAG pipeline (structured ZCQL + District-partitioned semantic search), a QuickML LLM summarizer, and a tamper-evident audit store.
 
-- Bilingual (Kannada + English) conversational query, text and voice
-- RAG-grounded answers with visible source citations
-- Interactive criminal network visualization
-- Proactive, case-evidence-based hotspot/early-warning alerts
-- Full tamper-evident, hash-chained audit trail and role-based access control
-- PDF export of any conversation
-- Highly scalable hybrid retrieval via on-the-fly **District-Level Index Partitioning** (measured sub-100ms at 50x load)
+```mermaid
+graph TD
+    %% Styling
+    classDef client fill:#3b82f6,stroke:#1d4ed8,stroke-width:2px,color:#fff
+    classDef serverless fill:#10b981,stroke:#047857,stroke-width:2px,color:#fff
+    classDef data fill:#8b5cf6,stroke:#6d28d9,stroke-width:2px,color:#fff
+    classDef external fill:#f59e0b,stroke:#b45309,stroke-width:2px,color:#fff
 
-## Tech Stack
+    User((Police<br>Officer))
+    
+    subgraph Frontend [React + Vite Web App]
+        Chat[Chat Interface]:::client
+        Voice[Voice Capture]:::client
+    end
+    
+    subgraph Catalyst Backend [Serverless Advanced I/O]
+        API[setu_api API Gateway]:::serverless
+        RBAC[RBAC & Sensitivity Gate]:::serverless
+        RAG[Hybrid Retrieval Engine]:::serverless
+    end
+    
+    subgraph Data Stores
+        Index[(Local TF-IDF<br>District Index)]:::data
+        Audit[(Catalyst<br>Audit Store)]:::data
+    end
+    
+    subgraph AI Services
+        LLM[QuickML LLM]:::external
+        Transcribe[Speech-to-Text<br>API]:::external
+    end
+    
+    User -->|Queries / Voice| Frontend
+    Voice -->|Audio| Transcribe
+    Transcribe -->|Text| Chat
+    Chat -->|REST API Request| API
+    
+    API --> RBAC
+    RBAC -->|Authorized| RAG
+    RBAC -->|Logs Queries| Audit
+    
+    RAG -->|Fetches Cases| Index
+    RAG -->|Passes Context| LLM
+    LLM -->|Synthesized Answer| API
+    
+    API -->|Sends Source-Cited Answer| Chat
+```
 
-React + TypeScript · Python 3.10+ (Catalyst Functions) · TF-IDF + BM25 Retrieval · Local NLP Heuristics · Catalyst Data Store + OLAP · D3.js
+## 🔄 User Journey & Data Flow
 
-Full target rationale in `docs/TechStack.md`.
+How does a typical query propagate through the system? 
 
-## Architecture
+```mermaid
+sequenceDiagram
+    autonumber
+    actor Officer as Investigator (User)
+    participant UI as Setu Frontend
+    participant Auth as RBAC Middleware
+    participant Engine as Retrieval Engine
+    participant DB as Hybrid Data Store
+    participant LLM as QuickML Model
+    
+    Officer->>UI: "Show me recent cyber fraud cases in Tumakuru"
+    UI->>Auth: POST /api/query (Includes X-Dev-Role Headers)
+    
+    Auth->>Auth: Enforce Jurisdiction & Sensitivity
+    Auth-->>Engine: Authorized Request
+    
+    Engine->>DB: Extract Entities (District: Tumakuru, MO: cyber fraud)
+    DB-->>Engine: Top-K Matching Cases
+    
+    Engine->>Auth: Apply Sensitivity Mask (Drop Restricted Cases)
+    Auth-->>Engine: Filtered Safe Cases
+    
+    Engine->>LLM: Provide Case Context + Query
+    LLM-->>Engine: Generate Summarized Answer
+    
+    Engine->>UI: Return Answer + Citations
+    UI->>Officer: Displays Answer & Source Links
+```
 
-See `docs/Architecture.md` and `docs/AIArchitecture.md` for target diagrams, and `docs/Datathon_Implemented_Features.md` for current implemented state. High level: a serverless Catalyst Functions layer orchestrates hybrid RAG (ZCQL structured search + District-partitioned TF-IDF semantic search), Data Store/OLAP (structured data + analytics), and local Jaccard-similarity network prediction, behind strict role-based access control. All interactions are cryptographically hash-chained in the audit store for tamper-evidence.
+## ✨ Key Features
 
-## Setup & Installation
+- 🗣️ **Bilingual Queries**: Query naturally in Kannada or English using text or voice.
+- 📑 **Explainable AI**: RAG-grounded answers with explicit, clickable source case citations.
+- 🔐 **Secure & Tamper-Evident**: Strict Role-Based Access Control (RBAC) and immutable hash-chained query audit logs.
+- ⚡ **High Performance**: Highly scalable hybrid retrieval utilizing on-the-fly **District-Level Index Partitioning** (measured sub-100ms at 50x load).
+- 🕸️ **Advanced Analytics**: Interactive criminal network visualization and early-warning alerts.
 
+## 💻 Tech Stack
+
+- **Frontend**: React, TypeScript, Vite, D3.js
+- **Backend**: Python 3.10+ (Catalyst Advanced I/O Functions)
+- **Retrieval**: TF-IDF + BM25, Local NLP Heuristics
+- **Cloud Platform**: Zoho Catalyst (Data Store, QuickML, Caching)
+
+## 🚀 Setup & Installation
+
+**1. Clone the repo**
 ```bash
-# Clone the repo
 git clone https://github.com/<org>/setu-ksp-datathon.git
 cd setu-ksp-datathon
+```
 
-# Install the Catalyst CLI
+**2. Setup Zoho Catalyst CLI**
+```bash
 npm install -g zcatalyst-cli
-
-# Log in and link the project
 catalyst login
 catalyst init
+```
 
-# Install frontend dependencies
+**3. Install Dependencies**
+```bash
+# Frontend
 cd client && npm install
 
-# Install function dependencies (per function)
-cd ../functions/queryFunction && pip install -r requirements.txt --break-system-packages
-# repeat for each function in functions/
+# Backend
+cd ../functions/setu_api && pip install -r requirements.txt --break-system-packages
 ```
 
-## Environment Configuration
-
-Copy `.env.example` to `.env` in each relevant function directory and fill in:
-```
-BHASHINI_API_KEY=
-SARVAM_API_KEY=
-```
-Catalyst-native services (Data Store, QuickML, Cache, Auth, Stratus) are configured through the Catalyst console, not environment variables — see `docs/DeploymentStrategy.md` §3.
-
-## Running Locally
-
+**4. Run Locally**
 ```bash
 # Serve functions locally via Catalyst CLI
 catalyst serve
@@ -77,51 +145,15 @@ catalyst serve
 cd client && npm run dev
 ```
 
-## Running Tests
+## ⚖️ Responsible AI
 
-```bash
-# Backend / ML unit tests
-pytest tests/unit
+Setu's predictive and pattern-detection features are deliberately grounded in **modus-operandi and case-level evidence only**. We strictly prohibit demographic, caste, religion, or socio-economic profiling. This restriction is enforced directly at the data-schema level, ensuring ethical and responsible AI usage by the police force.
 
-# Frontend tests
-cd client && npm test
+## 🗄️ Documentation
 
-# AI evaluation harness (retrieval precision, bilingual accuracy, hallucination review)
-python ml/eval/run_eval.py
-```
+The complete planning and design process — including hackathon analysis, architecture blueprints, engineering plans, and deployment strategies — can be found in the [`docs/`](./docs) directory.
 
-## Deployment
-
-```bash
-catalyst deploy
-```
-Full deployment architecture and Catalyst service list in `docs/Deployment.md`.
-
-## Project Documentation
-
-The complete planning and design process — hackathon analysis, product research, architecture, engineering plan, and submission materials — lives in [`docs/`](./docs), generated phase by phase:
-
-| Phase | Documents |
-|---|---|
-| 1. Hackathon Analysis | `HackathonAnalysis.md` |
-| 2. Product Discovery | `Research.md`, `CompetitorAnalysis.md`, `ProductDiscovery.md` |
-| 3. Product Definition | `PRD.md`, `ProductStrategy.md`, `Requirements.md`, `UserStories.md`, `FeaturePrioritization.md`, `Roadmap.md` |
-| 4. Architecture | `Architecture.md`, `Design.md`, `AIArchitecture.md`, `Database.md`, `APISpec.md`, `Security.md`, `Deployment.md`, `UX.md` |
-| 5. Engineering Plan | `FolderStructure.md`, `TechStack.md`, `CodingStandards.md`, `SprintPlan.md`, `TestingStrategy.md`, `DeploymentStrategy.md`, `MonitoringStrategy.md`, `RiskRegister.md` |
-| 6. Submission | `PitchDeck.md`, `DemoScript.md`, `SubmissionAnswers.md` |
-
-## Responsible AI
-
-Predictive and pattern-detection features are deliberately grounded in modus-operandi and case-level evidence only — never demographic, caste, religion, or socio-economic proxies. This is enforced at the data-schema level (`docs/Database.md` §3), not just in application logic. See `docs/HackathonAnalysis.md` §9 for the full reasoning.
-
-## Data
-
-All data used in this prototype is synthetic. No real SCRB or individual data is represented. See `docs/Database.md` §5 for the generation methodology.
-
-## Team
-
-*[fill in team name and members]*
-
-## License
-
-*[fill in — MIT recommended for a hackathon submission unless the organizers specify otherwise]*
+---
+<div align="center">
+  <p>Built for the <b>Karnataka State Police Datathon 2026</b></p>
+</div>
